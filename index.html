@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="">
+<html class="theme-next mist use-motion" lang="zh-tw">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -85,6 +85,7 @@
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="David.OAO | IT Online">
 <meta property="og:description" content="One today is worth two tomorrows">
+<meta property="og:locale" content="zh-tw">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="David.OAO | IT Online">
 <meta name="twitter:description" content="One today is worth two tomorrows">
@@ -103,7 +104,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -135,7 +136,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
   
   
@@ -184,7 +185,17 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
           </a>
         </li>
       
@@ -194,7 +205,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            歸檔
           </a>
         </li>
       
@@ -217,6 +228,195 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/04/10分鐘學會OpenCart入門指南/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David.OAO | IT Online">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/04/10分鐘學會OpenCart入門指南/" itemprop="url">10分鐘學會OpenCart入門指南</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-01-04T23:28:36+08:00">
+                2018-01-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <img src="/2018/01/04/10分鐘學會OpenCart入門指南/opencart-logo-256x256.png">
+<h1 id="OpenCart-入門指南"><a href="#OpenCart-入門指南" class="headerlink" title="OpenCart/入門指南"></a>OpenCart/入門指南</h1><p>本指南是為已經熟悉PHP，OOP和MVC架構的開發人員編寫的，雖然對於開發人員來說並不完全，但對於入門者來說是一個很好的起點</p>
+<hr>
+<h2 id="了解Libraries"><a href="#了解Libraries" class="headerlink" title="了解Libraries"></a>了解Libraries</h2><p>所有的Libraries功能都可以通過Controller，Model和Views使用，例如：<br><code>$this-&gt;library_name</code><br>所有這些功能都可以在<code>/system/library/</code>中找到。</p>
+<p>例如，要訪問當前購物車的產品，需要使用Cart分類，<br>該分類<code>/system/library/cart.php</code><br>可以通過<code>$this-&gt;cart-&gt;getProducts()</code>使用</p>
+<h3 id="常用的項目"><a href="#常用的項目" class="headerlink" title="常用的項目"></a>常用的項目</h3><ul>
+<li>customer.php - 客戶相關的功能</li>
+<li>user.php - 管理用戶相關的功能</li>
+<li>cart.php - 購物車相關功能</li>
+<li>config.php - 所有的設置都從這裡load</li>
+<li>url.php - 網址生成功能</li>
+</ul>
+<hr>
+<h2 id="了解route參數route-parameter"><a href="#了解route參數route-parameter" class="headerlink" title="了解route參數route parameter"></a>了解route參數route parameter</h2><p>OpenCart的框架依賴<code>route=aaa/bbb/ccc</code>查詢字符串參數來知道要load的內容，並且是查找每個頁面需要編輯文件的基礎功能。<br>大多數route實際上只使用aaa/bbb被看作是兩個部分，然而有些包含三個部分aaa/bbb/ccc。</p>
+<ul>
+<li>第一部分aaa通常涉及通用文件夾（例如controller或模板文件夾）</li>
+<li>第二部分通常涉及文件名，沒有相關的.php或.tpl副檔名</li>
+<li>第三部分在下面的“了解controller”部分進行了解釋</li>
+</ul>
+<hr>
+<h2 id="了解languages"><a href="#了解languages" class="headerlink" title="了解languages"></a>了解languages</h2><p>語言存儲在<code>/catalog/language/</code>文件夾的<code>your-language</code>文件夾中。<br>在這個範圍內，不同頁面使用的常規文本值存儲在<code>your-language.php</code>文件夾內的文件中，<br>因此對於目錄端的英文語言，可以在其中找到<br><code>catalog/language/english/english.php</code></p>
+<p>對於特定的頁面文本，需要route該頁面（這通常是這種情況，但並不是可以指定任何喜歡的語言文件）。<br>例如，搜索頁面具有<code>route＝product/search</code>，因此該頁面的語言特定文本在<code>catalog/language/english/product/search.php</code><br>（注意文件的名稱和子文件夾後面的route 加上.php。</p>
+<p>要在controllers中load語言，請使用<br><code>$this-&gt;language-&gt;load(&#39;product/search&#39;);</code></p>
+<p>然後，您可以使用語言庫函數<code>get</code>來檢索特定的語言文本，例如<br><code>$some_variable = $this-&gt;language-&gt;get(&#39;heading_title&#39;);</code></p>
+<p>語言變量在語言文件中使用一個特殊變量進行賦值，<br>該變量<code>$_</code>是一組鍵和文本值。<code>$_[&#39;heading_title&#39;] = &#39;Search&#39;;</code></p>
+<p>在你的<code>/catalog/language/english/product/search.php</code>應該找到類似的</p>
+<p>全局語言文件<code>english/english.php</code>的值將自動load，並可在不使用<br><code>$this-&gt;language-&gt;load</code>方法的情況下使用</p>
+<hr>
+<h2 id="了解controllers"><a href="#了解controllers" class="headerlink" title="了解controllers"></a>了解controllers</h2><p>controller根據route和loaded是相當直接。<br>controllers位於<code>/catalog/controller/</code>文件夾中。<br>從上個例子，搜索頁面的<code>Controller /product/search.php</code>在這個文件夾</p>
+<p>打開controller文件，你會看到一個extending the Controller名為Pascal Case，呼叫分類名<code>ControllerProductSearch</code></p>
+<p>這是特定的route，Controller + 子文件夾的名稱 + 文件名，沒有大寫的擴展名稱(Pascal Case)。大寫字母實際上並不是必需的，但為了便於閱讀，建議使用大寫字母。<br>值得注意的是，除了字母和數字之外，分類名不會從子文件夾和文件名中獲取任何值。下劃線將被刪除。</p>
+<p>聲明分類中的public可以通過路徑運行 - private不是。<br>預設情況下，使用標準的兩部分route（aaa/bbb），index()調用默認方法。如果使用路線的第三部分（ccc），則將運行此方法。<br>例如，<code>account/return/insert</code>將load<code>/catalog/controller/account/return.php</code>文件和分類，並嘗試呼叫該<code>insert</code></p>
+<hr>
+<h2 id="了解-Models"><a href="#了解-Models" class="headerlink" title="了解 Models"></a>了解 Models</h2><p>Models可以在<code>/catalog/model/</code>文件夾中找到，並根據功能進行分組，而不是route，因此您需要通過controller load它們<br><code>$this-&gt;load-&gt;model(&#39;xxx/yyy&#39;);</code></p>
+<p>這將loadxxx名為子文件夾中的文件yyy.php。然後可以通過object使用<br><code>$this-&gt;model_xxx_yyy</code></p>
+<p>和controller一樣，你只能調用它的public方法。例如，要調整圖像的大小，您可以使用該<code>tool/image</code>模組並呼叫resize如下所示<br><code>$this-&gt;load-&gt;model(&#39;tool/image&#39;);</code><br><code>$this-&gt;model_tool_image-&gt;resize(&#39;image.png&#39;, 300, 200);</code></p>
+<hr>
+<h2 id="了解controller-view中的變量分配"><a href="#了解controller-view中的變量分配" class="headerlink" title="了解controller view中的變量分配"></a>了解controller view中的變量分配</h2><p>為了將值傳遞給controller的view，只需將數據分配給$this-&gt;data變量，該變量本質上是一個key =&gt;值對的數組。舉個例子<br><code>$this-&gt;data[&#39;example_var&#39;] = 123;</code></p>
+<p>如果您熟悉將每個鍵轉換為變量的<a href="http://php.net/extract" target="_blank" rel="noopener">extract（）</a>方法，那麼在view中訪問它應該很容易理解。因此，view中的<code>example_var</code>關鍵變成<code>$example_var</code>並且可以被使用。</p>
+<hr>
+<h2 id="了解themes"><a href="#了解themes" class="headerlink" title="了解themes"></a>了解themes</h2><p>Themes僅供catalog端使用，基本上是模板，樣式表和主題圖像的文件夾。Theme文件夾放置在<code>/catalog/view/theme/</code>文件夾中，後面跟著主題名稱。該文件夾的名稱是不重要的，除了該default文件夾</p>
+<p>admin使用<code>/admin/view/template/</code>（跳過<code>/theme/theme-name/</code>，因為它不允許不同的主題）</p>
+<p>模板文件駐留在<code>template</code>主題文件夾內的文件夾中。如果任何模版對當前選定的主題不可用，則使用默認文件夾的模板作為後備。這意味著可以用很少的文件創建主題，並且仍然可以完全運行。它還減少了代碼重複和升級時的問題</p>
+<hr>
+<h2 id="了解views-templates"><a href="#了解views-templates" class="headerlink" title="了解views (templates)"></a>了解views (templates)</h2><p>與語言和模組一樣，view文件通常與route有關，但不一定非要。catalog 的模板通常在<code>/catalog/view/theme/your-theme/template/</code> 除非它不存在。</p>
+<p>在這種情況下，默認的主題模板將被使用。對於上面的搜索頁面示例，文件是product/search.tpl。對於有三部分的路線，一般來說aaa/bbb_ccc.tpl沒有硬性規定。在admin中，大多數頁面都遵循這一點，除了列出產品列表頁面<code>catalog/product_list.tpl</code>和產品編輯表單所在的頁面<code>catalog/product_form.tpl</code>。這些沒有設置的，默認購物車的標準。</p>
+<p>模板文件實際上只是另一個php文件，但帶有.tpl擴展名，實際上是在controller文件中運行，因此在controller中編寫代碼的所有內容都可以在模板文件中運行（儘管不建議，除非絕對必要）</p>
+<hr>
+<h2 id="了解database-object"><a href="#了解database-object" class="headerlink" title="了解database object"></a>了解database object</h2><ul>
+<li>查詢運行使用</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$result = <span class="keyword">$this</span>-&gt;db-&gt;query(<span class="string">"SELECT * FROM `"</span> . DB_PREFIX . <span class="string">"table`"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>DB_PREFIX</code>顧名思義就是一個數據庫前綴（如果存在的話</p>
+<p><code>$result</code>將返回一個SELECT查詢object，包含一些屬性</p>
+<p><code>$result-&gt;row</code>包含第一行的數據，如果一個或多個返回為關聯數組</p>
+<p><code>$result-&gt;rows</code>包含一個陣列的各行結果，非常適合循環使用foreach</p>
+<p><code>$result-&gt;num_rows</code>包含返回結果的數量</p>
+<ul>
+<li>也有些額外的方法<code>$this-&gt;db</code></li>
+</ul>
+<p><code>$this-&gt;db-&gt;escape()</code>在傳遞的值上使用mysql_real_escape_string（）</p>
+<p><code>$this-&gt;db-&gt;countAffected</code>返回UPDATE查詢所影響的行數等等</p>
+<p><code>$this-&gt;db-&gt;getLastId()</code>使用mysql_insert_id（）返回最後一個自動遞增ID</p>
+<hr>
+<h2 id="了解-reserved-variables"><a href="#了解-reserved-variables" class="headerlink" title="了解 reserved variables"></a>了解 reserved variables</h2><p>Opencart已預定義變量代替標準的使用<br><code>$_GET，$_POST，$_SESSION，$_COOKIE，$_FILES，$_REQUEST，$_SERVER</code></p>
+<p><code>$_SESSION</code>編輯使用<code>$this-&gt;session-&gt;data</code>模仿關聯數組<code>$_SESSION</code></p>
+<p>所有人都可以使用，<code>$this-&gt;request</code>並“cleaned”以符合啟用/禁用</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$_GET 變 <span class="keyword">$this</span>-&gt;request-&gt;get</span><br><span class="line"></span><br><span class="line">$_POST 變 <span class="keyword">$this</span>-&gt;request-&gt;post</span><br><span class="line"></span><br><span class="line">$_COOKIE 變 <span class="keyword">$this</span>-&gt;request-&gt;cookie</span><br><span class="line"></span><br><span class="line">$_FILES 變 <span class="keyword">$this</span>-&gt;request-&gt;files</span><br><span class="line"></span><br><span class="line">$_REQUEST 變 <span class="keyword">$this</span>-&gt;request-&gt;request</span><br><span class="line"></span><br><span class="line">$_SERVER 變 <span class="keyword">$this</span>-&gt;request-&gt;server</span><br></pre></td></tr></table></figure>
+<hr>
+<p>參考資料：<a href="https://stackoverflow.com/questions/13478995/how-to-become-an-opencart-guru" target="_blank" rel="noopener">php - How to become an OpenCart guru? - Stack Overflow</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -260,9 +460,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">發表於</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-03T23:21:48+08:00">
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-01-03T23:21:48+08:00">
                 2018-01-03
               </time>
             
@@ -356,7 +556,7 @@
 <p>一個驚嘆號!<br>接著一個方括號，裡面放上圖片的替代文字<br>接著一個普通括號，裡面放上圖片的網址，最後還可以用引號包住並加上 選擇性的’title’文字。</p>
 <p>行內圖片的語法看起來像是：<br><code>![Alt text](/path/to/img.jpg &quot;Optional title&quot;)</code></p>
 <hr>
-<h3 id="參考資料："><a href="#參考資料：" class="headerlink" title="參考資料："></a>參考資料：</h3><p><a href="https://wastemobile.gitbooks.io/gitbook-chinese/content/format/markdown.html" target="_blank" rel="noopener">Markdown | GitBook 中文解說 - 2.4</a><br><a href="http://markdown.tw/" target="_blank" rel="noopener">Markdown 語法說明</a></p>
+<h2 id="參考資料："><a href="#參考資料：" class="headerlink" title="參考資料："></a>參考資料：</h2><p><a href="https://wastemobile.gitbooks.io/gitbook-chinese/content/format/markdown.html" target="_blank" rel="noopener">Markdown | GitBook 中文解說 - 2.4</a><br><a href="http://markdown.tw/" target="_blank" rel="noopener">Markdown 語法說明</a></p>
 
           
         
@@ -434,9 +634,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">發表於</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-02T23:27:37+08:00">
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-01-02T23:27:37+08:00">
                 2018-01-02
               </time>
             
@@ -539,10 +739,10 @@
 <hr>
 <h2 id="常用-Hexo-指令"><a href="#常用-Hexo-指令" class="headerlink" title="常用 Hexo 指令"></a>常用 Hexo 指令</h2><p>$ hexo new “postName”  # 產生新的文章<br>$ hexo new page “pageName”  # 產生新的頁面</p>
 <h3 id="指令簡寫"><a href="#指令簡寫" class="headerlink" title="指令簡寫"></a>指令簡寫</h3><p>$ hexo n == hexo new  # 產生新的 post/page/draft<br>$ hexo g == hexo generate  # 產生靜態的檔案<br>$ hexo s == hexo server  # 啟動伺服器 預設網址為: <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a><br>$ hexo d == hexo deploy  # 部署文件至 Github 上</p>
-<h4 id="完成後佈署"><a href="#完成後佈署" class="headerlink" title="完成後佈署"></a>完成後佈署</h4><p>您可執行下列的其中一個指令，讓 Hexo 在建立完畢後自動佈署網站，兩個指令的作用是相同的。</p>
+<h3 id="完成後佈署"><a href="#完成後佈署" class="headerlink" title="完成後佈署"></a>完成後佈署</h3><p>您可執行下列的其中一個指令，讓 Hexo 在建立完畢後自動佈署網站，兩個指令的作用是相同的。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate --deploy</span><br><span class="line">hexo deploy --generate</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p>基本設定<a href="https://hexo.io/zh-tw/docs/" target="_blank" rel="noopener">文件 | Hexo</a></p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p>基本設定<a href="https://hexo.io/zh-tw/docs/" target="_blank" rel="noopener">文件 | Hexo</a></p>
 
           
         
@@ -620,9 +820,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">發表於</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-01T22:38:52+08:00">
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-01-01T22:38:52+08:00">
                 2018-01-01
               </time>
             
@@ -740,9 +940,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">發表於</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-20T17:22:25+08:00">
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-12-20T17:22:25+08:00">
                 2017-12-20
               </time>
             
@@ -872,8 +1072,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">文章</span>
                 </a>
               </div>
             
@@ -885,8 +1085,8 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">標籤</span>
                 </a>
               </div>
             
@@ -934,7 +1134,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
 
 
 
@@ -942,7 +1142,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
 
 
 
