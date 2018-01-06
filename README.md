@@ -1,4 +1,4 @@
-# Hexo+GitHub BulbCat.David blog
+# BulbCat.David blog
 
 ---
 
