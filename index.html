@@ -230,16 +230,6 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站點地圖
-          </a>
-        </li>
-      
 
       
     </ul>
@@ -259,6 +249,146 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tiida54.github.io/2018/01/09/3分鐘完成Hexo網站地圖Sitemap設定/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BulbCat.David">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BulbCat.David ｜前端工程師之路｜學習技術分享 BulbCat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/09/3分鐘完成Hexo網站地圖Sitemap設定/" itemprop="url">3分鐘完成Hexo網站地圖Sitemap設定</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-01-09T21:56:58+08:00">
+                2018-01-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <img src="/2018/01/09/3分鐘完成Hexo網站地圖Sitemap設定/sitemap.jpg">
+<h1 id="3分鐘完成Hexo網站地圖Sitemap設定"><a href="#3分鐘完成Hexo網站地圖Sitemap設定" class="headerlink" title="3分鐘完成Hexo網站地圖Sitemap設定"></a>3分鐘完成Hexo網站地圖Sitemap設定</h1><hr>
+<h2 id="Sitemap"><a href="#Sitemap" class="headerlink" title="Sitemap"></a>Sitemap</h2><p>在 Google 的網站管理員工具提交 <a href="https://goo.gl/kWDKxR" target="_blank" rel="noopener">Sitemap ／網站地圖</a>就等於告訴 Google 網站有這些網頁，請它趕快過來看看。</p>
+<p>Google Search Console （Google網站管理員）以前的名稱是 Google Webmaster（網站管理工具），是 Google開發的 免費SEO工具。</p>
+<p>提交 Sitemap 可以讓 Google 更快速有效的了解到網站上面有哪些網頁，那些網頁對應到的關鍵字有哪些，然後在往後的搜尋結果上面顯示這些被檢索的網頁。</p>
+<p>如果做外部連結 好比開隧道，提交 Sitemap 就好比把一張地圖交給 Google，讓 Google 知道這個存在，可以顯示給搜尋用戶的。</p>
+<hr>
+<h2 id="提交sitemap網站地圖"><a href="#提交sitemap網站地圖" class="headerlink" title="提交sitemap網站地圖"></a>提交sitemap網站地圖</h2><p>如果你想提交 sitemap，可以選擇在 Google 網站管理員裡面提交。但是提交前必須先註冊一個 Google網站管理員 (Google Search Console)帳號才能提交 sitemap。</p>
+<ul>
+<li><p>登入你的 Google 網站管理員頁面，然後在「檢索」裡面選擇「Sitemaps」</p>
+</li>
+<li><p>輸入 sitemap.xml 然後按 「提交 Sitemap」</p>
+</li>
+<li><p>提交「 Sitemap 」給 Google後，接下來就等你的網頁出現在搜尋引擎</p>
+</li>
+</ul>
+<hr>
+<h2 id="Hexo設定"><a href="#Hexo設定" class="headerlink" title="Hexo設定"></a>Hexo設定</h2><p>設定主題底下的 / <code>_config.yml</code></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Google Webmaster tools verification setting</span></span><br><span class="line"><span class="comment"># See: https://www.google.com/webmasters/</span></span><br><span class="line"><span class="attr">google_site_verification:</span> <span class="string">驗證碼</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Google Analytics</span></span><br><span class="line"><span class="attr">google_analytics:</span> <span class="string">帳戶ID</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://support.google.com/webmasters/answer/156184" target="_blank" rel="noopener">瞭解 Sitemap - Search Console說明</a><br><a href="https://github.com/hexojs/hexo-generator-sitemap" target="_blank" rel="noopener">GitHub - hexojs/hexo-generator-sitemap: Sitemap generator for Hexo.</a><br><a href="http://www.yesharris.com/search-console-intro/" target="_blank" rel="noopener">Google Search Console 初學者指南，如何使用及安裝 | Harris 先生</a><br><a href="https://yogapan.github.io/2017/08/11/%E7%94%A8Hexo-Github-Pages%E6%90%AD%E5%BB%BA%E5%80%8B%E4%BA%BA%E9%83%A8%E8%90%BD%E6%A0%BC/" target="_blank" rel="noopener">用Hexo + Github Pages搭建個人部落格 | 小蛇蛇的筆記</a><br><a href="https://shopline.tw/blog/new-sitemap-feature-for-ecommerce-stores/" target="_blank" rel="noopener">SEO功能優化 Sitemap與Google網站管理員的運用 | Shopline電商教室</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1592,7 +1722,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
