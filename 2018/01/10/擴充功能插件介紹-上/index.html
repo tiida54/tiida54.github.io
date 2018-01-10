@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="jhGR9g7yoPHCHNLRInYRrVrZV7d1wJepOzpqWfPbra8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-bulbcat.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-bulbcat.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-bulbcat.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo-bulbcat.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Google,Chrome," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Google Chrome 擴充功能插件介紹(上) 使用 Google Chrome 插件，讓你事半功倍。  Google Chrome擴充功能程式 - 維基百科，自由的百科全書  Adblock Plus - 10,000,000+ 位使用者  超過 1 億部設備上使用，是世界上最受歡迎的廣告攔截插件 Adblock Plus for Google Chrome 會阻擋：橫幅廣告、YouTub">
+<meta name="keywords" content="Google,Chrome">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google Chrome擴充功能插件介紹-上">
+<meta property="og:url" content="http://tiida54.github.io/2018/01/10/擴充功能插件介紹-上/index.html">
+<meta property="og:site_name" content="BulbCat.David ｜前端工程師之路｜學習技術分享 BulbCat">
+<meta property="og:description" content="Google Chrome 擴充功能插件介紹(上) 使用 Google Chrome 插件，讓你事半功倍。  Google Chrome擴充功能程式 - 維基百科，自由的百科全書  Adblock Plus - 10,000,000+ 位使用者  超過 1 億部設備上使用，是世界上最受歡迎的廣告攔截插件 Adblock Plus for Google Chrome 會阻擋：橫幅廣告、YouTub">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://tiida54.github.io/2018/01/10/擴充功能插件介紹-上/Google-Chrome-logo.png">
+<meta property="og:image" content="http://tiida54.github.io/2018/01/10/擴充功能插件介紹-上/Adblock-Plus.png">
+<meta property="og:image" content="http://tiida54.github.io/2018/01/10/擴充功能插件介紹-上/FireShot.png">
+<meta property="og:image" content="http://tiida54.github.io/2018/01/10/擴充功能插件介紹-上/OneTab.png">
+<meta property="og:image" content="http://tiida54.github.io/2018/01/10/擴充功能插件介紹-上/Bookmark-Manager.png">
+<meta property="og:image" content="http://tiida54.github.io/2018/01/10/擴充功能插件介紹-上/Wappalyzer.png">
+<meta property="og:image" content="http://tiida54.github.io/2018/01/10/擴充功能插件介紹-上/Dimensions.png">
+<meta property="og:image" content="http://tiida54.github.io/2018/01/10/擴充功能插件介紹-上/Web-Developer-Checklist.png">
+<meta property="og:image" content="http://tiida54.github.io/2018/01/10/擴充功能插件介紹-上/Pesticide-for-Chrome.png">
+<meta property="og:updated_time" content="2018-01-10T13:48:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Google Chrome擴充功能插件介紹-上">
+<meta name="twitter:description" content="Google Chrome 擴充功能插件介紹(上) 使用 Google Chrome 插件，讓你事半功倍。  Google Chrome擴充功能程式 - 維基百科，自由的百科全書  Adblock Plus - 10,000,000+ 位使用者  超過 1 億部設備上使用，是世界上最受歡迎的廣告攔截插件 Adblock Plus for Google Chrome 會阻擋：橫幅廣告、YouTub">
+<meta name="twitter:image" content="http://tiida54.github.io/2018/01/10/擴充功能插件介紹-上/Google-Chrome-logo.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tiida54.github.io/2018/01/10/擴充功能插件介紹-上/"/>
+
+
+
+
+
+  <title>Google Chrome擴充功能插件介紹-上 | BulbCat.David ｜前端工程師之路｜學習技術分享 BulbCat</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-112178007-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BulbCat.David ｜前端工程師之路｜學習技術分享 BulbCat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">BulbCat｜Front-end engineer｜Web Design｜One today is worth two tomorrows</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tiida54.github.io/2018/01/10/擴充功能插件介紹-上/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BulbCat.David">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BulbCat.David ｜前端工程師之路｜學習技術分享 BulbCat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Google Chrome擴充功能插件介紹-上</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-01-10T21:15:05+08:00">
+                2018-01-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <img src="/2018/01/10/擴充功能插件介紹-上/Google-Chrome-logo.png">
+<h1 id="Google-Chrome-擴充功能插件介紹-上"><a href="#Google-Chrome-擴充功能插件介紹-上" class="headerlink" title="Google Chrome 擴充功能插件介紹(上)"></a>Google Chrome 擴充功能插件介紹(上)</h1><blockquote>
+<p>使用 Google Chrome 插件，讓你事半功倍。</p>
+</blockquote>
+<p><a href="https://zh.wikipedia.org/wiki/Google_Chrome%E6%89%A9%E5%B1%95%E7%A8%8B%E5%BA%8F" target="_blank" rel="noopener">Google Chrome擴充功能程式 - 維基百科，自由的百科全書</a></p>
+<hr>
+<h2 id="Adblock-Plus-10-000-000-位使用者"><a href="#Adblock-Plus-10-000-000-位使用者" class="headerlink" title="Adblock Plus - 10,000,000+ 位使用者"></a>Adblock Plus - 10,000,000+ 位使用者</h2><img src="/2018/01/10/擴充功能插件介紹-上/Adblock-Plus.png">
+<ul>
+<li>超過 1 億部設備上使用，是世界上最受歡迎的廣告攔截插件</li>
+<li>Adblock Plus for Google Chrome 會阻擋：橫幅廣告、YouTube 影片廣告、 Facebook 廣告、彈出式視窗、還有各種礙眼的廣告</li>
+</ul>
+<p><a href="https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb" target="_blank" rel="noopener">Adblock Plus - Chrome 線上應用程式商店</a></p>
+<hr>
+<h2 id="FireShot-1-789-710-位使用者"><a href="#FireShot-1-789-710-位使用者" class="headerlink" title="FireShot - 1,789,710 位使用者"></a>FireShot - 1,789,710 位使用者</h2><img src="/2018/01/10/擴充功能插件介紹-上/FireShot.png">
+<ul>
+<li>捕捉網頁截圖，然後編輯，並將它們保存到PDF，JPEG，GIF，PNG或BMP，上傳，打印，在Photoshop中打開，複製到剪貼板或電子郵件</li>
+</ul>
+<p><a href="https://chrome.google.com/webstore/detail/take-webpage-screenshots/mcbpblocgmgfnpjjppndjkmgjaogfceg" target="_blank" rel="noopener">捕捉網頁截圖 - FireShot的 - Chrome 線上應用程式商店</a></p>
+<hr>
+<h2 id="OneTab-1-535-214-位使用者"><a href="#OneTab-1-535-214-位使用者" class="headerlink" title="OneTab - 1,535,214 位使用者"></a>OneTab - 1,535,214 位使用者</h2><img src="/2018/01/10/擴充功能插件介紹-上/OneTab.png">
+<ul>
+<li>將所有分頁轉換成一個清單，需要再次訪問這些分頁時，可以單獨或全部還原</li>
+<li>節省高達95％的記憶體，並減輕分頁混亂現象</li>
+</ul>
+<p><a href="https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall" target="_blank" rel="noopener">OneTab - Chrome 線上應用程式商店</a></p>
+<hr>
+<h2 id="Bookmark-Manager-904-946-位使用者"><a href="#Bookmark-Manager-904-946-位使用者" class="headerlink" title="Bookmark Manager - 904,946 位使用者"></a>Bookmark Manager - 904,946 位使用者</h2><img src="/2018/01/10/擴充功能插件介紹-上/Bookmark-Manager.png">
+<ul>
+<li>將圖片和附註加入書籤，讓您更方便使用</li>
+<li>具有書籤搜尋功能，不用再為分類書籤而煩惱</li>
+<li>可以與親朋好友分享自己的書籤。</li>
+</ul>
+<p><a href="https://chrome.google.com/webstore/detail/bookmark-manager/gmlllbghnfkpflemihljekbapjopfjik" target="_blank" rel="noopener">Bookmark Manager - Chrome 線上應用程式商店</a></p>
+<hr>
+<h2 id="Wappalyzer-643-969-位使用者"><a href="#Wappalyzer-643-969-位使用者" class="headerlink" title="Wappalyzer - 643,969 位使用者"></a>Wappalyzer - 643,969 位使用者</h2><img src="/2018/01/10/擴充功能插件介紹-上/Wappalyzer.png">
+<ul>
+<li>識別網站上的技術</li>
+<li>檢測分析工具，程式語言，ＪＳ框架，作業系統，網頁框架，內容管理系統，網頁伺服器，付款處理等技術</li>
+</ul>
+<p><a href="https://www.wappalyzer.com/" target="_blank" rel="noopener">Wappalyzer - Identify technologies on websites</a></p>
+<hr>
+<h2 id="Dimensions-74-005-位使用者"><a href="#Dimensions-74-005-位使用者" class="headerlink" title="Dimensions - 74,005 位使用者"></a>Dimensions - 74,005 位使用者</h2><img src="/2018/01/10/擴充功能插件介紹-上/Dimensions.png">
+<ul>
+<li>設計人員測量屏幕尺寸的工具，測量一個網站上的元素之間的距離</li>
+<li>測量鼠標指針向上/向下和向左/向右的尺寸，直到碰到邊界</li>
+</ul>
+<p><a href="https://chrome.google.com/webstore/detail/dimensions/baocaagndhipibgklemoalmkljaimfdj" target="_blank" rel="noopener">Dimensions - Chrome 線上應用程式商店</a></p>
+<hr>
+<h2 id="Web-Developer-Checklist-46-002-位使用者"><a href="#Web-Developer-Checklist-46-002-位使用者" class="headerlink" title="Web Developer Checklist - 46,002 位使用者"></a>Web Developer Checklist - 46,002 位使用者</h2><img src="/2018/01/10/擴充功能插件介紹-上/Web-Developer-Checklist.png">
+<ul>
+<li>網頁放上線之前的「查核清單」</li>
+<li>包含SEO、手機裝置、可用性、無障礙、環境整合、性能六大類</li>
+<li>還有詳細檢查清單<a href="http://webdevchecklist.com/" target="_blank" rel="noopener">Web Developer Checklist</a></li>
+</ul>
+<p><a href="https://chrome.google.com/webstore/detail/web-developer-checklist/iahamcpedabephpcgkeikbclmaljebjp" target="_blank" rel="noopener">Web Developer Checklist - Chrome 線上應用程式商店</a></p>
+<hr>
+<h2 id="Emmet-Re-view-41-179-位使用者"><a href="#Emmet-Re-view-41-179-位使用者" class="headerlink" title="Emmet Re:view - 41,179 位使用者"></a>Emmet Re:view - 41,179 位使用者</h2>
+<ul>
+<li>快速簡單的在多個視窗中測試您的響應式設計</li>
+<li>以並排的方式在多個視圖中顯示您的響應式網頁，以便您可以快速測試網頁在不同分辨率和設備上的效果</li>
+<li>所有的視圖都完全同步：滾動，填寫表單域，單擊，懸停和拖動元素獲得即時反饋</li>
+</ul>
+<p><a href="https://chrome.google.com/webstore/detail/emmet-review/epejoicbhllgiimigokgjdoijnpaphdp" target="_blank" rel="noopener">Emmet Re:view - Chrome 線上應用程式商店</a></p>
+<hr>
+<h2 id="Pesticide-for-Chrome-29-791-位使用者"><a href="#Pesticide-for-Chrome-29-791-位使用者" class="headerlink" title="Pesticide for Chrome - 29,791 位使用者"></a>Pesticide for Chrome - 29,791 位使用者</h2><img src="/2018/01/10/擴充功能插件介紹-上/Pesticide-for-Chrome.png">
+<ul>
+<li>檢視網頁的元素並畫上框線</li>
+<li><a href="https://github.com/mrmrs/pesticide" target="_blank" rel="noopener">GitHub - mrmrs/pesticide: Kill your css layout bugs</a></li>
+</ul>
+<p><a href="https://chrome.google.com/webstore/detail/pesticide-for-chrome/bblbgcheenepgnnajgfpiicnbbdmmooh" target="_blank" rel="noopener">Pesticide for Chrome - Chrome 線上應用程式商店</a></p>
+<hr>
+<h2 id="Responsive-Inspector-Reloaded-1-589-位使用者"><a href="#Responsive-Inspector-Reloaded-1-589-位使用者" class="headerlink" title="Responsive Inspector Reloaded - 1,589 位使用者"></a>Responsive Inspector Reloaded - 1,589 位使用者</h2>
+<ul>
+<li>快速查看網頁RWD斷點</li>
+</ul>
+<p><a href="https://chrome.google.com/webstore/detail/responsive-inspector-relo/elmkkpeccekaekegjhnekaolcjafnnep" target="_blank" rel="noopener">Responsive Inspector Reloaded - Chrome 線上應用程式商店</a></p>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author：</strong>
+    BulbCat.David
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link：</strong>
+    <a href="http://tiida54.github.io/2018/01/10/擴充功能插件介紹-上/" title="Google Chrome擴充功能插件介紹-上">http://tiida54.github.io/2018/01/10/擴充功能插件介紹-上/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice： </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Google/" rel="tag"># Google</a>
+          
+            <a href="/tags/Chrome/" rel="tag"># Chrome</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/09/3分鐘完成Hexo網站地圖Sitemap設定/" rel="next" title="3分鐘完成Hexo網站地圖Sitemap設定">
+                <i class="fa fa-chevron-left"></i> 3分鐘完成Hexo網站地圖Sitemap設定
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.gif"
+                alt="BulbCat.David" />
+            
+              <p class="site-author-name" itemprop="name">BulbCat.David</p>
+              <p class="site-description motion-element" itemprop="description">BulbCat 邁向前端工程師的學習心得與技術分享｜Front-end engineer｜Web Design</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/tiida54" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Google-Chrome-擴充功能插件介紹-上"><span class="nav-number">1.</span> <span class="nav-text">Google Chrome 擴充功能插件介紹(上)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Adblock-Plus-10-000-000-位使用者"><span class="nav-number">1.1.</span> <span class="nav-text">Adblock Plus - 10,000,000+ 位使用者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FireShot-1-789-710-位使用者"><span class="nav-number">1.2.</span> <span class="nav-text">FireShot - 1,789,710 位使用者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OneTab-1-535-214-位使用者"><span class="nav-number">1.3.</span> <span class="nav-text">OneTab - 1,535,214 位使用者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bookmark-Manager-904-946-位使用者"><span class="nav-number">1.4.</span> <span class="nav-text">Bookmark Manager - 904,946 位使用者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wappalyzer-643-969-位使用者"><span class="nav-number">1.5.</span> <span class="nav-text">Wappalyzer - 643,969 位使用者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dimensions-74-005-位使用者"><span class="nav-number">1.6.</span> <span class="nav-text">Dimensions - 74,005 位使用者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-Developer-Checklist-46-002-位使用者"><span class="nav-number">1.7.</span> <span class="nav-text">Web Developer Checklist - 46,002 位使用者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Emmet-Re-view-41-179-位使用者"><span class="nav-number">1.8.</span> <span class="nav-text">Emmet Re:view - 41,179 位使用者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pesticide-for-Chrome-29-791-位使用者"><span class="nav-number">1.9.</span> <span class="nav-text">Pesticide for Chrome - 29,791 位使用者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Responsive-Inspector-Reloaded-1-589-位使用者"><span class="nav-number">1.10.</span> <span class="nav-text">Responsive Inspector Reloaded - 1,589 位使用者</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BulbCat.David</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
