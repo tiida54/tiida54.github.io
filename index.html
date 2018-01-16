@@ -324,98 +324,20 @@
       
         
           
-            <img src="/2018/01/16/10分鐘學會OpenCart自定義主題/opencart-logo-256x256.png">
-<h1 id="10分鐘學會OpenCart自定義主題"><a href="#10分鐘學會OpenCart自定義主題" class="headerlink" title="10分鐘學會OpenCart自定義主題"></a>10分鐘學會OpenCart自定義主題</h1><blockquote>
-<p>堅持了就是神話，放棄了就是笑話。</p>
-</blockquote>
-<hr>
-<h2 id="OpenCart預設主題結構"><a href="#OpenCart預設主題結構" class="headerlink" title="OpenCart預設主題結構"></a>OpenCart預設主題結構</h2><p>Image(圖像):所有有關主題的圖像文件都放在這裡。<br>Stylesheet(樣式表):樣式表的外觀相關代碼。<br>Template(模板):在這裡找到所有前端模板的文件。所有的模板文件模塊化，讓事情變得整潔乾淨。</p>
-<hr>
-<h2 id="模板分類"><a href="#模板分類" class="headerlink" title="模板分類"></a>模板分類</h2><h3 id="Common-常見的"><a href="#Common-常見的" class="headerlink" title="Common(常見的)"></a>Common(常見的)</h3><p>跨不同頁面的模板公共元素文件都放在這個目錄中。例如包括頁首(header)，頁尾(footer)和側邊欄(sidebar)相關的模板。如果打算使用在不同的頁面，也應該把您的模板文件放在這裡，長遠來看這樣比較好維護。</p>
-<h3 id="Information-信息"><a href="#Information-信息" class="headerlink" title="Information(信息)"></a>Information(信息)</h3><p>可以在這裡找到聯繫頁面、網站導航頁面和靜態信息頁面的相關模板。</p>
-<h3 id="Module-模塊"><a href="#Module-模塊" class="headerlink" title="Module(模塊)"></a>Module(模塊)</h3><p>保存模板種類的重要的目錄。我們可以創建自己的自定義模塊，以滿足自定義要求，所以這是有關自定義模塊模板文件存放的地方。</p>
-<hr>
-<h2 id="創建自定義主題"><a href="#創建自定義主題" class="headerlink" title="創建自定義主題"></a>創建自定義主題</h2><p>一般分為兩種情況：<br>想要用所選擇的新界面完全取代預設的前端界面，<br>想改變一些東西如顏色組合、佈局結構和品牌相關的變化。</p>
-<p>1.從後端啟動自定義主題。登錄後端，進入System(系統)&gt;Settings(設置)。會列出所有 OpenCart 安裝存儲可用的商店(store)。</p>
-<p>2.點擊 Action(動作)欄位的 Edit(編輯)鏈接，應該會開啟商店的配置界面。</p>
-<p>3.點擊 General。選擇我們的自定義主題，列在 default 主題的 Template(模板)下拉框中。選擇並點擊 Save(保存)按鈕來套用變更。</p>
-<ul>
-<li><p>已經建立了mycustomtheme作為商店的啟動主題，首先會在<br><code>catalog/view/theme/mycustomtheme/template/common/home.tpl</code>嘗試找文件。如果找到了，OpenCart 就會使用該文件，並停止搜尋過程。</p>
-</li>
-<li><p>如果OpenCart在啟動主題找不到home.tpl，將還回到預設的主題，並嘗試使用<br><code>catalog/view/theme/default/template/common/home.tpl</code>。home.tpl一定會在，除非限制了預設主題模板文件！</p>
-</li>
-</ul>
-<p>4.繼續在自定義的主題目錄template下創建一個名為common的新目錄。現在從default主題的 <code>template/common</code>目錄複製home.tpl和header.tpl模板文件。貼到我們主題的新創建的common目錄。</p>
-<p>5.從default主題的stylesheet目錄複製所有的樣式表文件，並貼到我們主題的stylesheet目錄。image 目錄亦同，雖然目前我們會忽略這個目錄。</p>
-<p>6.只將需要自定義的模板文件複製到自定義主題。因為缺少的文件會從 default 主題中獲取，所以沒有必要保持相同文件的副本，除非您需要修改它。保持和 default 主題相似的文件結構。</p>
-<p>7.讓我們從自定義主題獲取並來改變之，找到下面的代碼：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"catalog/view/theme/default/stylesheet/stylesheet.css"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>並替換成mycustomtheme，其它所需要的樣式表引用亦同。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"catalog/view/theme/mycustomtheme/stylesheet/stylesheet.css"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>通過這種方式，我們確保了所有的樣式表文件是從自定義主題載入。</p>
-<hr>
-<h2 id="OpenCart模板介紹"><a href="#OpenCart模板介紹" class="headerlink" title="OpenCart模板介紹"></a>OpenCart模板介紹</h2><p>OpenCart提供的模板，可以將它們分成三個不同的類別。<br>有助於我們理解在前端生成完整頁面到底需要些什麼。</p>
-<ul>
-<li>佈局模板</li>
-</ul>
-<p>就OpenCart而言，模板被稱為佈局。您可以想像一個佈局模板是一個裝飾模板，用於收集頁面不同區域的內容，將該內容壓入佈局，然後生成一個完整的頁面。 </p>
-<p>佈局模板可以引用像標題，頁腳，側邊欄元素和模塊內容等元素。對於商店前端中的幾乎每個頁面，都存在一個關聯的佈局模板。</p>
-<p>OpenCart也允許您從後端創建佈局，這也是您可以更改某些前端頁面的部分結構的另一種方式。</p>
-<ul>
-<li>子模板</li>
-</ul>
-<p>這種模板為特定內容生成一個子模板。在一般情況下，內容由子模板生成並被推送到佈局模板中。這種最簡單的例子是<code>template/common/header.tpl</code>。它負責為前端的每個頁面生成標題部分。</p>
-<p>正如我們前面所討論的那樣，OpenCart提供了一個很好的方式來組織模板文件，使得它header.tpl在common目錄中是有意義的。該目錄中的大多數模板都會生成插槽特定的內容，最終插入到佈局中。</p>
-<ul>
-<li>模塊模板</li>
-</ul>
-<p>請記住，模塊就像一個塊，它被推送到佈局模板中的特定區域。正如你可能已經猜到的那樣，模塊模板與不同的模塊有關，正如我們所看到的，OpenCart帶有很多內置的模塊來擴展核心功能。 </p>
-<p>默認情況下，佈局模板中有四個不同的區域位置可用。他們是： </p>
-<p>內容頂部、內容底部、左列、右欄</p>
-<p>您可以將模塊分配給這些位置中的任何一個。顧名思義，如果您已將模塊分配到“Content Top”位置，它將顯示在頁面的主要內容之上。模塊模板可以在<code>template/module</code>目錄中找到，所以如果你要創建一個新的模塊，你必須在這個目錄下放置一個相關的模板。</p>
-<p>模塊模板和子模板這兩個都被視為子模板，並在頁面生成過程中被推送到佈局模板。</p>
-<hr>
-<h2 id="在前端佈局發現模板"><a href="#在前端佈局發現模板" class="headerlink" title="在前端佈局發現模板"></a>在前端佈局發現模板</h2><p>每當訪問前端的頁面時，應用程序將執行以下過程：</p>
-<ul>
-<li><p>根據URL中設置的“route”變量，OpenCart找到一個合適的控制器來處理請求。我們將看到一個“route”變量究竟是什麼，以及它在後面的章節中做了什麼。現在，我們假設它將OpenCart引導到適當的控制器文件以供執行。</p>
-</li>
-<li><p>現在由控制器來完成剩下的工作。控制器是包含語言文件和模型文件等其他元素的地方。它還獲取並設置要推送到顯示模板的實際內容。</p>
-</li>
-<li><p>一旦控制器完成建立的內容，它將這個信息交給一個視圖元素，該視圖元素負責向用戶顯示最終的輸出。這裡需要注意的是，控制器還會設置佈局模板的文件名，這個佈局模板文件名將在稍後階段被視圖使用。</p>
-</li>
-<li><p>最後，一個視圖元素拉取所需的模板文件，並使用之前在控制器中準備的內容對其進行裝飾。該過程通過將輸出發送給最終用戶而結束。</p>
-</li>
-</ul>
-<p>現在考慮一個您想要更改商店前端中任何頁面的佈局結構的場景。這引發的第一個問題是我們如何去尋找與特定頁面相關的模板。雖然沒有具體的方法來做這個，但讓我們來看看一些可用的方式。</p>
-<h3 id="1-基於結構的預測"><a href="#1-基於結構的預測" class="headerlink" title="1.基於結構的預測"></a>1.基於結構的預測</h3><p>這是預測任何路線相關模板的最簡單方法。“route”是鏈接URL中的查詢字符串變量。</p>
-<p>例如，請考慮前端顯示給用戶的登錄頁面中的以下鏈接URL：</p>
-<p><code>http://www.youropencartdomain.com/index.php?route=account/login</code></p>
-<p>所以在上面的URL中，<code>account/login</code>是對我們有用的“route”參數的值。您可以簡單地將此值映射到template默認主題的目錄。在這種情況下，您最終得到的模板路徑如下所示：</p>
-<p><code>{opencart_document_root}/catalog/view/theme/default/template/account/login.tpl</code></p>
-<p>正如你可能已經註意到的那樣，“route”值的第二部分“login”成為模板文件名（login.tpl在上面的例子中）。</p>
-<h3 id="2-極客之路"><a href="#2-極客之路" class="headerlink" title="2.極客之路"></a>2.極客之路</h3><p>在大多數情況下，上述方法應該可以工作，但是在這種情況下，您將需要查看控制器文件。同樣，route參數也有助於找到相關的控制器文件。</p>
-<p>讓我們考慮在前端顯示給用戶的登錄頁面的鏈接URL：</p>
-<p><code>http://www.youropencartdomain.com/index.php?route=account/login</code></p>
-<p>您可以映射相對於路徑的值<code>catalog/controller</code>來查找關聯的控制器文件。所以在這種情況下，您最終應該使用的控制器文件是：</p>
-<p><code>{opencart_document_root}/catalog/controller/account/login.php</code></p>
-<p>正如您可能已經註意到的那樣，“route”值的第二部分“登錄”成為控制器文件名（login.php 在上述情況下）。一旦你找到一個相關的控制器文件，你應該看看這樣的代碼：</p>
-<p><code>this-&gt;template = &#39;default/template/account/login.tpl&#39;;</code></p>
-<p>這是控制器告訴OpenCart它應該從“默認”主題顯示“ login.tpl ”佈局模板的方式。當然，如果這個模板已經在你的自定義主題中被覆蓋了，它將會被優先考慮！</p>
-<p>在為任何頁面尋找佈局模板而討論的兩種方法中，第一種方法更適合主題開發人員，第二種方法適合那些對代碼感覺更舒適的人。</p>
-<hr>
-<h2 id="佈局模板的通用元素"><a href="#佈局模板的通用元素" class="headerlink" title="佈局模板的通用元素"></a>佈局模板的通用元素</h2><p>找到您想要自定義的特定佈局模板我們將看到佈局模板中的一些常見元素。</p>
-<p>打開佈局模板文件<code>default/template/account/login.tpl</code>以供參考。</p>
-<p>$ header  在OpenCart頁面中顯示標題部分的內容。<br>與此相關的模板可以在這裡找到<code>default/template/common/header.tpl</code></p>
-<p>$ footer  在OpenCart頁面中顯示頁腳部分的內容。<br>與此相關的模板可以在這裡找到<code>default/template/common/footer.tpl</code></p>
-<p>$ column_left  負責顯示從後端分配給“Column Left”位置的所有模塊的輸出。<br>與此相關的模板可以在這裡找到<code>default/template/common/column_left.tpl</code></p>
-<p>$ column_right  負責顯示從後端分配給“Column Right”位置的所有模塊的輸出。<br>與此相關的模板可以在這裡找到<code>default/template/common/column_right.tpl</code></p>
-<p>$ content_top  負責顯示從後端分配給“Content Top”位置的所有模塊的輸出。<br>與此相關的模板可以在這裡找到<code>default/template/common/content_top.tpl</code></p>
-<p>$ content_bottom  負責顯示從後端分配給“Content Bottom”位置的所有模塊的輸出。<br>與此相關的模板可以在這裡找到<code>default/template/common/content_bottom.tpl</code></p>
-<p>在你想自定義特定模塊的輸出的情況下，<br>與此相關的模板可以在這裡找到<code>default/template/module/{modulename.tpl}</code> </p>
-<p>在“賬戶”模塊的情況下，文件是<code>default/template/module/account.tpl</code><br>模塊模板文件的命名約定很容易猜到，因為它與模塊的名稱完全相同。</p>
-<hr>
-
           
+10分鐘學會OpenCart自定義主題
+堅持了就是神話，放棄了就是笑話。
+
+
+OpenCart預設主題結構Image(圖像):所有有關主題的圖像文件都放在這裡。Stylesheet(樣式表):樣式表的外觀相關代碼。Template(模板):在這裡找到所有前端模板的文件。所有的模板文件模塊化，讓事情
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/16/10分鐘學會OpenCart自定義主題/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -533,57 +455,20 @@
       
         
           
-            <img src="/2018/01/15/使用Markdown寫作與分享知識的最佳方式-HackMD/minion.png">
-<h1 id="使用-Markdown-寫作與分享知識的最佳方式-HackMD"><a href="#使用-Markdown-寫作與分享知識的最佳方式-HackMD" class="headerlink" title="使用 Markdown 寫作與分享知識的最佳方式 - HackMD"></a>使用 Markdown 寫作與分享知識的最佳方式 - HackMD</h1><blockquote>
-<p>使用Markdown寫作與分享知識的最佳方式</p>
-</blockquote>
-<hr>
-<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>MAC系列的使用者，可以使用 <a href="https://goo.gl/5Y3qAC" target="_blank" rel="noopener">bear</a> 來編寫 <a href="https://goo.gl/tFpVp5" target="_blank" rel="noopener">Markdown</a> 格式文件，但windows系統卻沒有這樣的系統可以使用，所以今天來介紹一個，線上編輯Markdown的強大工具 <a href="https://goo.gl/zHek3o" target="_blank" rel="noopener"><i class="fa fa-file-text"></i> HackHD</a></p>
-<hr>
-<h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><p><i class="fa fa-file-text"></i> <strong>HackMD</strong> 是個跨平台的 Markdown 即時協作筆記<br>所以您可以在<strong>電腦、平板甚至是手機</strong>與其他人做筆記！<br>同時也可以在 <strong><a href="https://goo.gl/zHek3o" target="_blank" rel="noopener">首頁</a></strong> 透過 <strong>Facebook、Twitter、GitHub、Dropbox</strong> 登入</p>
-<hr>
-<h2 id="特色介紹"><a href="#特色介紹" class="headerlink" title="特色介紹"></a>特色介紹</h2><h3 id="共同協作"><a href="#共同協作" class="headerlink" title="共同協作"></a>共同協作</h3><p>檢視右上方有個小按鈕，您可以透過以下選項來更改權限：</p>
-<p><img src="https://i.imgur.com/vNJBmlE.png" alt="共同協作"></p>
-<p><i class="fa fa-leaf fa-fw"></i> 隨意：任何人都可以更改這份筆記<br><i class="fa fa-pencil fa-fw"></i> 可編輯：已登入使用者可以更改這份筆記<br><i class="fa fa-lock fa-fw"></i> 鎖定：只有擁有者可以更改這份筆記<br><i class="fa fa-hand-stop-o fa-fw"></i> 私有：只有擁有者可以更改與檢視這份筆記</p>
-<hr>
-<h3 id="檢視模式"><a href="#檢視模式" class="headerlink" title="檢視模式"></a>檢視模式</h3><img src="/2018/01/15/使用Markdown寫作與分享知識的最佳方式-HackMD/code.png">
-<ul>
-<li><i class="fa fa-eye fa-fw"></i> 檢視：只看到結果</li>
-<li><i class="fa fa-columns fa-fw"></i> 同時：同時看到兩邊</li>
-<li><i class="fa fa-edit fa-fw"></i> 編輯：只看到編輯器</li>
-</ul>
-<hr>
-<h3 id="上方工具列"><a href="#上方工具列" class="headerlink" title="上方工具列"></a>上方工具列</h3><p>工具列除了基本的文字粗體斜體，另外還提供了<br><img src="https://i.imgur.com/gFcnjPd.png" alt="上方工具列"></p>
-<ul>
-<li><i class="fa fa-code" aria-hidden="true"></i> 行內程式碼</li>
-<li><i class="fa fa-quote-left" aria-hidden="true"></i> 引用區塊</li>
-<li><i class="fa fa-list-ul" aria-hidden="true"></i> 列表清單</li>
-<li><i class="fa fa-check-square-o" aria-hidden="true"></i> 待辦清單</li>
-<li><i class="fa fa-link" aria-hidden="true"></i> 連結功能</li>
-<li><i class="fa fa-picture-o" aria-hidden="true"></i> 插入圖片</li>
-<li><i class="fa fa-table" aria-hidden="true"></i> 插入表格</li>
-<li><i class="fa fa-minus" aria-hidden="true"></i> 插入分隔線</li>
-</ul>
-<hr>
-<h3 id="自動完成"><a href="#自動完成" class="headerlink" title="自動完成"></a>自動完成</h3><p>提供完整的 Markdown 自動完成與提示</p>
-<ul>
-<li>表情符號：輸入 <code>:</code> 顯示提示</li>
-<li>程式碼區塊：輸入 <code>``` </code> 加上一個字元 顯示提示 <i hidden>```</i></li>
-<li>標頭：輸入 <code>#</code> 顯示提示</li>
-<li>參考：輸入 <code>[]</code> 顯示提示</li>
-<li>外部：輸入 <code>{}</code> 顯示提示</li>
-<li>圖片：輸入 <code>!</code> 顯示提示</li>
-</ul>
-<hr>
-<h3 id="外部嵌入"><a href="#外部嵌入" class="headerlink" title="外部嵌入"></a>外部嵌入</h3><p>提供多種格式的外部嵌入<br><strong>Youtube、Vimeo、Gist、SlideShare、Speakerdeck、PDF</strong></p>
-<p><img src="https://i.imgur.com/4lIvufQ.png" alt="外部嵌入"></p>
-<hr>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>除了以上的特色介紹，<i class="fa fa-file-text"></i> <strong>HackMD</strong>還擁有許多強大的功能，而且<a href="https://goo.gl/bnELtR" target="_blank" rel="noopener">官方文件-HackHD功能介紹</a>也說明得非常詳細，還提供中英日三種說明，快使用<strong>HackMD</strong>來編寫Markdown技術文檔吧！</p>
-<hr>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://goo.gl/bnELtR" target="_blank" rel="noopener">HackHD-功能介紹</a></p>
-<hr>
-
           
+使用 Markdown 寫作與分享知識的最佳方式 - HackMD
+使用Markdown寫作與分享知識的最佳方式
+
+
+引言MAC系列的使用者，可以使用 bear 來編寫 Markdown 格式文件，但windows系統卻沒有這樣的系統可以使用，所以今天來介紹一個，線上編輯Markdown的強大工具
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/15/使用Markdown寫作與分享知識的最佳方式-HackMD/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -701,37 +586,22 @@
       
         
           
-            <img src="/2018/01/14/10分鐘學會SCSS常用語法-學習筆記/scss-logo.svg">
-<h1 id="10分鐘學會SCSS常用語法-學習筆記"><a href="#10分鐘學會SCSS常用語法-學習筆記" class="headerlink" title="10分鐘學會SCSS常用語法-學習筆記"></a>10分鐘學會SCSS常用語法-學習筆記</h1><hr>
-<h2 id="使用Prepros編譯SCSS"><a href="#使用Prepros編譯SCSS" class="headerlink" title="使用Prepros編譯SCSS"></a>使用Prepros編譯SCSS</h2><ul>
-<li>巣狀寫法 - 減少重複編寫HTML屬性</li>
-<li>變數使用 - 全域設定CSS變數(顏色、字體)</li>
-<li>@import - 每隻SCSS功能分開，再彙整成一隻檔案(_reset下底線=合併用檔案)</li>
-<li>@extend - 繼承擴充</li>
-<li>@mixin - 轉化常用語法，可帶入變數(@include載入)</li>
-<li>@content - grid.scss斷點設計</li>
-</ul>
-<h2 id="SCSS結構-import"><a href="#SCSS結構-import" class="headerlink" title="SCSS結構 - @import"></a>SCSS結構 - @import</h2><ul>
-<li>mixin - 全域變數+Mixin</li>
-<li>variable - 變數</li>
-<li>reset - reset.css</li>
-<li>layout - 共同框架</li>
-<li>module/button - 按鈕,表單,表格</li>
-<li>index - 首頁</li>
-<li>page/.. - 內頁</li>
-</ul>
-<h2 id="SCSS設計-RWD"><a href="#SCSS設計-RWD" class="headerlink" title="SCSS設計 - RWD"></a>SCSS設計 - RWD</h2><ul>
-<li>設定常用變數</li>
-<li>import設計</li>
-<li>區隔layout</li>
-<li>斷點設計</li>
-<li>page SCSS獨立</li>
-</ul>
-<hr>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://goo.gl/wKv7Ck" target="_blank" rel="noopener">SCSS 15分鐘入門</a></p>
-<hr>
-
           
+10分鐘學會SCSS常用語法-學習筆記
+使用Prepros編譯SCSS
+巣狀寫法 - 減少重複編寫HTML屬性
+變數使用 - 全域設定CSS變數(顏色、字體)
+@import - 每隻SCSS功能分開，再彙整成一隻檔案(_reset下底線=合併用檔案)
+@extend - 繼承擴充
+@mixin 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/14/10分鐘學會SCSS常用語法-學習筆記/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -849,33 +719,24 @@
       
         
           
-            <img src="/2018/01/13/Chrome網頁除錯功能大解密-學習筆記-下/developers-logo.svg">
-<h1 id="Chrome網頁除錯功能大解密-學習筆記-下"><a href="#Chrome網頁除錯功能大解密-學習筆記-下" class="headerlink" title="Chrome網頁除錯功能大解密-學習筆記(下)"></a>Chrome網頁除錯功能大解密-學習筆記(下)</h1><blockquote>
-<p><a href="https://goo.gl/a9vNXq" target="_blank" rel="noopener">六角學院Udemy學習筆記</a></p>
-</blockquote>
-<hr>
-<h2 id="JavaScript-與效能調校"><a href="#JavaScript-與效能調校" class="headerlink" title="JavaScript 與效能調校"></a>JavaScript 與效能調校</h2><ul>
-<li>Network區塊 - requests下載檔案數，Load讀取時間 (優化效能)</li>
-<li>Comsole區塊 - <ul>
-<li>使用console.log執行JavaScript除錯</li>
-<li>直接編寫JS,JQ,JSON語法</li>
-<li>console.table - 表格顯示陣列 </li>
-</ul>
-</li>
-<li>Event Listener功能 - 事件監聽</li>
-<li>Breakpoints功能 - 下斷點</li>
-</ul>
-<hr>
-<h2 id="JavaScript-進階除錯篇"><a href="#JavaScript-進階除錯篇" class="headerlink" title="JavaScript 進階除錯篇"></a>JavaScript 進階除錯篇</h2><ul>
-<li>Sources區塊 - 查看JavaScript</li>
-<li>DOM (Break on) - 查看子元素編輯、屬性變更、本身被移除</li>
-<li>JS除錯 - 行內斷點，進入進出函數，除錯模式</li>
-<li>Call Stack - 追蹤函數程式</li>
-<li>AJAX XHR 斷點偵測 - XHR關鍵字斷點</li>
-</ul>
-<hr>
-
           
+Chrome網頁除錯功能大解密-學習筆記(下)
+六角學院Udemy學習筆記
+
+
+JavaScript 與效能調校
+Network區塊 - requests下載檔案數，Load讀取時間 (優化效能)
+Comsole區塊 - 
+使用console.log執行JavaScript除錯
+直接編寫JS,JQ
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/13/Chrome網頁除錯功能大解密-學習筆記-下/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -993,32 +854,23 @@
       
         
           
-            <img src="/2018/01/12/Chrome網頁除錯功能大解密-學習筆記-上/developers-logo.svg">
-<h1 id="Chrome網頁除錯功能大解密-學習筆記-上"><a href="#Chrome網頁除錯功能大解密-學習筆記-上" class="headerlink" title="Chrome網頁除錯功能大解密-學習筆記(上)"></a>Chrome網頁除錯功能大解密-學習筆記(上)</h1><blockquote>
-<p><a href="https://goo.gl/a9vNXq" target="_blank" rel="noopener">六角學院Udemy學習筆記</a></p>
-</blockquote>
-<hr>
-<h2 id="Chrome-除錯環境介紹"><a href="#Chrome-除錯環境介紹" class="headerlink" title="Chrome 除錯環境介紹"></a>Chrome 除錯環境介紹</h2><ul>
-<li>使用 chrome dev tools 網頁除錯工具(開發人員工具)</li>
-<li>將開發人員工具獨立出來，方便觀看Elements、Console</li>
-<li>切換 <i class="fa fa-mobile  fa-1x" aria-hidden="true"></i> device模式檢查RWD(320px,375px,425px,768px,1024px)</li>
-</ul>
-<hr>
-<h2 id="HTML、CSS-除錯教學"><a href="#HTML、CSS-除錯教學" class="headerlink" title="HTML、CSS 除錯教學"></a>HTML、CSS 除錯教學</h2><ul>
-<li>Styles功能 - 使用Filter搜尋CSS元素</li>
-<li>Computed功能 - 查看CSS最終指定樣式</li>
-<li>Sources區塊 - 擷取CSS</li>
-<li>:hov - 更改元素樣式</li>
-<li>CSS元素 transition - 漸變效果調整速率</li>
-<li>show console - Animations 查看動畫效果時間軸</li>
-</ul>
-<hr>
-<h2 id="實用插件與資源補充"><a href="#實用插件與資源補充" class="headerlink" title="實用插件與資源補充"></a>實用插件與資源補充</h2><ul>
-<li>Type Sample - 識別和預覽網頁字體</li>
-</ul>
-<hr>
-
           
+Chrome網頁除錯功能大解密-學習筆記(上)
+六角學院Udemy學習筆記
+
+
+Chrome 除錯環境介紹
+使用 chrome dev tools 網頁除錯工具(開發人員工具)
+將開發人員工具獨立出來，方便觀看Elements、Console
+切換  device模式檢查RWD(320px,375
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/12/Chrome網頁除錯功能大解密-學習筆記-上/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1136,56 +988,23 @@
       
         
           
-            <img src="/2018/01/11/擴充功能插件介紹-下/Icono-web-store.png">
-<h1 id="Google-Chrome-擴充功能插件介紹-下"><a href="#Google-Chrome-擴充功能插件介紹-下" class="headerlink" title="Google Chrome 擴充功能插件介紹(下)"></a>Google Chrome 擴充功能插件介紹(下)</h1><blockquote>
-<p>使用 Google Chrome 插件，讓你事半功倍。</p>
-</blockquote>
-<p><a href="https://zh.wikipedia.org/wiki/Google_Chrome%E6%89%A9%E5%B1%95%E7%A8%8B%E5%BA%8F" target="_blank" rel="noopener">Google Chrome擴充功能程式 - 維基百科，自由的百科全書</a></p>
-<hr>
-<h2 id="User-Agent-Switcher-for-Chrome-1-289-025-位使用者"><a href="#User-Agent-Switcher-for-Chrome-1-289-025-位使用者" class="headerlink" title="User-Agent Switcher for Chrome - 1,289,025 位使用者"></a>User-Agent Switcher for Chrome - 1,289,025 位使用者</h2><img src="/2018/01/11/擴充功能插件介紹-下/User-Agent-Switcher-for-Chrome.png">
-<ul>
-<li>快速切換手機和桌面各式瀏覽器，方便開發移動瀏覽器和桌面瀏覽器上的網站</li>
-</ul>
-<p><a href="https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg" target="_blank" rel="noopener">User-Agent Switcher for Chrome - Chrome 線上應用程式商店</a></p>
-<hr>
-<h2 id="Search-by-Image-by-Google-1-160-341-位使用者"><a href="#Search-by-Image-by-Google-1-160-341-位使用者" class="headerlink" title="Search by Image (by Google) - 1,160,341 位使用者"></a>Search by Image (by Google) - 1,160,341 位使用者</h2><img src="/2018/01/11/擴充功能插件介紹-下/Search-by-Image.png">
-<ul>
-<li>使用網絡上的任何圖片啟動Google搜索</li>
-</ul>
-<p><a href="https://chrome.google.com/webstore/detail/search-by-image-by-google/dajedkncpodkggklbegccjpmnglmnflm" target="_blank" rel="noopener">Search by Image (by Google) - Chrome 線上應用程式商店</a></p>
-<hr>
-<h2 id="goo-gl-URL-Shortener-Unofficial-1-143-716-位使用者"><a href="#goo-gl-URL-Shortener-Unofficial-1-143-716-位使用者" class="headerlink" title="goo.gl URL Shortener (Unofficial) - 1,143,716 位使用者"></a>goo.gl URL Shortener (Unofficial) - 1,143,716 位使用者</h2><img src="/2018/01/11/擴充功能插件介紹-下/URL-Shortener.png">
-<ul>
-<li>Google網址縮短</li>
-</ul>
-<p><a href="https://chrome.google.com/webstore/detail/googl-url-shortener-unoff/iblijlcdoidgdpfknkckljiocdbnlagk" target="_blank" rel="noopener">goo.gl URL Shortener (Unofficial) - Chrome 線上應用程式商店</a></p>
-<hr>
-<h2 id="ColorPick-Eyedropper-606-156-位使用者"><a href="#ColorPick-Eyedropper-606-156-位使用者" class="headerlink" title="ColorPick Eyedropper - 606,156 位使用者"></a>ColorPick Eyedropper - 606,156 位使用者</h2><img src="/2018/01/11/擴充功能插件介紹-下/ColorPick-Eyedropper.png">
-<ul>
-<li>顏色選擇工具，允許您從網頁選擇顏色值</li>
-</ul>
-<p><a href="https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg" target="_blank" rel="noopener">ColorPick Eyedropper - Chrome 線上應用程式商店</a></p>
-<hr>
-<h2 id="Keywords-Everywhere-Keyword-Tool-173-735-位使用者"><a href="#Keywords-Everywhere-Keyword-Tool-173-735-位使用者" class="headerlink" title="Keywords Everywhere - Keyword Tool - 173,735 位使用者"></a>Keywords Everywhere - Keyword Tool - 173,735 位使用者</h2><img src="/2018/01/11/擴充功能插件介紹-下/Keywords-Everywhere.png">
-<ul>
-<li>免費的關鍵字工具來查看搜索量</li>
-</ul>
-<p><a href="https://chrome.google.com/webstore/detail/keywords-everywhere-keywo/hbapdpeemoojbophdfndmlgdhppljgmp" target="_blank" rel="noopener">Keywords Everywhere - Keyword Tool - Chrome 線上應用程式商店</a></p>
-<hr>
-<h2 id="Google-類似網頁-164-102-位使用者"><a href="#Google-類似網頁-164-102-位使用者" class="headerlink" title="Google 類似網頁 - 164,102 位使用者"></a>Google 類似網頁 - 164,102 位使用者</h2><img src="/2018/01/11/擴充功能插件介紹-下/Google類似網頁.png">
-<ul>
-<li>尋找與目前所看網頁內容類似的網頁。</li>
-</ul>
-<p><a href="https://chrome.google.com/webstore/detail/google-similar-pages/pjnfggphgdjblhfjaphkjhfpiiekbbej" target="_blank" rel="noopener">Google 類似網頁 - Chrome 線上應用程式商店</a></p>
-<hr>
-<h2 id="Check-My-Links-159-500-位使用者"><a href="#Check-My-Links-159-500-位使用者" class="headerlink" title="Check My Links - 159,500 位使用者"></a>Check My Links - 159,500 位使用者</h2><img src="/2018/01/11/擴充功能插件介紹-下/CheckMyLinks.png">
-<ul>
-<li>通過網頁爬行檢查連結，並查找斷開的連結，速檢查頁面上的所有鏈接是否正常工作</li>
-</ul>
-<p><a href="https://chrome.google.com/webstore/detail/check-my-links/ojkcdipcgfaekbeaelaapakgnjflfglf" target="_blank" rel="noopener">Check My Links - Chrome 線上應用程式商店</a></p>
-<hr>
-
           
+Google Chrome 擴充功能插件介紹(下)
+使用 Google Chrome 插件，讓你事半功倍。
+
+Google Chrome擴充功能程式 - 維基百科，自由的百科全書
+
+User-Agent Switcher for Chrome - 1,289,025 位使用者
+
+快速切換手機和桌面
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/11/擴充功能插件介紹-下/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1303,85 +1122,23 @@
       
         
           
-            <img src="/2018/01/10/擴充功能插件介紹-上/Google-Chrome-logo.png">
-<h1 id="Google-Chrome-擴充功能插件介紹-上"><a href="#Google-Chrome-擴充功能插件介紹-上" class="headerlink" title="Google Chrome 擴充功能插件介紹(上)"></a>Google Chrome 擴充功能插件介紹(上)</h1><blockquote>
-<p>使用 Google Chrome 插件，讓你事半功倍。</p>
-</blockquote>
-<p><a href="https://zh.wikipedia.org/wiki/Google_Chrome%E6%89%A9%E5%B1%95%E7%A8%8B%E5%BA%8F" target="_blank" rel="noopener">Google Chrome擴充功能程式 - 維基百科，自由的百科全書</a></p>
-<hr>
-<h2 id="Adblock-Plus-10-000-000-位使用者"><a href="#Adblock-Plus-10-000-000-位使用者" class="headerlink" title="Adblock Plus - 10,000,000+ 位使用者"></a>Adblock Plus - 10,000,000+ 位使用者</h2><img src="/2018/01/10/擴充功能插件介紹-上/Adblock-Plus.png">
-<ul>
-<li>超過 1 億部設備上使用，是世界上最受歡迎的廣告攔截插件</li>
-<li>Adblock Plus for Google Chrome 會阻擋：橫幅廣告、YouTube 影片廣告、 Facebook 廣告、彈出式視窗、還有各種礙眼的廣告</li>
-</ul>
-<p><a href="https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb" target="_blank" rel="noopener">Adblock Plus - Chrome 線上應用程式商店</a></p>
-<hr>
-<h2 id="FireShot-1-789-710-位使用者"><a href="#FireShot-1-789-710-位使用者" class="headerlink" title="FireShot - 1,789,710 位使用者"></a>FireShot - 1,789,710 位使用者</h2><img src="/2018/01/10/擴充功能插件介紹-上/FireShot.png">
-<ul>
-<li>捕捉網頁截圖，然後編輯，並將它們保存到PDF，JPEG，GIF，PNG或BMP，上傳，打印，在Photoshop中打開，複製到剪貼板或電子郵件</li>
-</ul>
-<p><a href="https://chrome.google.com/webstore/detail/take-webpage-screenshots/mcbpblocgmgfnpjjppndjkmgjaogfceg" target="_blank" rel="noopener">捕捉網頁截圖 - FireShot的 - Chrome 線上應用程式商店</a></p>
-<hr>
-<h2 id="OneTab-1-535-214-位使用者"><a href="#OneTab-1-535-214-位使用者" class="headerlink" title="OneTab - 1,535,214 位使用者"></a>OneTab - 1,535,214 位使用者</h2><img src="/2018/01/10/擴充功能插件介紹-上/OneTab.png">
-<ul>
-<li>將所有分頁轉換成一個清單，需要再次訪問這些分頁時，可以單獨或全部還原</li>
-<li>節省高達95％的記憶體，並減輕分頁混亂現象</li>
-</ul>
-<p><a href="https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall" target="_blank" rel="noopener">OneTab - Chrome 線上應用程式商店</a></p>
-<hr>
-<h2 id="Bookmark-Manager-904-946-位使用者"><a href="#Bookmark-Manager-904-946-位使用者" class="headerlink" title="Bookmark Manager - 904,946 位使用者"></a>Bookmark Manager - 904,946 位使用者</h2><img src="/2018/01/10/擴充功能插件介紹-上/Bookmark-Manager.png">
-<ul>
-<li>將圖片和附註加入書籤，讓您更方便使用</li>
-<li>具有書籤搜尋功能，不用再為分類書籤而煩惱</li>
-<li>可以與親朋好友分享自己的書籤。</li>
-</ul>
-<p><a href="https://chrome.google.com/webstore/detail/bookmark-manager/gmlllbghnfkpflemihljekbapjopfjik" target="_blank" rel="noopener">Bookmark Manager - Chrome 線上應用程式商店</a></p>
-<hr>
-<h2 id="Wappalyzer-643-969-位使用者"><a href="#Wappalyzer-643-969-位使用者" class="headerlink" title="Wappalyzer - 643,969 位使用者"></a>Wappalyzer - 643,969 位使用者</h2><img src="/2018/01/10/擴充功能插件介紹-上/Wappalyzer.png">
-<ul>
-<li>識別網站上的技術</li>
-<li>檢測分析工具，程式語言，ＪＳ框架，作業系統，網頁框架，內容管理系統，網頁伺服器，付款處理等技術</li>
-</ul>
-<p><a href="https://www.wappalyzer.com/" target="_blank" rel="noopener">Wappalyzer - Identify technologies on websites</a></p>
-<hr>
-<h2 id="Dimensions-74-005-位使用者"><a href="#Dimensions-74-005-位使用者" class="headerlink" title="Dimensions - 74,005 位使用者"></a>Dimensions - 74,005 位使用者</h2><img src="/2018/01/10/擴充功能插件介紹-上/Dimensions.png">
-<ul>
-<li>設計人員測量屏幕尺寸的工具，測量一個網站上的元素之間的距離</li>
-<li>測量鼠標指針向上/向下和向左/向右的尺寸，直到碰到邊界</li>
-</ul>
-<p><a href="https://chrome.google.com/webstore/detail/dimensions/baocaagndhipibgklemoalmkljaimfdj" target="_blank" rel="noopener">Dimensions - Chrome 線上應用程式商店</a></p>
-<hr>
-<h2 id="Web-Developer-Checklist-46-002-位使用者"><a href="#Web-Developer-Checklist-46-002-位使用者" class="headerlink" title="Web Developer Checklist - 46,002 位使用者"></a>Web Developer Checklist - 46,002 位使用者</h2><img src="/2018/01/10/擴充功能插件介紹-上/Web-Developer-Checklist.png">
-<ul>
-<li>網頁放上線之前的「查核清單」</li>
-<li>包含SEO、手機裝置、可用性、無障礙、環境整合、性能六大類</li>
-<li>還有詳細檢查清單<a href="http://webdevchecklist.com/" target="_blank" rel="noopener">Web Developer Checklist</a></li>
-</ul>
-<p><a href="https://chrome.google.com/webstore/detail/web-developer-checklist/iahamcpedabephpcgkeikbclmaljebjp" target="_blank" rel="noopener">Web Developer Checklist - Chrome 線上應用程式商店</a></p>
-<hr>
-<h2 id="Emmet-Re-view-41-179-位使用者"><a href="#Emmet-Re-view-41-179-位使用者" class="headerlink" title="Emmet Re:view - 41,179 位使用者"></a>Emmet Re:view - 41,179 位使用者</h2>
-<ul>
-<li>快速簡單的在多個視窗中測試您的響應式設計</li>
-<li>以並排的方式在多個視圖中顯示您的響應式網頁，以便您可以快速測試網頁在不同分辨率和設備上的效果</li>
-<li>所有的視圖都完全同步：滾動，填寫表單域，單擊，懸停和拖動元素獲得即時反饋</li>
-</ul>
-<p><a href="https://chrome.google.com/webstore/detail/emmet-review/epejoicbhllgiimigokgjdoijnpaphdp" target="_blank" rel="noopener">Emmet Re:view - Chrome 線上應用程式商店</a></p>
-<hr>
-<h2 id="Pesticide-for-Chrome-29-791-位使用者"><a href="#Pesticide-for-Chrome-29-791-位使用者" class="headerlink" title="Pesticide for Chrome - 29,791 位使用者"></a>Pesticide for Chrome - 29,791 位使用者</h2><img src="/2018/01/10/擴充功能插件介紹-上/Pesticide-for-Chrome.png">
-<ul>
-<li>檢視網頁的元素並畫上框線</li>
-<li><a href="https://github.com/mrmrs/pesticide" target="_blank" rel="noopener">GitHub - mrmrs/pesticide: Kill your css layout bugs</a></li>
-</ul>
-<p><a href="https://chrome.google.com/webstore/detail/pesticide-for-chrome/bblbgcheenepgnnajgfpiicnbbdmmooh" target="_blank" rel="noopener">Pesticide for Chrome - Chrome 線上應用程式商店</a></p>
-<hr>
-<h2 id="Responsive-Inspector-Reloaded-1-589-位使用者"><a href="#Responsive-Inspector-Reloaded-1-589-位使用者" class="headerlink" title="Responsive Inspector Reloaded - 1,589 位使用者"></a>Responsive Inspector Reloaded - 1,589 位使用者</h2>
-<ul>
-<li>快速查看網頁RWD斷點</li>
-</ul>
-<p><a href="https://chrome.google.com/webstore/detail/responsive-inspector-relo/elmkkpeccekaekegjhnekaolcjafnnep" target="_blank" rel="noopener">Responsive Inspector Reloaded - Chrome 線上應用程式商店</a></p>
-<hr>
-
           
+Google Chrome 擴充功能插件介紹(上)
+使用 Google Chrome 插件，讓你事半功倍。
+
+Google Chrome擴充功能程式 - 維基百科，自由的百科全書
+
+Adblock Plus - 10,000,000+ 位使用者
+
+超過 1 億部設備上使用，是世界上最受歡迎的廣告攔
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/10/擴充功能插件介紹-上/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1499,29 +1256,18 @@
       
         
           
-            <img src="/2018/01/09/3分鐘完成Hexo網站地圖Sitemap設定/sitemap.jpg">
-<h1 id="3分鐘完成Hexo網站地圖Sitemap設定"><a href="#3分鐘完成Hexo網站地圖Sitemap設定" class="headerlink" title="3分鐘完成Hexo網站地圖Sitemap設定"></a>3分鐘完成Hexo網站地圖Sitemap設定</h1><hr>
-<h2 id="Sitemap"><a href="#Sitemap" class="headerlink" title="Sitemap"></a>Sitemap</h2><p>在 Google 的網站管理員工具提交 <a href="https://goo.gl/kWDKxR" target="_blank" rel="noopener">Sitemap ／網站地圖</a>就等於告訴 Google 網站有這些網頁，請它趕快過來看看。</p>
-<p>Google Search Console （Google網站管理員）以前的名稱是 Google Webmaster（網站管理工具），是 Google開發的 免費SEO工具。</p>
-<p>提交 Sitemap 可以讓 Google 更快速有效的了解到網站上面有哪些網頁，那些網頁對應到的關鍵字有哪些，然後在往後的搜尋結果上面顯示這些被檢索的網頁。</p>
-<p>如果做外部連結 好比開隧道，提交 Sitemap 就好比把一張地圖交給 Google，讓 Google 知道這個存在，可以顯示給搜尋用戶的。</p>
-<hr>
-<h2 id="提交sitemap網站地圖"><a href="#提交sitemap網站地圖" class="headerlink" title="提交sitemap網站地圖"></a>提交sitemap網站地圖</h2><p>如果你想提交 sitemap，可以選擇在 Google 網站管理員裡面提交。但是提交前必須先註冊一個 Google網站管理員 (Google Search Console)帳號才能提交 sitemap。</p>
-<ul>
-<li><p>登入你的 Google 網站管理員頁面，然後在「檢索」裡面選擇「Sitemaps」</p>
-</li>
-<li><p>輸入 sitemap.xml 然後按 「提交 Sitemap」</p>
-</li>
-<li><p>提交「 Sitemap 」給 Google後，接下來就等你的網頁出現在搜尋引擎</p>
-</li>
-</ul>
-<hr>
-<h2 id="Hexo設定"><a href="#Hexo設定" class="headerlink" title="Hexo設定"></a>Hexo設定</h2><p>設定主題底下的 / <code>_config.yml</code></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Google Webmaster tools verification setting</span></span><br><span class="line"><span class="comment"># See: https://www.google.com/webmasters/</span></span><br><span class="line"><span class="attr">google_site_verification:</span> <span class="string">驗證碼</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Google Analytics</span></span><br><span class="line"><span class="attr">google_analytics:</span> <span class="string">帳戶ID</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://support.google.com/webmasters/answer/156184" target="_blank" rel="noopener">瞭解 Sitemap - Search Console說明</a><br><a href="https://github.com/hexojs/hexo-generator-sitemap" target="_blank" rel="noopener">GitHub - hexojs/hexo-generator-sitemap: Sitemap generator for Hexo.</a><br><a href="http://www.yesharris.com/search-console-intro/" target="_blank" rel="noopener">Google Search Console 初學者指南，如何使用及安裝 | Harris 先生</a><br><a href="https://yogapan.github.io/2017/08/11/%E7%94%A8Hexo-Github-Pages%E6%90%AD%E5%BB%BA%E5%80%8B%E4%BA%BA%E9%83%A8%E8%90%BD%E6%A0%BC/" target="_blank" rel="noopener">用Hexo + Github Pages搭建個人部落格 | 小蛇蛇的筆記</a><br><a href="https://shopline.tw/blog/new-sitemap-feature-for-ecommerce-stores/" target="_blank" rel="noopener">SEO功能優化 Sitemap與Google網站管理員的運用 | Shopline電商教室</a></p>
-
           
+3分鐘完成Hexo網站地圖Sitemap設定
+Sitemap在 Google 的網站管理員工具提交 Sitemap ／網站地圖就等於告訴 Google 網站有這些網頁，請它趕快過來看看。
+Google Search Console （Google網站管理員）以前的名稱是 Google Webmas
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/09/3分鐘完成Hexo網站地圖Sitemap設定/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1639,39 +1385,19 @@
       
         
           
-            <img src="/2018/01/08/10分鐘瞭解OpenCart模塊結構/opencart-logo-256x256.png">
-<h1 id="10分鐘瞭解OpenCart模塊結構"><a href="#10分鐘瞭解OpenCart模塊結構" class="headerlink" title="10分鐘瞭解OpenCart模塊結構"></a>10分鐘瞭解OpenCart模塊結構</h1><p>編寫 OpenCart 模塊可以很好地瞭解 OpenCart 運作的基本原理，<br>OpenCart 模塊遵循 <a href="https://goo.gl/BwTfgV" target="_blank" rel="noopener">MVCL 設計模式</a></p>
-<hr>
-<h2 id="基本目錄結構"><a href="#基本目錄結構" class="headerlink" title="基本目錄結構"></a>基本目錄結構</h2><p>模塊的基本文件結構將分為兩部分，即 Admin 和 Catalog 文件夾。每個文件夾的內容分別遵循 MVC-L 框架，</p>
-<p>OpenCart 首先將前台和後台完全分離開來，後台文件結構在<code>admin/目錄</code>下；而前台在<code>catalog/目錄</code>，入口文件<code>index.php 在根目錄下</code>。各自都有一個可以做不同設置的配置文件<code>config.php</code>，在這裡設置一些目錄路徑常量、數據庫信息等。</p>
-<p><strong>admin 文件夾的文件將處理其設置的所有更改，模塊在管理中的顯示方式，安裝/卸載模塊等。而模塊的顯示方式及其在商店前端如何工作將由 catalog 文件夾中的文件處理。</strong></p>
-<hr>
-<h2 id="Admin-後台模塊功能"><a href="#Admin-後台模塊功能" class="headerlink" title="Admin 後台模塊功能"></a>Admin 後台模塊功能</h2><p>所有管理文件位於 admin/ 文件夾中。 admin/ 文件夾中共四個文件夾：</p>
-<p><strong>controller,view,language,model</strong></p>
-<p>所有模塊在每個視圖和控制器文件夾中將至少要有一個文件。大多數情況下，在每個模型和語言文件夾中只需要一個文件。通常這些文件具有相同的名稱，但視圖文件擁有不同的後綴（.tpl）</p>
-<hr>
-<h3 id="Admin-controller-控制器"><a href="#Admin-controller-控制器" class="headerlink" title="Admin / controller - 控制器"></a>Admin / controller - 控制器</h3><p>第一個介紹後台模塊管理的控制器。OpenCart 通過讀取你<code>admin/controller/module</code>文件夾即可自動識別現有模塊。<br>此文件夾中存在的任何模塊將自動顯示在「模塊」頁面和「用戶權限」頁面上。你可以命名你的控制器文件為<code>my_module.php</code></p>
-<p>將函數定義為<code>public function install()</code>，當在「擴展」 &gt; 「模塊」頁面上單擊安裝鏈接時觸發此功能；當單擊卸載鏈接時，將觸發<code>public function uninstall()</code>的函數。</p>
-<p>你可以使用這些功能來創建和刪除你模塊所需的任何結構（如數據庫表或配置設置）。創建一個卸載功能來清理模塊所做的任何更改是一個很好的習慣。</p>
-<h4 id="通過URL訪問"><a href="#通過URL訪問" class="headerlink" title="通過URL訪問"></a>通過URL訪問</h4><p><strong>控制器是 OpenCart 在 MVC-L 框架中通過 URL 訪問的唯一文件。</strong>在後台管理中，URL 看起來像<code>/admin/index.php?route=module/my_module&amp;token</code>，而前端的 URL 則沒有。</p>
-<p>控制器文件將具有定義為<code>public function index()</code>的函數。<br>這是由 URL 加載的可公開訪問的「頁面」，當單擊「編輯」按鈕時將顯示該視圖，以及視圖表單將提交到的頁面。提交的數據將在此函數中處理並通過控制器的配置對象保存到 settings 數據庫表中。</p>
-<hr>
-<h3 id="Admin-view-視圖"><a href="#Admin-view-視圖" class="headerlink" title="Admin / view - 視圖"></a>Admin / view - 視圖</h3><p>模塊管理界面的第二個必需文件是視圖。這將在<code>admin/view/template/module</code>文件夾中創建，後綴為 .tpl。這是 OpenCart 視圖文件的標準。在此文件中，你將創建一個表單供用戶填寫並提交。它將被提交給模塊控制器的 index 函數。</p>
-<p>創建視圖文件的最簡單方法是複製並粘貼一個現有的類似的視圖文件，並編輯表單以包含模塊配置選項的正確字段。你可以命名你的視圖文件為<code>my_module.tpl</code></p>
-<p>在視圖中，你將可以透過控制器處理變量，訪問來自 language 中存儲的 PHP 變量。<br><strong>你可以看到<code>$_[&#39;text&#39;]</code>變量由控制器處理，然後作為<code>$text</code>發送到視圖。</strong></p>
-<hr>
-<h3 id="Admin-model-模型"><a href="#Admin-model-模型" class="headerlink" title="Admin / model - 模型"></a>Admin / model - 模型</h3><p>模塊在後台管理中需要一個模型文件是罕見的。<strong>除非如果你的模塊依賴於自己的數據庫表，或自定義查詢來創建一個特定格式的數據</strong>，那麼你可能會發現自己在編寫一個模型文件。</p>
-<p>這樣的例子可能是，如果您正在編寫訪問者統計模塊，其中 IP 地址和訪問次數存儲在每個訪問者的數據庫表中。你可以創建一個模型文件，並具有在 OpenCart 數據庫中定義和創建此額外表的功能。</p>
-<p>模型文件將存在於<code>admin/model/module</code>文件夾中。你可以將模型文件命名為 <code>my_module.php</code>，與你的控制器和語言文件相同。</p>
-<hr>
-<h3 id="Catalog-前端模塊功能"><a href="#Catalog-前端模塊功能" class="headerlink" title="Catalog 前端模塊功能"></a>Catalog 前端模塊功能</h3><p>前端模塊遵循剛剛描述的後台管理界面相同的模式。你在每個前端文件中包含的內容在很大程度上取決於你的模塊應該做什麼。模塊可以訪問 OpenCart 中已存在的任何模型文件，如果相同的查詢已經存在，則不需要編寫自己的數據庫查詢 (Admin模型)。</p>
-<p>例如，<code>catalog/product</code>模型包含許多有用的查詢來獲取產品。使用這些模型功能優先於重新編寫已有的代碼。</p>
-<p>前端模塊的一個主要區別是，視圖文件將位於<code>catalog/view/theme/(主題名稱)/template/module</code>文件夾中。主題是一個顯然比後台管理視圖層次更深的文件夾結構。OpenCart 商店有許多不同的前端主題，但只有一個後台管理模板。</p>
-<p>在模塊的前端部分，<strong>你可以通過控制器的配置對象和傳遞給模塊控制器的 index 函數下的 $settings 變量訪問模塊保存的配置選項。</strong>你可以根據這些設置控制前端各個方面的顯示。</p>
-<hr>
-<p>參考資料<br><a href="https://stackoverflow.com/questions/46741142/what-is-mvcl-design-pattern-in-open-cart" target="_blank" rel="noopener">MVCL-stackoverflow</a></p>
-
           
+10分鐘瞭解OpenCart模塊結構編寫 OpenCart 模塊可以很好地瞭解 OpenCart 運作的基本原理，OpenCart 模塊遵循 MVCL 設計模式
+
+基本目錄結構模塊的基本文件結構將分為兩部分，即 Admin 和 Catalog 文件夾。每個文件夾的內容分別遵循 MVC-L 框架，
+
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/08/10分鐘瞭解OpenCart模塊結構/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1789,42 +1515,27 @@
       
         
           
-            <img src="/2018/01/07/創業成功率提升到九成的方法/TED-logo-480x270.gif">
-<h1 id="創業成功率提升到90-的方法-獲得有用的資源"><a href="#創業成功率提升到90-的方法-獲得有用的資源" class="headerlink" title="創業成功率提升到90%的方法 - 獲得有用的資源"></a>創業成功率提升到90%的方法 - 獲得有用的資源</h1><blockquote>
-<p>互相的了解，讓做法更加有效，關係變得美好</p>
-</blockquote>
-<p>分享影片：<a href="https://goo.gl/ZQptdD" target="_blank" rel="noopener">雷．達里歐: 如何讓公司裡最好的點子總是勝出 | TED Talk</a></p>
-<hr>
-<h2 id="概論"><a href="#概論" class="headerlink" title="概論"></a>概論</h2><ul>
-<li>眼光準確，不隨波逐流</li>
-<li>吸取經驗，避免相同的錯誤</li>
-<li>讓公司裡最好的點子總是勝出</li>
-</ul>
-<hr>
-<h2 id="重點"><a href="#重點" class="headerlink" title="重點"></a>重點</h2><p>讓員工、客戶提出反駁的看法，藉以檢視自己的觀點，來瞭解人們想要的是什麼</p>
-<ul>
-<li>Ｘ 獨裁主義（只看自我觀點）</li>
-<li>Ｘ 公平主義（人人意見平等）</li>
-<li>Ｏ 功利主義（找出最好的決定）</li>
-</ul>
-<p>綜觀全局的想法，看見事情的全貌<br>（轉為多維度看事情，看法變為客觀標準，進而找出最佳的決定）</p>
-<hr>
-<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><h3 id="徹底透明化"><a href="#徹底透明化" class="headerlink" title="徹底透明化"></a>徹底透明化</h3><p>（公開評論與賞罰）</p>
-<ul>
-<li>需要誠實，說出自己所見的一切，彼此間雙向的做出回饋</li>
-<li>完全透明及誠實，平均花上18個月</li>
-<li>產生的問題 -（情感問題-感性無法完全誠實，職場殘酷-透明化帶來的理性壓力）</li>
-</ul>
-<h3 id="加入電腦分析"><a href="#加入電腦分析" class="headerlink" title="加入電腦分析"></a>加入電腦分析</h3><p>（數據會說話，讓電腦數據與自己一起做決定）</p>
-<h3 id="集點系統"><a href="#集點系統" class="headerlink" title="集點系統"></a>集點系統</h3><p>（對意見作出評分1~10分，並提出原因）</p>
-<h3 id="人員總效用最大化"><a href="#人員總效用最大化" class="headerlink" title="人員總效用最大化"></a>人員<a href="https://goo.gl/tgwnNm" target="_blank" rel="noopener">總效用</a>最大化</h3><ul>
-<li>分析人員長短處做出組合互補，使邊際效用為零）</li>
-<li>工作更有效率，員工之間組合產能更大</li>
-<li>25~30%的人不適用（人非產品，是複雜的，難以完全的互補組合）</li>
-</ul>
-<hr>
-
           
+創業成功率提升到90%的方法 - 獲得有用的資源
+互相的了解，讓做法更加有效，關係變得美好
+
+分享影片：雷．達里歐: 如何讓公司裡最好的點子總是勝出 | TED Talk
+
+概論
+眼光準確，不隨波逐流
+吸取經驗，避免相同的錯誤
+讓公司裡最好的點子總是勝出
+
+
+重點讓員工、客戶提出反駁的看法，藉以檢
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/07/創業成功率提升到九成的方法/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
