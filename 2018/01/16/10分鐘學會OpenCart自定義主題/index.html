@@ -81,15 +81,20 @@
 
 
 
+<meta name="description" content="10分鐘學會OpenCart自定義主題 堅持了就是神話，放棄了就是笑話。   OpenCart預設主題結構Image(圖像):所有有關主題的圖像文件都放在這裡。Stylesheet(樣式表):樣式表的外觀相關代碼。Template(模板):在這裡找到所有前端模板的文件。所有的模板文件模塊化，讓事情變得整潔乾淨。  模板分類Common(常見的)跨不同頁面的模板公共元素文件都放在這個目錄中。例如包">
 <meta name="keywords" content="OpenCart">
 <meta property="og:type" content="article">
 <meta property="og:title" content="10分鐘學會OpenCart自定義主題">
 <meta property="og:url" content="http://tiida54.github.io/2018/01/16/10分鐘學會OpenCart自定義主題/index.html">
 <meta property="og:site_name" content="BulbCat.David ｜前端工程師之路｜學習技術分享 BulbCat">
+<meta property="og:description" content="10分鐘學會OpenCart自定義主題 堅持了就是神話，放棄了就是笑話。   OpenCart預設主題結構Image(圖像):所有有關主題的圖像文件都放在這裡。Stylesheet(樣式表):樣式表的外觀相關代碼。Template(模板):在這裡找到所有前端模板的文件。所有的模板文件模塊化，讓事情變得整潔乾淨。  模板分類Common(常見的)跨不同頁面的模板公共元素文件都放在這個目錄中。例如包">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-01-16T14:08:14.000Z">
+<meta property="og:image" content="http://tiida54.github.io/2018/01/16/10分鐘學會OpenCart自定義主題/opencart-logo-256x256.png">
+<meta property="og:updated_time" content="2018-01-16T14:16:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="10分鐘學會OpenCart自定義主題">
+<meta name="twitter:description" content="10分鐘學會OpenCart自定義主題 堅持了就是神話，放棄了就是笑話。   OpenCart預設主題結構Image(圖像):所有有關主題的圖像文件都放在這裡。Stylesheet(樣式表):樣式表的外觀相關代碼。Template(模板):在這裡找到所有前端模板的文件。所有的模板文件模塊化，讓事情變得整潔乾淨。  模板分類Common(常見的)跨不同頁面的模板公共元素文件都放在這個目錄中。例如包">
+<meta name="twitter:image" content="http://tiida54.github.io/2018/01/16/10分鐘學會OpenCart自定義主題/opencart-logo-256x256.png">
 
 
 
@@ -318,7 +323,97 @@
       
 
       
-        <p></p>
+        <img src="/2018/01/16/10分鐘學會OpenCart自定義主題/opencart-logo-256x256.png">
+<h1 id="10分鐘學會OpenCart自定義主題"><a href="#10分鐘學會OpenCart自定義主題" class="headerlink" title="10分鐘學會OpenCart自定義主題"></a>10分鐘學會OpenCart自定義主題</h1><blockquote>
+<p>堅持了就是神話，放棄了就是笑話。</p>
+</blockquote>
+<hr>
+<h2 id="OpenCart預設主題結構"><a href="#OpenCart預設主題結構" class="headerlink" title="OpenCart預設主題結構"></a>OpenCart預設主題結構</h2><p>Image(圖像):所有有關主題的圖像文件都放在這裡。<br>Stylesheet(樣式表):樣式表的外觀相關代碼。<br>Template(模板):在這裡找到所有前端模板的文件。所有的模板文件模塊化，讓事情變得整潔乾淨。</p>
+<hr>
+<h2 id="模板分類"><a href="#模板分類" class="headerlink" title="模板分類"></a>模板分類</h2><h3 id="Common-常見的"><a href="#Common-常見的" class="headerlink" title="Common(常見的)"></a>Common(常見的)</h3><p>跨不同頁面的模板公共元素文件都放在這個目錄中。例如包括頁首(header)，頁尾(footer)和側邊欄(sidebar)相關的模板。如果打算使用在不同的頁面，也應該把您的模板文件放在這裡，長遠來看這樣比較好維護。</p>
+<h3 id="Information-信息"><a href="#Information-信息" class="headerlink" title="Information(信息)"></a>Information(信息)</h3><p>可以在這裡找到聯繫頁面、網站導航頁面和靜態信息頁面的相關模板。</p>
+<h3 id="Module-模塊"><a href="#Module-模塊" class="headerlink" title="Module(模塊)"></a>Module(模塊)</h3><p>保存模板種類的重要的目錄。我們可以創建自己的自定義模塊，以滿足自定義要求，所以這是有關自定義模塊模板文件存放的地方。</p>
+<hr>
+<h2 id="創建自定義主題"><a href="#創建自定義主題" class="headerlink" title="創建自定義主題"></a>創建自定義主題</h2><p>一般分為兩種情況：<br>想要用所選擇的新界面完全取代預設的前端界面，<br>想改變一些東西如顏色組合、佈局結構和品牌相關的變化。</p>
+<p>1.從後端啟動自定義主題。登錄後端，進入System(系統)&gt;Settings(設置)。會列出所有 OpenCart 安裝存儲可用的商店(store)。</p>
+<p>2.點擊 Action(動作)欄位的 Edit(編輯)鏈接，應該會開啟商店的配置界面。</p>
+<p>3.點擊 General。選擇我們的自定義主題，列在 default 主題的 Template(模板)下拉框中。選擇並點擊 Save(保存)按鈕來套用變更。</p>
+<ul>
+<li><p>已經建立了mycustomtheme作為商店的啟動主題，首先會在<br><code>catalog/view/theme/mycustomtheme/template/common/home.tpl</code>嘗試找文件。如果找到了，OpenCart 就會使用該文件，並停止搜尋過程。</p>
+</li>
+<li><p>如果OpenCart在啟動主題找不到home.tpl，將還回到預設的主題，並嘗試使用<br><code>catalog/view/theme/default/template/common/home.tpl</code>。home.tpl一定會在，除非限制了預設主題模板文件！</p>
+</li>
+</ul>
+<p>4.繼續在自定義的主題目錄template下創建一個名為common的新目錄。現在從default主題的 <code>template/common</code>目錄複製home.tpl和header.tpl模板文件。貼到我們主題的新創建的common目錄。</p>
+<p>5.從default主題的stylesheet目錄複製所有的樣式表文件，並貼到我們主題的stylesheet目錄。image 目錄亦同，雖然目前我們會忽略這個目錄。</p>
+<p>6.只將需要自定義的模板文件複製到自定義主題。因為缺少的文件會從 default 主題中獲取，所以沒有必要保持相同文件的副本，除非您需要修改它。保持和 default 主題相似的文件結構。</p>
+<p>7.讓我們從自定義主題獲取並來改變之，找到下面的代碼：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"catalog/view/theme/default/stylesheet/stylesheet.css"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>並替換成mycustomtheme，其它所需要的樣式表引用亦同。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"catalog/view/theme/mycustomtheme/stylesheet/stylesheet.css"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>通過這種方式，我們確保了所有的樣式表文件是從自定義主題載入。</p>
+<hr>
+<h2 id="OpenCart模板介紹"><a href="#OpenCart模板介紹" class="headerlink" title="OpenCart模板介紹"></a>OpenCart模板介紹</h2><p>OpenCart提供的模板，可以將它們分成三個不同的類別。<br>有助於我們理解在前端生成完整頁面到底需要些什麼。</p>
+<ul>
+<li>佈局模板</li>
+</ul>
+<p>就OpenCart而言，模板被稱為佈局。您可以想像一個佈局模板是一個裝飾模板，用於收集頁面不同區域的內容，將該內容壓入佈局，然後生成一個完整的頁面。 </p>
+<p>佈局模板可以引用像標題，頁腳，側邊欄元素和模塊內容等元素。對於商店前端中的幾乎每個頁面，都存在一個關聯的佈局模板。</p>
+<p>OpenCart也允許您從後端創建佈局，這也是您可以更改某些前端頁面的部分結構的另一種方式。</p>
+<ul>
+<li>子模板</li>
+</ul>
+<p>這種模板為特定內容生成一個子模板。在一般情況下，內容由子模板生成並被推送到佈局模板中。這種最簡單的例子是<code>template/common/header.tpl</code>。它負責為前端的每個頁面生成標題部分。</p>
+<p>正如我們前面所討論的那樣，OpenCart提供了一個很好的方式來組織模板文件，使得它header.tpl在common目錄中是有意義的。該目錄中的大多數模板都會生成插槽特定的內容，最終插入到佈局中。</p>
+<ul>
+<li>模塊模板</li>
+</ul>
+<p>請記住，模塊就像一個塊，它被推送到佈局模板中的特定區域。正如你可能已經猜到的那樣，模塊模板與不同的模塊有關，正如我們所看到的，OpenCart帶有很多內置的模塊來擴展核心功能。 </p>
+<p>默認情況下，佈局模板中有四個不同的區域位置可用。他們是： </p>
+<p>內容頂部、內容底部、左列、右欄</p>
+<p>您可以將模塊分配給這些位置中的任何一個。顧名思義，如果您已將模塊分配到“Content Top”位置，它將顯示在頁面的主要內容之上。模塊模板可以在<code>template/module</code>目錄中找到，所以如果你要創建一個新的模塊，你必須在這個目錄下放置一個相關的模板。</p>
+<p>模塊模板和子模板這兩個都被視為子模板，並在頁面生成過程中被推送到佈局模板。</p>
+<hr>
+<h2 id="在前端佈局發現模板"><a href="#在前端佈局發現模板" class="headerlink" title="在前端佈局發現模板"></a>在前端佈局發現模板</h2><p>每當訪問前端的頁面時，應用程序將執行以下過程：</p>
+<ul>
+<li><p>根據URL中設置的“route”變量，OpenCart找到一個合適的控制器來處理請求。我們將看到一個“route”變量究竟是什麼，以及它在後面的章節中做了什麼。現在，我們假設它將OpenCart引導到適當的控制器文件以供執行。</p>
+</li>
+<li><p>現在由控制器來完成剩下的工作。控制器是包含語言文件和模型文件等其他元素的地方。它還獲取並設置要推送到顯示模板的實際內容。</p>
+</li>
+<li><p>一旦控制器完成建立的內容，它將這個信息交給一個視圖元素，該視圖元素負責向用戶顯示最終的輸出。這裡需要注意的是，控制器還會設置佈局模板的文件名，這個佈局模板文件名將在稍後階段被視圖使用。</p>
+</li>
+<li><p>最後，一個視圖元素拉取所需的模板文件，並使用之前在控制器中準備的內容對其進行裝飾。該過程通過將輸出發送給最終用戶而結束。</p>
+</li>
+</ul>
+<p>現在考慮一個您想要更改商店前端中任何頁面的佈局結構的場景。這引發的第一個問題是我們如何去尋找與特定頁面相關的模板。雖然沒有具體的方法來做這個，但讓我們來看看一些可用的方式。</p>
+<h3 id="1-基於結構的預測"><a href="#1-基於結構的預測" class="headerlink" title="1.基於結構的預測"></a>1.基於結構的預測</h3><p>這是預測任何路線相關模板的最簡單方法。“route”是鏈接URL中的查詢字符串變量。</p>
+<p>例如，請考慮前端顯示給用戶的登錄頁面中的以下鏈接URL：</p>
+<p><code>http://www.youropencartdomain.com/index.php?route=account/login</code></p>
+<p>所以在上面的URL中，<code>account/login</code>是對我們有用的“route”參數的值。您可以簡單地將此值映射到template默認主題的目錄。在這種情況下，您最終得到的模板路徑如下所示：</p>
+<p><code>{opencart_document_root}/catalog/view/theme/default/template/account/login.tpl</code></p>
+<p>正如你可能已經註意到的那樣，“route”值的第二部分“login”成為模板文件名（login.tpl在上面的例子中）。</p>
+<h3 id="2-極客之路"><a href="#2-極客之路" class="headerlink" title="2.極客之路"></a>2.極客之路</h3><p>在大多數情況下，上述方法應該可以工作，但是在這種情況下，您將需要查看控制器文件。同樣，route參數也有助於找到相關的控制器文件。</p>
+<p>讓我們考慮在前端顯示給用戶的登錄頁面的鏈接URL：</p>
+<p><code>http://www.youropencartdomain.com/index.php?route=account/login</code></p>
+<p>您可以映射相對於路徑的值<code>catalog/controller</code>來查找關聯的控制器文件。所以在這種情況下，您最終應該使用的控制器文件是：</p>
+<p><code>{opencart_document_root}/catalog/controller/account/login.php</code></p>
+<p>正如您可能已經註意到的那樣，“route”值的第二部分“登錄”成為控制器文件名（login.php 在上述情況下）。一旦你找到一個相關的控制器文件，你應該看看這樣的代碼：</p>
+<p><code>this-&gt;template = &#39;default/template/account/login.tpl&#39;;</code></p>
+<p>這是控制器告訴OpenCart它應該從“默認”主題顯示“ login.tpl ”佈局模板的方式。當然，如果這個模板已經在你的自定義主題中被覆蓋了，它將會被優先考慮！</p>
+<p>在為任何頁面尋找佈局模板而討論的兩種方法中，第一種方法更適合主題開發人員，第二種方法適合那些對代碼感覺更舒適的人。</p>
+<hr>
+<h2 id="佈局模板的通用元素"><a href="#佈局模板的通用元素" class="headerlink" title="佈局模板的通用元素"></a>佈局模板的通用元素</h2><p>找到您想要自定義的特定佈局模板我們將看到佈局模板中的一些常見元素。</p>
+<p>打開佈局模板文件<code>default/template/account/login.tpl</code>以供參考。</p>
+<p>$ header  在OpenCart頁面中顯示標題部分的內容。<br>與此相關的模板可以在這裡找到<code>default/template/common/header.tpl</code></p>
+<p>$ footer  在OpenCart頁面中顯示頁腳部分的內容。<br>與此相關的模板可以在這裡找到<code>default/template/common/footer.tpl</code></p>
+<p>$ column_left  負責顯示從後端分配給“Column Left”位置的所有模塊的輸出。<br>與此相關的模板可以在這裡找到<code>default/template/common/column_left.tpl</code></p>
+<p>$ column_right  負責顯示從後端分配給“Column Right”位置的所有模塊的輸出。<br>與此相關的模板可以在這裡找到<code>default/template/common/column_right.tpl</code></p>
+<p>$ content_top  負責顯示從後端分配給“Content Top”位置的所有模塊的輸出。<br>與此相關的模板可以在這裡找到<code>default/template/common/content_top.tpl</code></p>
+<p>$ content_bottom  負責顯示從後端分配給“Content Bottom”位置的所有模塊的輸出。<br>與此相關的模板可以在這裡找到<code>default/template/common/content_bottom.tpl</code></p>
+<p>在你想自定義特定模塊的輸出的情況下，<br>與此相關的模板可以在這裡找到<code>default/template/module/{modulename.tpl}</code> </p>
+<p>在“賬戶”模塊的情況下，文件是<code>default/template/module/account.tpl</code><br>模塊模板文件的命名約定很容易猜到，因為它與模塊的名稱完全相同。</p>
+<hr>
+
       
     </div>
     
@@ -426,8 +521,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -498,6 +602,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#10分鐘學會OpenCart自定義主題"><span class="nav-number">1.</span> <span class="nav-text">10分鐘學會OpenCart自定義主題</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenCart預設主題結構"><span class="nav-number">1.1.</span> <span class="nav-text">OpenCart預設主題結構</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板分類"><span class="nav-number">1.2.</span> <span class="nav-text">模板分類</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-常見的"><span class="nav-number">1.2.1.</span> <span class="nav-text">Common(常見的)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Information-信息"><span class="nav-number">1.2.2.</span> <span class="nav-text">Information(信息)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Module-模塊"><span class="nav-number">1.2.3.</span> <span class="nav-text">Module(模塊)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#創建自定義主題"><span class="nav-number">1.3.</span> <span class="nav-text">創建自定義主題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenCart模板介紹"><span class="nav-number">1.4.</span> <span class="nav-text">OpenCart模板介紹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在前端佈局發現模板"><span class="nav-number">1.5.</span> <span class="nav-text">在前端佈局發現模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-基於結構的預測"><span class="nav-number">1.5.1.</span> <span class="nav-text">1.基於結構的預測</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-極客之路"><span class="nav-number">1.5.2.</span> <span class="nav-text">2.極客之路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#佈局模板的通用元素"><span class="nav-number">1.6.</span> <span class="nav-text">佈局模板的通用元素</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
