@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="jhGR9g7yoPHCHNLRInYRrVrZV7d1wJepOzpqWfPbra8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-bulbcat.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-bulbcat.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-bulbcat.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo-bulbcat.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="OpenCart," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="10分鐘學會OpenCart主題修改vQmod 成名每在窮苦日，敗事多於得意時   第1步 創建空白的OpenCart主題1.在catalog/view/theme/下創建一個mytheme文件夾，目錄架構該是這個樣子的： 123catalog/view/theme/|-&amp;gt; default|-&amp;gt; mytheme 2.來到OpenCart後台： Admin -&amp;gt; System -">
+<meta name="keywords" content="OpenCart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="10分鐘學會OpenCart主題修改vQmod">
+<meta property="og:url" content="http://tiida54.github.io/2018/01/21/10分鐘學會OpenCart主題修改/index.html">
+<meta property="og:site_name" content="BulbCat.David ｜前端工程師之路｜學習技術分享 BulbCat">
+<meta property="og:description" content="10分鐘學會OpenCart主題修改vQmod 成名每在窮苦日，敗事多於得意時   第1步 創建空白的OpenCart主題1.在catalog/view/theme/下創建一個mytheme文件夾，目錄架構該是這個樣子的： 123catalog/view/theme/|-&amp;gt; default|-&amp;gt; mytheme 2.來到OpenCart後台： Admin -&amp;gt; System -">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://tiida54.github.io/2018/01/21/10分鐘學會OpenCart主題修改/opencart-logo-400x300.png">
+<meta property="og:updated_time" content="2018-01-21T12:42:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="10分鐘學會OpenCart主題修改vQmod">
+<meta name="twitter:description" content="10分鐘學會OpenCart主題修改vQmod 成名每在窮苦日，敗事多於得意時   第1步 創建空白的OpenCart主題1.在catalog/view/theme/下創建一個mytheme文件夾，目錄架構該是這個樣子的： 123catalog/view/theme/|-&amp;gt; default|-&amp;gt; mytheme 2.來到OpenCart後台： Admin -&amp;gt; System -">
+<meta name="twitter:image" content="http://tiida54.github.io/2018/01/21/10分鐘學會OpenCart主題修改/opencart-logo-400x300.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tiida54.github.io/2018/01/21/10分鐘學會OpenCart主題修改/"/>
+
+
+
+
+
+  <title>10分鐘學會OpenCart主題修改vQmod | BulbCat.David ｜前端工程師之路｜學習技術分享 BulbCat</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-112178007-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BulbCat.David ｜前端工程師之路｜學習技術分享 BulbCat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">BulbCat｜Front-end engineer｜Web Design｜One today is worth two tomorrows</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tiida54.github.io/2018/01/21/10分鐘學會OpenCart主題修改/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BulbCat.David">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BulbCat.David ｜前端工程師之路｜學習技術分享 BulbCat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">10分鐘學會OpenCart主題修改vQmod</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-01-21T19:16:21+08:00">
+                2018-01-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <img src="/2018/01/21/10分鐘學會OpenCart主題修改/opencart-logo-400x300.png">
+<h1 id="10分鐘學會OpenCart主題修改vQmod"><a href="#10分鐘學會OpenCart主題修改vQmod" class="headerlink" title="10分鐘學會OpenCart主題修改vQmod"></a>10分鐘學會OpenCart主題修改vQmod</h1><blockquote>
+<p>成名每在窮苦日，敗事多於得意時</p>
+</blockquote>
+<hr>
+<h2 id="第1步-創建空白的OpenCart主題"><a href="#第1步-創建空白的OpenCart主題" class="headerlink" title="第1步 創建空白的OpenCart主題"></a>第1步 創建空白的OpenCart主題</h2><p>1.在<code>catalog/view/theme/</code>下創建一個mytheme文件夾，目錄架構該是這個樣子的：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">catalog/view/theme/</span><br><span class="line">|-&gt; <span class="keyword">default</span></span><br><span class="line">|-&gt; mytheme</span><br></pre></td></tr></table></figure>
+<p>2.來到OpenCart後台：</p>
+<p><code>Admin -&gt; System -&gt; Setting – &gt; Edit Store -&gt;Tab Store -&gt; template -&gt;mytheme</code></p>
+<p>修改主題為自定義主題mytheme(將default替換為mytheme)</p>
+<hr>
+<h2 id="第2步-創建基礎的OpenCart主題"><a href="#第2步-創建基礎的OpenCart主題" class="headerlink" title="第2步 創建基礎的OpenCart主題"></a>第2步 創建基礎的OpenCart主題</h2><p>1.創建一些文件夾，並複製默認主題的一些文件，不是複製全部哦：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">catalog/view/theme/</span><br><span class="line">|-&gt; <span class="keyword">default</span></span><br><span class="line">|-&gt; mytheme</span><br><span class="line">    |-&gt; image – 複製全部圖片</span><br><span class="line">    |-&gt; stylesheet – 複製全部樣式表文件</span><br><span class="line">    |-&gt; template</span><br><span class="line">        |-&gt; common</span><br><span class="line">            |-&gt; header.tpl - 複製這個模板文件</span><br></pre></td></tr></table></figure>
+<p>樣式表需要圖片，所以複製全部圖片過來；<br>樣式表文件是<code>header.tpl</code>需要的；<br><code>slideshow.css</code>和<code>carousel.css</code>是OpenCart模塊需要的；<br>要改變外觀（如顏色配置）可以修改<code>mytheme/stylesheet/stylesheet.css</code></p>
+<hr>
+<h2 id="第3步-修改OpenCart主題：理解Controller"><a href="#第3步-修改OpenCart主題：理解Controller" class="headerlink" title="第3步 修改OpenCart主題：理解Controller"></a>第3步 修改OpenCart主題：理解Controller</h2><h3 id="模板如何成為主題"><a href="#模板如何成為主題" class="headerlink" title="模板如何成為主題"></a>模板如何成為主題</h3><p>修改的tpl文件都在新建的<code>mytheme</code>的子文件夾下，不要修改默認主題的文件。繼續複製默認主題下的文件到<code>mytheme</code>文件夾及其子文件夾，需要複製的基本文件如下</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">catalog/view/theme/</span><br><span class="line">|-&gt; <span class="keyword">default</span></span><br><span class="line">|-&gt; mytheme</span><br><span class="line">    |-&gt; image</span><br><span class="line">    |-&gt; stylesheet</span><br><span class="line">    |-&gt; template</span><br><span class="line">        |-&gt; common</span><br><span class="line">            |-&gt; header.tpl</span><br><span class="line">            |-&gt; footer.tpl</span><br><span class="line">        |-&gt; information</span><br><span class="line">            |-&gt; information.tpl</span><br><span class="line">        |-&gt; product</span><br><span class="line">            |-&gt; product.tpl</span><br><span class="line">            |-&gt; category.tpl</span><br><span class="line">            |-&gt; manufacturer_list.tpl</span><br></pre></td></tr></table></figure>
+<p>如果你的<code>mytheme</code>下沒有如上對應的文件夾，請自行創建。</p>
+<h3 id="理解OpenCart使用的MVC模型"><a href="#理解OpenCart使用的MVC模型" class="headerlink" title="理解OpenCart使用的MVC模型"></a>理解OpenCart使用的MVC模型</h3><ul>
+<li><p>對於鏈接<code>route=product/category</code>，OpenCart會調用<code>controller/product/category.php</code>文件；</p>
+</li>
+<li><p>這個<code>Controller</code>（這個例子中是category.php）將決定載入哪一個/種MVC-L：模型、視圖（也就是tpl後綴的模板）、語言。具體來說會載入：</p>
+</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span>個模型 (category, product, image): <span class="keyword">$this</span>-&gt;load-&gt;model();</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>個視圖 (category.tpl &amp; not_found.tpl): <span class="keyword">$this</span>-&gt;template = ;</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>種語言 <span class="keyword">$this</span>-&gt;language-&gt;load()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>這個<code>Controller</code>會決定如何將數據推送到模板以及如何處理用戶的輸入數據。</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">例如：數據庫數據的推送</span><br><span class="line">`<span class="keyword">$this</span>-&gt;<span class="keyword">$this</span>-&gt;data[『text_price<span class="string">'] = $this-&gt;language-&gt;get(『text_price'</span>);`</span><br><span class="line"></span><br><span class="line">將會生成可供模板調用的價格字段：</span><br><span class="line">`<span class="meta">&lt;?php</span> <span class="keyword">echo</span> $text_price; <span class="meta">?&gt;</span>`</span><br></pre></td></tr></table></figure>
+<p><strong><code>Controller</code>是沒有回調函數的，如果手工修改了<code>Controller</code>文件，在升級你的OpenCart的時候，會被官方文件替換掉，為了能手工修改控制器，可以使用<code>vQmod</code>做一個虛擬修改，後面將進行介紹。</strong></p>
+<hr>
+<h2 id="第4步-修改OpenCart主題：理解Model"><a href="#第4步-修改OpenCart主題：理解Model" class="headerlink" title="第4步 修改OpenCart主題：理解Model"></a>第4步 修改OpenCart主題：理解Model</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">$this</span>-&gt;load-&gt;model(『catalog/product<span class="string">'); - 載入模型</span></span><br><span class="line"><span class="string">$this-&gt;model_catalog_product-&gt;getTotalProducts(); - 獲取數據</span></span><br><span class="line"><span class="string">$this-&gt;model_catalog_product-&gt;editProduct() - 處理數據</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><code>Model</code>在MVC中的作用是<strong>處理與數據庫有關的數據推送和讀取</strong>，在Controller推拉數據之前，需要載入特定的Model。</p>
+</li>
+<li><p>載入模型：告訴OpenCart在前台或者管理員界面載入<code>model/catalog/product.php</code>， <code>getTotalProducts()</code>,<code>editProduct()</code>是<code>model/catalog/product.php</code>的內置函數。</p>
+</li>
+<li><p>打開<code>model/catalog/product.php</code>，找到<code>public function getProduct</code>，找到<code>return array</code>：</p>
+</li>
+</ol>
+<p><code>getProduct()</code>列出了產品的所有信息，而顯示哪些是由<code>Controller</code>決定的！<br>打開<code>controller/product/category.php</code>，找到<code>$this-&gt;data[『products&#39;][] = array</code>就可以知道這個Controller調用了哪些數據了！</p>
+<hr>
+<h2 id="第5步-修改OpenCart主題：理解vQmod"><a href="#第5步-修改OpenCart主題：理解vQmod" class="headerlink" title="第5步 修改OpenCart主題：理解vQmod"></a>第5步 修改OpenCart主題：理解vQmod</h2><p><strong>「vQmod™」（虛擬快速修改）</strong>，這是一個免費開源的程序組件，可以理解為一個模塊，作用是在不修改程序核心文件的前提下，對程序進行虛擬的修改。<br>它的原理很簡單：<strong>創建xml搜索/替換腳本文件</strong>，而不是去直接修改核心文件。在頁面加載解析為每個源核心文件使用php函數<code>include</code>或<code>require_once</code>來載入腳本文件。<br>當源核心文件需要修改時，會生成一個臨時文件。該臨時文件在執行過程中取代了原來的核心文件，原來的核心文件是永遠不會改變的。</p>
+<p>vQmod可以對OpenCart的無回調的<code>Controller</code>和<code>Model</code>進行虛擬的修改。<br>請先下載vQmod！將下載到的壓縮包解壓，然後將vqmod文件夾複製到Opencart的根目錄，示例如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">OpenCart的根目錄</span><br><span class="line">    |-&gt; admin</span><br><span class="line">    |-&gt; catalog</span><br><span class="line">    |-&gt; download</span><br><span class="line">    |-&gt; image</span><br><span class="line">    |-&gt; system</span><br><span class="line">    |-&gt; vqmod</span><br></pre></td></tr></table></figure>
+<p><strong>自動安裝vQmod</strong></p>
+<p>在你的瀏覽器打開<code>http://我的域名/vqmod/install</code>，<br>會看到安裝成功的信息：<code>vQmod has been installed on your system!</code></p>
+<hr>
+<h3 id="手動安裝vQmod"><a href="#手動安裝vQmod" class="headerlink" title="手動安裝vQmod"></a>手動安裝vQmod</h3><p>1.在上傳vqmod文件夾到前文所述位置後，打開OpenCart網站根目錄下的<code>index.php</code>，將其中的</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Startup</span></span><br><span class="line"><span class="keyword">require_once</span>(DIR_SYSTEM . 『startup.php<span class="string">');</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// Application Classes</span></span><br><span class="line"><span class="string">require_once(DIR_SYSTEM . 『library/customer.php'</span>);</span><br><span class="line"><span class="keyword">require_once</span>(DIR_SYSTEM . 『library/currency.php<span class="string">');</span></span><br><span class="line"><span class="string">require_once(DIR_SYSTEM . 『library/tax.php'</span>);</span><br><span class="line"><span class="keyword">require_once</span>(DIR_SYSTEM . 『library/weight.php<span class="string">');</span></span><br><span class="line"><span class="string">require_once(DIR_SYSTEM . 『library/length.php'</span>);</span><br><span class="line"><span class="keyword">require_once</span>(DIR_SYSTEM . 『library/cart.php<span class="string">');</span></span><br><span class="line"><span class="string">require_once(DIR_SYSTEM . 『library/affiliate.php'</span>);</span><br></pre></td></tr></table></figure>
+<p>替換為：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vQmod</span></span><br><span class="line"><span class="keyword">require_once</span>(『./vqmod/vqmod.php<span class="string">');</span></span><br><span class="line"><span class="string">VQMod::bootup();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// VQMODDED Startup</span></span><br><span class="line"><span class="string">require_once(VQMod::modCheck(DIR_SYSTEM . 『startup.php'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// Application Classes</span></span><br><span class="line"><span class="keyword">require_once</span>(VQMod::modCheck(DIR_SYSTEM . 『library/customer.php<span class="string">'));</span></span><br><span class="line"><span class="string">require_once(VQMod::modCheck(DIR_SYSTEM . 『library/currency.php'</span>));</span><br><span class="line"><span class="keyword">require_once</span>(VQMod::modCheck(DIR_SYSTEM . 『library/tax.php<span class="string">'));</span></span><br><span class="line"><span class="string">require_once(VQMod::modCheck(DIR_SYSTEM . 『library/weight.php'</span>));</span><br><span class="line"><span class="keyword">require_once</span>(VQMod::modCheck(DIR_SYSTEM . 『library/length.php<span class="string">'));</span></span><br><span class="line"><span class="string">require_once(VQMod::modCheck(DIR_SYSTEM . 『library/cart.php'</span>));</span><br><span class="line"><span class="keyword">require_once</span>(VQMod::modCheck(DIR_SYSTEM . 『library/affiliate.php<span class="string">'));</span></span><br></pre></td></tr></table></figure>
+<p>2.打開網站根目錄下的<code>admin/index.php</code>，將其中的：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Startup</span></span><br><span class="line"><span class="keyword">require_once</span>(DIR_SYSTEM . 『startup.php<span class="string">');</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// Application Classes</span></span><br><span class="line"><span class="string">require_once(DIR_SYSTEM . 『library/currency.php'</span>);</span><br><span class="line"><span class="keyword">require_once</span>(DIR_SYSTEM . 『library/user.php<span class="string">'));</span></span><br><span class="line"><span class="string">require_once(DIR_SYSTEM . 『library/weight.php'</span>);</span><br><span class="line"><span class="keyword">require_once</span>(DIR_SYSTEM . 『library/length.php<span class="string">');</span></span><br></pre></td></tr></table></figure>
+<p>替換為：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vQmod</span></span><br><span class="line"><span class="keyword">require_once</span>(『../vqmod/vqmod.php<span class="string">');</span></span><br><span class="line"><span class="string">VQMod::bootup();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// VQMODDED Startup</span></span><br><span class="line"><span class="string">require_once(VQMod::modCheck(DIR_SYSTEM . 『startup.php'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// Application Classes</span></span><br><span class="line"><span class="keyword">require_once</span>(VQMod::modCheck(DIR_SYSTEM . 『library/currency.php<span class="string">'));</span></span><br><span class="line"><span class="string">require_once(VQMod::modCheck(DIR_SYSTEM . 『library/user.php'</span>));</span><br><span class="line"><span class="keyword">require_once</span>(VQMod::modCheck(DIR_SYSTEM . 『library/weight.php<span class="string">'));</span></span><br><span class="line"><span class="string">require_once(VQMod::modCheck(DIR_SYSTEM . 『library/length.php'</span>));</span><br></pre></td></tr></table></figure>
+<p>3.打開網站根目錄下的<code>vqmod/vqcache</code>，如果這個目錄已經有了幾個<code>vq</code>開頭的php文件，那就說明<code>vqmod</code>已經在工作了！</p>
+<p>4.前面已經說過了vqmod腳本文件是xml格式的，位於OpenCart網站根目錄下的<code>vqmod\xml</code>文件夾，被vqmod修改後的文件緩存在<code>vqmod\vqcache</code>文件夾。<br>一個vqmod腳本可以有多個修改規則，也可以修改程序核心的多個文件。</p>
+<hr>
+<h3 id="vqmod腳本的示例"><a href="#vqmod腳本的示例" class="headerlink" title="vqmod腳本的示例"></a>vqmod腳本的示例</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?</span>xml version=「<span class="number">1.0</span>」 encoding=「UTF<span class="number">-8</span>」<span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;<span class="name">modification</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">id</span>&gt;</span>vQmod File ID<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span> —&gt; vQmod 腳本的版本聲明</span><br><span class="line"><span class="tag">&lt;<span class="name">vqmver</span> <span class="attr">required</span>=<span class="string">「true」</span>&gt;</span>1.0.8<span class="tag">&lt;/<span class="name">vqmver</span>&gt;</span> —&gt; 最低的vQmod 版本要求</span><br><span class="line"><span class="tag">&lt;<span class="name">author</span>&gt;</span>Suoling.net<span class="tag">&lt;/<span class="name">author</span>&gt;</span>—&gt; vQmod 腳本的作者</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">file</span> <span class="attr">name</span>=<span class="string">「catalog/controller/product/category.php</span> 「&gt;</span> —&gt; 聲明要修改的文件</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">operation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">search</span> <span class="attr">position</span>=<span class="string">「replace」</span>&gt;</span>&lt;![CDATA[</span><br><span class="line">搜索OpenCart核心程序中要修改的文件中的原代碼</span><br><span class="line">]]&gt;<span class="tag">&lt;/<span class="name">search</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">add</span>&gt;</span>&lt;![CDATA[</span><br><span class="line">替換代碼</span><br><span class="line">]]&gt;<span class="tag">&lt;/<span class="name">add</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">operation</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">operation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">search</span> <span class="attr">position</span>=<span class="string">「after」</span>&gt;</span>&lt;![CDATA[</span><br><span class="line">搜索OpenCart核心程序中要添加代碼的文件中的原代碼</span><br><span class="line">]]&gt;<span class="tag">&lt;/<span class="name">search</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">add</span>&gt;</span>&lt;![CDATA[</span><br><span class="line">附加在：搜索OpenCart核心程序中要添加代碼的文件中的原代碼之後的代碼（添加在原代碼之後）</span><br><span class="line">]]&gt;<span class="tag">&lt;/<span class="name">add</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">operation</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">operation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">search</span> <span class="attr">position</span>=<span class="string">「before」</span>&gt;</span>&lt;![CDATA[</span><br><span class="line">搜索OpenCart核心程序中要添加代碼的文件中的原代碼</span><br><span class="line">]]&gt;<span class="tag">&lt;/<span class="name">search</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">add</span>&gt;</span>&lt;![CDATA[</span><br><span class="line">&lt;add&gt;&lt;![CDATA[</span><br><span class="line">附加在：搜索OpenCart核心程序中要添加代碼的文件中的原代碼之後的代碼（添加在原代碼之前）  </span><br><span class="line">]]&gt;<span class="tag">&lt;/<span class="name">add</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">operation</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">file</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">modification</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author：</strong>
+    BulbCat.David
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link：</strong>
+    <a href="http://tiida54.github.io/2018/01/21/10分鐘學會OpenCart主題修改/" title="10分鐘學會OpenCart主題修改vQmod">http://tiida54.github.io/2018/01/21/10分鐘學會OpenCart主題修改/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice： </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OpenCart/" rel="tag"># OpenCart</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/20/介紹5個設計常用的網站/" rel="next" title="介紹5個設計常用的網站">
+                <i class="fa fa-chevron-left"></i> 介紹5個設計常用的網站
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.gif"
+                alt="BulbCat.David" />
+            
+              <p class="site-author-name" itemprop="name">BulbCat.David</p>
+              <p class="site-description motion-element" itemprop="description">BulbCat 邁向前端工程師的學習心得與技術分享｜Front-end engineer｜Web Design</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/tiida54" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#10分鐘學會OpenCart主題修改vQmod"><span class="nav-number">1.</span> <span class="nav-text">10分鐘學會OpenCart主題修改vQmod</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第1步-創建空白的OpenCart主題"><span class="nav-number">1.1.</span> <span class="nav-text">第1步 創建空白的OpenCart主題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第2步-創建基礎的OpenCart主題"><span class="nav-number">1.2.</span> <span class="nav-text">第2步 創建基礎的OpenCart主題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第3步-修改OpenCart主題：理解Controller"><span class="nav-number">1.3.</span> <span class="nav-text">第3步 修改OpenCart主題：理解Controller</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模板如何成為主題"><span class="nav-number">1.3.1.</span> <span class="nav-text">模板如何成為主題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解OpenCart使用的MVC模型"><span class="nav-number">1.3.2.</span> <span class="nav-text">理解OpenCart使用的MVC模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第4步-修改OpenCart主題：理解Model"><span class="nav-number">1.4.</span> <span class="nav-text">第4步 修改OpenCart主題：理解Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第5步-修改OpenCart主題：理解vQmod"><span class="nav-number">1.5.</span> <span class="nav-text">第5步 修改OpenCart主題：理解vQmod</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手動安裝vQmod"><span class="nav-number">1.5.1.</span> <span class="nav-text">手動安裝vQmod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vqmod腳本的示例"><span class="nav-number">1.5.2.</span> <span class="nav-text">vqmod腳本的示例</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BulbCat.David</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
