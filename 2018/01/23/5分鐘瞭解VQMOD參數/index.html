@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="jhGR9g7yoPHCHNLRInYRrVrZV7d1wJepOzpqWfPbra8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-bulbcat.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-bulbcat.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-bulbcat.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo-bulbcat.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="OpenCart," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="5分鐘瞭解VQMOD參數設定 培育能力的事必須不斷地去做，又必須隨時改善學習方法，提高學習效率，才會成功。 - 葉聖陶   vQMOD 目錄vqmod/xml//放VQMOD插件的XML檔 vqmod/logs//vqmod日誌目錄 vqmod/vqcache//vqmod緩存目錄 自己產生改變後的檔案 vqmod/checked.cache//vqmod用於保存已緩存的文件名 vqmod/mo">
+<meta name="keywords" content="OpenCart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5分鐘瞭解VQMOD參數設定">
+<meta property="og:url" content="http://tiida54.github.io/2018/01/23/5分鐘瞭解VQMOD參數/index.html">
+<meta property="og:site_name" content="BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat">
+<meta property="og:description" content="5分鐘瞭解VQMOD參數設定 培育能力的事必須不斷地去做，又必須隨時改善學習方法，提高學習效率，才會成功。 - 葉聖陶   vQMOD 目錄vqmod/xml//放VQMOD插件的XML檔 vqmod/logs//vqmod日誌目錄 vqmod/vqcache//vqmod緩存目錄 自己產生改變後的檔案 vqmod/checked.cache//vqmod用於保存已緩存的文件名 vqmod/mo">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://tiida54.github.io/2018/01/23/5分鐘瞭解VQMOD參數/operating-system.png">
+<meta property="og:updated_time" content="2018-01-23T09:08:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="5分鐘瞭解VQMOD參數設定">
+<meta name="twitter:description" content="5分鐘瞭解VQMOD參數設定 培育能力的事必須不斷地去做，又必須隨時改善學習方法，提高學習效率，才會成功。 - 葉聖陶   vQMOD 目錄vqmod/xml//放VQMOD插件的XML檔 vqmod/logs//vqmod日誌目錄 vqmod/vqcache//vqmod緩存目錄 自己產生改變後的檔案 vqmod/checked.cache//vqmod用於保存已緩存的文件名 vqmod/mo">
+<meta name="twitter:image" content="http://tiida54.github.io/2018/01/23/5分鐘瞭解VQMOD參數/operating-system.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tiida54.github.io/2018/01/23/5分鐘瞭解VQMOD參數/"/>
+
+
+
+
+
+  <title>5分鐘瞭解VQMOD參數設定 | BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-112178007-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">BulbCat｜Front-end engineer｜Web Design｜One today is worth two tomorrows</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tiida54.github.io/2018/01/23/5分鐘瞭解VQMOD參數/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BulbCat.David">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">5分鐘瞭解VQMOD參數設定</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-01-23T16:51:34+08:00">
+                2018-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <img src="/2018/01/23/5分鐘瞭解VQMOD參數/operating-system.png">
+<h1 id="5分鐘瞭解VQMOD參數設定"><a href="#5分鐘瞭解VQMOD參數設定" class="headerlink" title="5分鐘瞭解VQMOD參數設定"></a>5分鐘瞭解VQMOD參數設定</h1><blockquote>
+<p>培育能力的事必須不斷地去做，又必須隨時改善學習方法，提高學習效率，才會成功。 - 葉聖陶</p>
+</blockquote>
+<hr>
+<h2 id="vQMOD-目錄"><a href="#vQMOD-目錄" class="headerlink" title="vQMOD 目錄"></a>vQMOD 目錄</h2><p><code>vqmod/xml</code><br>//放VQMOD插件的XML檔</p>
+<p><code>vqmod/logs</code><br>//vqmod日誌目錄</p>
+<p><code>vqmod/vqcache</code><br>//vqmod緩存目錄 自己產生改變後的檔案</p>
+<p><code>vqmod/checked.cache</code><br>//vqmod用於保存已緩存的文件名</p>
+<p><code>vqmod/mods.cache</code><br>//vqmod用於保存緩存文件的序列化源碼</p>
+<hr>
+<h2 id="vQMOD-參數"><a href="#vQMOD-參數" class="headerlink" title="vQMOD 參數"></a>vQMOD 參數</h2><p>replace ：為在搜尋標籤中的<strong>資料取代為add標籤</strong>上的資料。(預設)<br>before ：為在搜尋標籤中的<strong>資料之前插入</strong>add標籤上的資料。<br>after ：為在搜尋標籤中的<strong>資料之後插入</strong>add標籤上的資料。<br>top ：為在<strong>文件頂部插入</strong>add標籤上的資料。搜尋資料會被忽略。<br>bottom ：為在<strong>文件底部插入</strong>add標籤上的資料。搜尋資料會被忽略。<br>all ：將完全以add標籤上的資料<strong>取代所有資料</strong>。搜尋資料會被忽略。</p>
+<h3 id="offset屬性"><a href="#offset屬性" class="headerlink" title="offset屬性"></a>offset屬性</h3><p><strong>offset屬性：要工作的位置</strong><br>若搜尋位置為before 及 offset 3，其會放置add標籤上的資料在<strong>搜尋前3行</strong><br>若搜尋位置為after 及 offset 3，其會放置add標籤上的資料在<strong>搜尋後3行</strong><br>若搜尋位置為replace 及 offset 3，其會<strong>從搜尋行中移除碼及下一個3行以add標籤上的資料取代</strong><br>若搜尋位置為top 及 offset 3，其會在文件的<strong>最前3行下面</strong>放置add標籤上的資料<br>若搜尋位置為bottom 及 offset 3，其會在文件的<strong>最後3行前面</strong>放置add標籤上的資料</p>
+<h3 id="index屬性"><a href="#index屬性" class="headerlink" title="index屬性"></a>index屬性</h3><p><strong>index屬性：搜尋標籤中，將要指定動作的例項標示</strong><br>若搜尋字串為”echo”，在文件中有5個echo值，而只想取代第1和第3的值，可使用index=”1,3″來標示<br>多個實例是逗號來分隔，啟始值為”1″<br>遺漏或設置為false則取代所有例項。(預設)</p>
+<h3 id="regex屬性"><a href="#regex屬性" class="headerlink" title="regex屬性"></a>regex屬性</h3><p><strong>regex屬性：用於指定是否要以正規表示法來搜尋</strong><br>若為 true，則是以有效的正規表示法模式來搜尋<br>遺漏或設置為false則是使用正常字串來搜尋(預設)</p>
+<h3 id="trim屬性"><a href="#trim屬性" class="headerlink" title="trim屬性"></a>trim屬性</h3><p><strong>trim屬性：設置為 true / false，將修剪空白和換行</strong><br>遺漏或設置為true，則代表要修剪。(預設為 true)</p>
+<hr>
+<h3 id="參數範例"><a href="#參數範例" class="headerlink" title="參數範例"></a>參數範例</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">search</span> <span class="attr">position</span>=<span class="string">”replace”</span> <span class="attr">regex</span>=<span class="string">”true”</span>&gt;</span></span><br><span class="line">/*為在搜尋標籤中的資料取代 且用正規表示法模式來搜尋*/</span><br><span class="line"><span class="tag">&lt;<span class="name">search</span> <span class="attr">position</span>=<span class="string">”after”</span> <span class="attr">offset</span>=<span class="string">”6″</span>&gt;</span></span><br><span class="line">/*after： 在尋找到的字串後面增加；before：在尋找到的字串前面增加；replace：替換尋找到的字串*/</span><br></pre></td></tr></table></figure>
+<p>如要在一個文件中的某句前加入一段代碼，但該文件中搜索到多處有這句，可以使用index=「5」這樣的方式來指定要在第五處的前面加入。例如：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">search</span> <span class="attr">position</span>=<span class="string">”before”</span> <span class="attr">index</span>=<span class="string">”2,4,6″</span>&gt;</span>&lt;![CDATA[xxxxxxxxxxxx]]&gt;<span class="tag">&lt;/<span class="name">search</span>&gt;</span></span><br><span class="line">即在文件中搜索xxxxxxxxxxxx，在搜索到的第2，4，6處改行前面加入。</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="vQMOD-參數詳細"><a href="#vQMOD-參數詳細" class="headerlink" title="vQMOD 參數詳細"></a>vQMOD 參數詳細</h2><p><code>modification</code><br>這是檔案最高級別，也只有一個。</p>
+<p><code>modification / id</code><br>這是模組的名稱和描述。<br>格式：文字形式。(信息)</p>
+<p><code>modification / version</code><br>這是模組的版本。<br>格式：數字或Decimal (1.0.0)</p>
+<p><code>modification / vqmver</code><br>這是最短VirtualQMod所需版本的腳本。<br>格式：數字或Decimal (1.0.0)</p>
+<p><code>modification / author</code><br>這是模組的作者。<br>格式：文字形式。(信息)</p>
+<p><code>modification / file</code><br>此為要變更的檔案名稱</p>
+<p><code>modification / file / operation / search</code><br>這為所需操作的第一步。<br>只能搜尋單一行。但可使用offset 及 index屬性來協助</p>
+<p><code>&lt;![CDATA[ ]]&gt;</code><br>此被稱為CDATA tags其用來指定要添加代碼的文件中的原代碼</p>
+<hr>
+<h3 id="vQMOD腳本示例"><a href="#vQMOD腳本示例" class="headerlink" title="vQMOD腳本示例"></a>vQMOD腳本示例</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=「1.0」 encoding=「UTF-8」?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">modification</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">id</span>&gt;</span>vQmod File ID<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span> —&gt; vQmod 腳本的版本聲明</span><br><span class="line"><span class="tag">&lt;<span class="name">vqmver</span> <span class="attr">required</span>=<span class="string">「true」</span>&gt;</span>1.0.8<span class="tag">&lt;/<span class="name">vqmver</span>&gt;</span> —&gt; 最低的vQmod 版本要求</span><br><span class="line"><span class="tag">&lt;<span class="name">author</span>&gt;</span>Suoling.net<span class="tag">&lt;/<span class="name">author</span>&gt;</span>—&gt; vQmod 腳本的作者</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">file</span> <span class="attr">name</span>=<span class="string">「catalog/controller/product/category.php</span> 「&gt;</span> —&gt; 聲明要修改的文件</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">operation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">search</span> <span class="attr">position</span>=<span class="string">「replace」</span>&gt;</span>&lt;![CDATA[</span><br><span class="line">搜索OpenCart核心程序中要修改的文件中的原代碼</span><br><span class="line">]]&gt;<span class="tag">&lt;/<span class="name">search</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">add</span>&gt;</span>&lt;![CDATA[</span><br><span class="line">替換代碼</span><br><span class="line">]]&gt;<span class="tag">&lt;/<span class="name">add</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">operation</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">operation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">search</span> <span class="attr">position</span>=<span class="string">「after」</span>&gt;</span>&lt;![CDATA[</span><br><span class="line">搜索OpenCart核心程序中要添加代碼的文件中的原代碼</span><br><span class="line">]]&gt;<span class="tag">&lt;/<span class="name">search</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">add</span>&gt;</span>&lt;![CDATA[</span><br><span class="line">附加在：搜索OpenCart核心程序中要添加代碼的文件中的原代碼之後的代碼（添加在原代碼之後）</span><br><span class="line">]]&gt;<span class="tag">&lt;/<span class="name">add</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">operation</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">operation</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">search</span> <span class="attr">position</span>=<span class="string">「before」</span>&gt;</span>&lt;![CDATA[</span><br><span class="line">搜索OpenCart核心程序中要添加代碼的文件中的原代碼</span><br><span class="line">]]&gt;<span class="tag">&lt;/<span class="name">search</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">add</span>&gt;</span>&lt;![CDATA[</span><br><span class="line">附加在：搜索OpenCart核心程序中要添加代碼的文件中的原代碼之後的代碼（添加在原代碼之前）  </span><br><span class="line">]]&gt;<span class="tag">&lt;/<span class="name">add</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">operation</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">file</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">modification</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author：</strong>
+    BulbCat.David
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link：</strong>
+    <a href="http://tiida54.github.io/2018/01/23/5分鐘瞭解VQMOD參數/" title="5分鐘瞭解VQMOD參數設定">http://tiida54.github.io/2018/01/23/5分鐘瞭解VQMOD參數/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice： </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OpenCart/" rel="tag"># OpenCart</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/22/視差滾動網頁設計-學習筆記/" rel="next" title="視差滾動網頁設計-學習筆記">
+                <i class="fa fa-chevron-left"></i> 視差滾動網頁設計-學習筆記
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.gif"
+                alt="BulbCat.David" />
+            
+              <p class="site-author-name" itemprop="name">BulbCat.David</p>
+              <p class="site-description motion-element" itemprop="description">BulbCat 邁向前端工程師的學習心得與技術分享｜Front-end engineer｜Web Design</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/tiida54" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#5分鐘瞭解VQMOD參數設定"><span class="nav-number">1.</span> <span class="nav-text">5分鐘瞭解VQMOD參數設定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vQMOD-目錄"><span class="nav-number">1.1.</span> <span class="nav-text">vQMOD 目錄</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vQMOD-參數"><span class="nav-number">1.2.</span> <span class="nav-text">vQMOD 參數</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#offset屬性"><span class="nav-number">1.2.1.</span> <span class="nav-text">offset屬性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#index屬性"><span class="nav-number">1.2.2.</span> <span class="nav-text">index屬性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#regex屬性"><span class="nav-number">1.2.3.</span> <span class="nav-text">regex屬性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#trim屬性"><span class="nav-number">1.2.4.</span> <span class="nav-text">trim屬性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#參數範例"><span class="nav-number">1.2.5.</span> <span class="nav-text">參數範例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vQMOD-參數詳細"><span class="nav-number">1.3.</span> <span class="nav-text">vQMOD 參數詳細</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vQMOD腳本示例"><span class="nav-number">1.3.1.</span> <span class="nav-text">vQMOD腳本示例</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BulbCat.David</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
