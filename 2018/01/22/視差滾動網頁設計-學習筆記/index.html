@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="視差滾動網頁設計 - 學習筆記 努力是成功之母。 - 賽凡提斯   概述 - 視差滾動 當使用者滾動滑鼠滾輪（捲軸）時，將多層背景以不同速度移動，形成3D的垂直運動效果，造成視覺上的錯覺並增加趣味性。 原理是在二維場景中創建一個深度錯覺，在攝影機移動過程中，讓背景圖像的移動速度比前景圖像慢。   固定背景圖-滾動改變位置CSS transform12345.wrap &amp;#123;  backgr">
+<meta name="description" content="視差滾動網頁設計 - 學習筆記 努力是成功之母。 - 賽凡提斯   概述 - 視差滾動 當使用者滾動滑鼠滾輪（捲軸）時，將多層背景以不同速度移動，形成3D的垂直運動效果，造成視覺上的錯覺並增加趣味性。 原理是在二維場景中創建一個深度錯覺，在攝影機移動過程中，讓背景圖像的移動速度比前景圖像慢。">
 <meta name="keywords" content="CSS,HTML,Notes,六角學院,Javascript,FrontEnd">
 <meta property="og:type" content="article">
 <meta property="og:title" content="視差滾動網頁設計-學習筆記">
 <meta property="og:url" content="http://tiida54.github.io/2018/01/22/視差滾動網頁設計-學習筆記/index.html">
 <meta property="og:site_name" content="BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat">
-<meta property="og:description" content="視差滾動網頁設計 - 學習筆記 努力是成功之母。 - 賽凡提斯   概述 - 視差滾動 當使用者滾動滑鼠滾輪（捲軸）時，將多層背景以不同速度移動，形成3D的垂直運動效果，造成視覺上的錯覺並增加趣味性。 原理是在二維場景中創建一個深度錯覺，在攝影機移動過程中，讓背景圖像的移動速度比前景圖像慢。   固定背景圖-滾動改變位置CSS transform12345.wrap &amp;#123;  backgr">
+<meta property="og:description" content="視差滾動網頁設計 - 學習筆記 努力是成功之母。 - 賽凡提斯   概述 - 視差滾動 當使用者滾動滑鼠滾輪（捲軸）時，將多層背景以不同速度移動，形成3D的垂直運動效果，造成視覺上的錯覺並增加趣味性。 原理是在二維場景中創建一個深度錯覺，在攝影機移動過程中，讓背景圖像的移動速度比前景圖像慢。">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="http://tiida54.github.io/2018/01/22/視差滾動網頁設計-學習筆記/Parallax-scrolling.gif">
-<meta property="og:updated_time" content="2018-01-22T13:31:55.000Z">
+<meta property="og:updated_time" content="2018-01-24T15:54:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="視差滾動網頁設計-學習筆記">
-<meta name="twitter:description" content="視差滾動網頁設計 - 學習筆記 努力是成功之母。 - 賽凡提斯   概述 - 視差滾動 當使用者滾動滑鼠滾輪（捲軸）時，將多層背景以不同速度移動，形成3D的垂直運動效果，造成視覺上的錯覺並增加趣味性。 原理是在二維場景中創建一個深度錯覺，在攝影機移動過程中，讓背景圖像的移動速度比前景圖像慢。   固定背景圖-滾動改變位置CSS transform12345.wrap &amp;#123;  backgr">
+<meta name="twitter:description" content="視差滾動網頁設計 - 學習筆記 努力是成功之母。 - 賽凡提斯   概述 - 視差滾動 當使用者滾動滑鼠滾輪（捲軸）時，將多層背景以不同速度移動，形成3D的垂直運動效果，造成視覺上的錯覺並增加趣味性。 原理是在二維場景中創建一個深度錯覺，在攝影機移動過程中，讓背景圖像的移動速度比前景圖像慢。">
 <meta name="twitter:image" content="http://tiida54.github.io/2018/01/22/視差滾動網頁設計-學習筆記/Parallax-scrolling.gif">
 
 
@@ -332,6 +332,7 @@
 <li>當使用者滾動滑鼠滾輪（捲軸）時，將多層背景以不同速度移動，形成3D的垂直運動效果，造成視覺上的錯覺並增加趣味性。</li>
 <li>原理是在二維場景中創建一個深度錯覺，在攝影機移動過程中，讓背景圖像的移動速度比前景圖像慢。</li>
 </ul>
+<a id="more"></a>
 <hr>
 <h2 id="固定背景圖-滾動改變位置CSS-transform"><a href="#固定背景圖-滾動改變位置CSS-transform" class="headerlink" title="固定背景圖-滾動改變位置CSS transform"></a>固定背景圖-滾動改變位置CSS transform</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrap</span> &#123;</span><br><span class="line">  <span class="attribute">background-position</span>: bottom center; <span class="comment">/*背景圖顯示位置*/</span></span><br><span class="line">  <span class="attribute">background-size</span>: cover; <span class="comment">/*圖片全畫面*/</span></span><br><span class="line">  <span class="attribute">background-attachment</span>: fixed; <span class="comment">/*固定背景圖*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bg scroll</span></span><br><span class="line">$(<span class="string">'#profiles'</span>).css(<span class="string">'background-position-y'</span>, -(scrollPos / <span class="number">2</span>) + <span class="string">'px'</span>)</span><br><span class="line">$(<span class="string">'#header-ele'</span>).css(<span class="string">'transform'</span>, <span class="string">'translateY( '</span> + (scrollPos / <span class="number">2</span>) + <span class="string">'px )'</span>)</span><br></pre></td></tr></table></figure>
