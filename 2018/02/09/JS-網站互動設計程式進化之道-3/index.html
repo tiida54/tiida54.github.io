@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="jhGR9g7yoPHCHNLRInYRrVrZV7d1wJepOzpqWfPbra8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-bulbcat.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-bulbcat.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-bulbcat.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo-bulbcat.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="share,Notes,Javascript," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="JavaScript&amp;amp;JQuery-網站互動設計程式進化之道-3學習筆記(3)  成立之難如登天，覆敗之易如燎毛 - 李綠園   引言原文書名：JavaScript &amp;amp; JQuery: Interactive Front-End Web Development作者：Jon Duckett譯者：謝銘倫出版社：碁峰出版日期：2017/02/24  JavaScript &amp;amp; J">
+<meta name="keywords" content="share,Notes,Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS-網站互動設計程式進化之道-3">
+<meta property="og:url" content="http://tiida54.github.io/2018/02/09/JS-網站互動設計程式進化之道-3/index.html">
+<meta property="og:site_name" content="BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat">
+<meta property="og:description" content="JavaScript&amp;amp;JQuery-網站互動設計程式進化之道-3學習筆記(3)  成立之難如登天，覆敗之易如燎毛 - 李綠園   引言原文書名：JavaScript &amp;amp; JQuery: Interactive Front-End Web Development作者：Jon Duckett譯者：謝銘倫出版社：碁峰出版日期：2017/02/24  JavaScript &amp;amp; J">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/James_Webb_Space_Telescope_Mirrors_Will_Piece_Together_Cosmic_Puzzles_%2830108124923%29.jpg/500px-James_Webb_Space_Telescope_Mirrors_Will_Piece_Together_Cosmic_Puzzles_%2830108124923%29.jpg">
+<meta property="og:updated_time" content="2018-02-09T15:16:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS-網站互動設計程式進化之道-3">
+<meta name="twitter:description" content="JavaScript&amp;amp;JQuery-網站互動設計程式進化之道-3學習筆記(3)  成立之難如登天，覆敗之易如燎毛 - 李綠園   引言原文書名：JavaScript &amp;amp; JQuery: Interactive Front-End Web Development作者：Jon Duckett譯者：謝銘倫出版社：碁峰出版日期：2017/02/24  JavaScript &amp;amp; J">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/James_Webb_Space_Telescope_Mirrors_Will_Piece_Together_Cosmic_Puzzles_%2830108124923%29.jpg/500px-James_Webb_Space_Telescope_Mirrors_Will_Piece_Together_Cosmic_Puzzles_%2830108124923%29.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tiida54.github.io/2018/02/09/JS-網站互動設計程式進化之道-3/"/>
+
+
+
+
+
+  <title>JS-網站互動設計程式進化之道-3 | BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-112178007-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">BulbCat｜Front-end engineer｜Web Design｜One today is worth two tomorrows</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tiida54.github.io/2018/02/09/JS-網站互動設計程式進化之道-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BulbCat.David">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS-網站互動設計程式進化之道-3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-02-09T23:10:44+08:00">
+                2018-02-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/James_Webb_Space_Telescope_Mirrors_Will_Piece_Together_Cosmic_Puzzles_%2830108124923%29.jpg/500px-James_Webb_Space_Telescope_Mirrors_Will_Piece_Together_Cosmic_Puzzles_%2830108124923%29.jpg" alt="The primary mirror of NASA&#39;s James Webb Space Telescope."></p>
+<h1 id="JavaScript-amp-JQuery-網站互動設計程式進化之道-3"><a href="#JavaScript-amp-JQuery-網站互動設計程式進化之道-3" class="headerlink" title="JavaScript&amp;JQuery-網站互動設計程式進化之道-3"></a>JavaScript&amp;JQuery-網站互動設計程式進化之道-3</h1><p>學習筆記(3)</p>
+<blockquote>
+<p>成立之難如登天，覆敗之易如燎毛 - 李綠園</p>
+</blockquote>
+<hr>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>原文書名：JavaScript &amp; JQuery: Interactive Front-End Web Development<br>作者：Jon Duckett<br>譯者：謝銘倫<br>出版社：碁峰<br>出版日期：2017/02/24</p>
+<ul>
+<li><a href="http://www.books.com.tw/products/0010744702?loc=P_asb_003" target="_blank" rel="noopener">JavaScript &amp; JQuery - 網站互動設計程式進化之道</a></li>
+<li><a href="http://javascriptbook.com/about/" target="_blank" rel="noopener">Welcome to a nicer way to learn JavaScript &amp; jQuery - about</a></li>
+</ul>
+<a id="more"></a>
+<hr>
+<h2 id="三、決策-Decisions-amp-迴圈-Loops"><a href="#三、決策-Decisions-amp-迴圈-Loops" class="headerlink" title="三、決策(Decisions) &amp; 迴圈(Loops)"></a>三、決策(Decisions) &amp; 迴圈(Loops)</h2><ul>
+<li><a href="http://javascriptbook.com/code/c04/" target="_blank" rel="noopener">相關範例 - Chapter 4: Decisions &amp; Loops</a></li>
+</ul>
+<h3 id="決策條件-Decisions"><a href="#決策條件-Decisions" class="headerlink" title="決策條件(Decisions)"></a>決策條件(Decisions)</h3><ul>
+<li>比較運算子</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">=== <span class="comment">//嚴格等於：確認資料型別和值均相同</span></span><br><span class="line">!== <span class="comment">//嚴格不等於：確認資料型別和值均不相同</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>邏輯運算子</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&amp;&amp; <span class="comment">//AND 多個條件是否成立</span></span><br><span class="line">|| <span class="comment">//OR 至少一個條件成立</span></span><br><span class="line">!  <span class="comment">//NOT 將布林值轉換為相反值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 捷徑運算：第一個條件已達成，則不需要再評估後面的條件</span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; anything <span class="comment">//必為false</span></span><br><span class="line"><span class="literal">true</span> || anything  <span class="comment">//必為true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>switch 條件判斷句</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> msg;        <span class="comment">// Message</span></span><br><span class="line"><span class="keyword">var</span> level = <span class="number">2</span>;  <span class="comment">// Level</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Determine message based on level</span></span><br><span class="line"><span class="keyword">switch</span> (level) &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">    msg = <span class="string">'Good luck on the first test'</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    msg = <span class="string">'Second of three - keep going!'</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    msg = <span class="string">'Final round, almost there!'</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    msg = <span class="string">'Good luck!'</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="資料型別"><a href="#資料型別" class="headerlink" title="資料型別"></a>資料型別</h3><ul>
+<li><strong>型別轉換：Javascript是弱型別，會試著將運算合理化</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//假值(falsy)會被視為false</span></span><br><span class="line"><span class="keyword">var</span> highScore = <span class="literal">false</span>;        <span class="comment">//傳統布林值false</span></span><br><span class="line"><span class="keyword">var</span> highScore = <span class="number">0</span>;            <span class="comment">//數字0</span></span><br><span class="line"><span class="keyword">var</span> highScore = <span class="string">''</span>;           <span class="comment">//空白值</span></span><br><span class="line"><span class="keyword">var</span> highScore = <span class="number">10</span>/<span class="string">'score'</span>;   <span class="comment">//NaN(視為數值但不是一個數字)</span></span><br><span class="line"><span class="keyword">var</span> highScore;                <span class="comment">//未被指定值的變數</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//幾乎除了以上例子，其他均於真值(truthy)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>檢測相等性和存在性</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//存在性</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.getElementById(<span class="string">'header'</span>))&#123;</span><br><span class="line">    <span class="comment">//元件存在，執行一些工作任務</span></span><br><span class="line">&#125;　<span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//元件不存在，執行另外的工作任務</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//相等性</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.getElementById(<span class="string">'header'</span>) == <span class="literal">true</span>)</span><br><span class="line"><span class="comment">//document.getElementById('header')會回傳一個物件，物件會被視為真值，但並不等同於布林值true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>捷徑值：邏輯運算取得真值，將停止運算並回傳結果值</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// artist非空字串是真值，故回傳結果值Rembrandt，artistA的值會與artist相同</span></span><br><span class="line"><span class="keyword">var</span> artist = <span class="string">'Rembrandt'</span>;</span><br><span class="line"><span class="keyword">var</span> artistA = (artist || &#123;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// artist為空字串是假值，artistA會成為一個空物件</span></span><br><span class="line"><span class="keyword">var</span> artist = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">var</span> artistA = (artist || &#123;&#125;);</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="迴圈-Loops"><a href="#迴圈-Loops" class="headerlink" title="迴圈(Loops)"></a>迴圈(Loops)</h3><ul>
+<li>while 迴圈：符合條件便持續執行區塊程式碼</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">1</span>;       <span class="comment">// Set counter to 1</span></span><br><span class="line"><span class="keyword">var</span> msg = <span class="string">''</span>;    <span class="comment">// Message</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Store 5 times table in a variable</span></span><br><span class="line"><span class="keyword">while</span> (i &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  msg += i + <span class="string">' x 5 = '</span> + (i * <span class="number">5</span>) + <span class="string">'&lt;br /&gt;'</span>;</span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>do while 迴圈：區塊中的程式碼至少執行一次</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">1</span>;       <span class="comment">// Set counter to 1</span></span><br><span class="line"><span class="keyword">var</span> msg = <span class="string">''</span>;    <span class="comment">// Message</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Store 5 times table in a variable</span></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  msg += i + <span class="string">' x 5 = '</span> + (i * <span class="number">5</span>) + <span class="string">'&lt;br /&gt;'</span>;</span><br><span class="line">    i++;</span><br><span class="line">&#125; <span class="keyword">while</span> (i &lt; <span class="number">1</span>);</span><br><span class="line"><span class="comment">// Note how this is already 1 and it still runs</span></span><br></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author：</strong>
+    BulbCat.David
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link：</strong>
+    <a href="http://tiida54.github.io/2018/02/09/JS-網站互動設計程式進化之道-3/" title="JS-網站互動設計程式進化之道-3">http://tiida54.github.io/2018/02/09/JS-網站互動設計程式進化之道-3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice： </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/share/" rel="tag"># share</a>
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/08/JS-網站互動設計程式進化之道-2/" rel="next" title="JS-網站互動設計程式進化之道-2">
+                <i class="fa fa-chevron-left"></i> JS-網站互動設計程式進化之道-2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.gif"
+                alt="BulbCat.David" />
+            
+              <p class="site-author-name" itemprop="name">BulbCat.David</p>
+              <p class="site-description motion-element" itemprop="description">BulbCat 邁向前端工程師的學習心得與技術分享｜Front-end engineer｜Web Design</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/tiida54" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-amp-JQuery-網站互動設計程式進化之道-3"><span class="nav-number">1.</span> <span class="nav-text">JavaScript&amp;JQuery-網站互動設計程式進化之道-3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、決策-Decisions-amp-迴圈-Loops"><span class="nav-number">1.2.</span> <span class="nav-text">三、決策(Decisions) &amp; 迴圈(Loops)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#決策條件-Decisions"><span class="nav-number">1.2.1.</span> <span class="nav-text">決策條件(Decisions)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#資料型別"><span class="nav-number">1.2.2.</span> <span class="nav-text">資料型別</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迴圈-Loops"><span class="nav-number">1.2.3.</span> <span class="nav-text">迴圈(Loops)</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BulbCat.David</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
