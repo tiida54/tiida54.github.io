@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="jhGR9g7yoPHCHNLRInYRrVrZV7d1wJepOzpqWfPbra8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-bulbcat.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-bulbcat.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-bulbcat.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo-bulbcat.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="share,Notes,Javascript," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="JavaScript&amp;amp;JQuery-網站互動設計程式進化之道-4學習筆記(4)  打造產品很困難。如果它很簡單，那每個人都來做了   引言原文書名：JavaScript &amp;amp; JQuery: Interactive Front-End Web Development作者：Jon Duckett譯者：謝銘倫出版社：碁峰出版日期：2017/02/24  JavaScript &amp;amp;">
+<meta name="keywords" content="share,Notes,Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS-網站互動設計程式進化之道-4">
+<meta property="og:url" content="http://tiida54.github.io/2018/02/10/JS-網站互動設計程式進化之道-4/index.html">
+<meta property="og:site_name" content="BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat">
+<meta property="og:description" content="JavaScript&amp;amp;JQuery-網站互動設計程式進化之道-4學習筆記(4)  打造產品很困難。如果它很簡單，那每個人都來做了   引言原文書名：JavaScript &amp;amp; JQuery: Interactive Front-End Web Development作者：Jon Duckett譯者：謝銘倫出版社：碁峰出版日期：2017/02/24  JavaScript &amp;amp;">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Shakedown_2008_Figure_1a.jpg/500px-Shakedown_2008_Figure_1a.jpg">
+<meta property="og:updated_time" content="2018-02-10T15:50:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS-網站互動設計程式進化之道-4">
+<meta name="twitter:description" content="JavaScript&amp;amp;JQuery-網站互動設計程式進化之道-4學習筆記(4)  打造產品很困難。如果它很簡單，那每個人都來做了   引言原文書名：JavaScript &amp;amp; JQuery: Interactive Front-End Web Development作者：Jon Duckett譯者：謝銘倫出版社：碁峰出版日期：2017/02/24  JavaScript &amp;amp;">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Shakedown_2008_Figure_1a.jpg/500px-Shakedown_2008_Figure_1a.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tiida54.github.io/2018/02/10/JS-網站互動設計程式進化之道-4/"/>
+
+
+
+
+
+  <title>JS-網站互動設計程式進化之道-4 | BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-112178007-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">BulbCat｜Front-end engineer｜Web Design｜One today is worth two tomorrows</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tiida54.github.io/2018/02/10/JS-網站互動設計程式進化之道-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BulbCat.David">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS-網站互動設計程式進化之道-4</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-02-10T23:43:54+08:00">
+                2018-02-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Shakedown_2008_Figure_1a.jpg/500px-Shakedown_2008_Figure_1a.jpg" alt="Snowboard figure at the 2008 Shakedown. Saint-Sauveur, Quebec (Canada)."></p>
+<h1 id="JavaScript-amp-JQuery-網站互動設計程式進化之道-4"><a href="#JavaScript-amp-JQuery-網站互動設計程式進化之道-4" class="headerlink" title="JavaScript&amp;JQuery-網站互動設計程式進化之道-4"></a>JavaScript&amp;JQuery-網站互動設計程式進化之道-4</h1><p>學習筆記(4)</p>
+<blockquote>
+<p>打造產品很困難。如果它很簡單，那每個人都來做了</p>
+</blockquote>
+<hr>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>原文書名：JavaScript &amp; JQuery: Interactive Front-End Web Development<br>作者：Jon Duckett<br>譯者：謝銘倫<br>出版社：碁峰<br>出版日期：2017/02/24</p>
+<ul>
+<li><a href="http://www.books.com.tw/products/0010744702?loc=P_asb_003" target="_blank" rel="noopener">JavaScript &amp; JQuery - 網站互動設計程式進化之道</a></li>
+<li><a href="http://javascriptbook.com/about/" target="_blank" rel="noopener">Welcome to a nicer way to learn JavaScript &amp; jQuery - about</a></li>
+</ul>
+<a id="more"></a>
+<hr>
+<h2 id="四、文件物件模型（Document-Object-Model-DOM）"><a href="#四、文件物件模型（Document-Object-Model-DOM）" class="headerlink" title="四、文件物件模型（Document Object Model , DOM）"></a>四、<a href="https://goo.gl/ECNOv4" target="_blank" rel="noopener">文件物件模型（Document Object Model , DOM）</a></h2><ul>
+<li><a href="http://javascriptbook.com/code/c05/" target="_blank" rel="noopener">相關範例 - Chapter 5: Document Object Model</a></li>
+</ul>
+<hr>
+<h3 id="節點類型"><a href="#節點類型" class="headerlink" title="節點類型"></a><a href="https://goo.gl/t7FKVc" target="_blank" rel="noopener">節點類型</a></h3><ul>
+<li>文件節點：document 節點</li>
+<li>標籤元件節點：HTML 標籤，改變結構</li>
+<li>屬性節點：改變 class 屬性觸發特效（屬於標籤元件的一部分）</li>
+<li>文字節點：text 節點，改變文字內容</li>
+</ul>
+<hr>
+<h3 id="存取元件節點"><a href="#存取元件節點" class="headerlink" title="存取元件節點"></a>存取元件節點</h3><ul>
+<li>選取一個標籤節點</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 利用ID唯一值選取元件</span></span><br><span class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.getElementById(<span class="string">'one'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用CSS選擇器，回傳第一個符合條件的元件</span></span><br><span class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.querySelector(<span class="string">'li.hot'</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>選取多個標籤節點</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 選取有指定class值的所有元件</span></span><br><span class="line"><span class="keyword">var</span> elements = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'hot'</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 選取有指定標籤的所有元件</span></span><br><span class="line"><span class="keyword">var</span> elements = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用CSS選擇器，選取所有符合條件的元件（靜態節點串列）</span></span><br><span class="line"><span class="keyword">var</span> els = <span class="built_in">document</span>.querySelectorAll(<span class="string">'li.hot'</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 判斷節點串列項目數量</span></span><br><span class="line"><span class="keyword">if</span> (elements.length &gt; <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="comment">// 回傳指定節點</span></span><br><span class="line">    <span class="keyword">var</span> el = elements[<span class="number">2</span>];</span><br><span class="line">    el.className = <span class="string">'cool'</span>;</span><br><span class="line">    els[<span class="number">1</span>].className = <span class="string">'cool'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 巡訪節點串列</span></span><br><span class="line"><span class="keyword">if</span> (hotItems.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; hotItems.length; i++) &#123;</span><br><span class="line">        hotItems\[i\].className = <span class="string">'cool'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>節點間的選取（DOM巡訪）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 選取目前節點的父節點</span></span><br><span class="line"><span class="keyword">var</span> parentItem = startItem.parentNode;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 選取前或後兄弟節點</span></span><br><span class="line"><span class="keyword">var</span> prevItem = startItem.previousSibling;</span><br><span class="line"><span class="keyword">var</span> nextItem = startItem.nextSibling;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 選取第一個或最後一個子節點</span></span><br><span class="line"><span class="keyword">var</span> firstItem = startItem.firstChild;</span><br><span class="line"><span class="keyword">var</span> lastItem = startItem.lastChild;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="操作元件節點"><a href="#操作元件節點" class="headerlink" title="操作元件節點"></a>操作元件節點</h3><ul>
+<li>存取/變更文字節點</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 存取文字節點</span></span><br><span class="line"><span class="keyword">var</span> elText  = itemTwo.firstChild.nodeValue;   </span><br><span class="line"><span class="comment">// 變更文字內容</span></span><br><span class="line">elText = elText.replace(<span class="string">'pine nuts'</span>, <span class="string">'kale'</span>);  </span><br><span class="line"><span class="comment">// 設定文字節點至元件中</span></span><br><span class="line">itemTwo.firstChild.nodeValue = elText;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>操作HTML節點內容</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 取得子元件及文字內容</span></span><br><span class="line"><span class="keyword">var</span> itemContent = firstItem.innerHTML;</span><br><span class="line"><span class="comment">// 變更內容</span></span><br><span class="line">firstItem.innerHTML = <span class="string">'&lt;a href=\\"http://example.org\\"&gt;'</span> + itemContent + <span class="string">'&lt;/a&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 只存取文字內容</span></span><br><span class="line"><span class="keyword">var</span> showTextContent = firstItem.textContent;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// DOM操作</span></span><br><span class="line"><span class="comment">// 建立新元件節點</span></span><br><span class="line"><span class="keyword">var</span> newEl = <span class="built_in">document</span>.createElement(<span class="string">'li'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立文字節點</span></span><br><span class="line"><span class="keyword">var</span> newText = <span class="built_in">document</span>.createTextNode(<span class="string">'quinoa'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 將文字節點加入元件節點下</span></span><br><span class="line">newEl.appendChild(newText);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 找出新節點要加入的位置</span></span><br><span class="line"><span class="keyword">var</span> position = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'ul'</span>)[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入新節點</span></span><br><span class="line">position.appendChild(newEl);</span><br><span class="line"></span><br><span class="line"><span class="comment">//找出容納節點(父節點)</span></span><br><span class="line"><span class="keyword">var</span> containerEl = removeEl.parentNode;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 移除元件節點(子節點)</span></span><br><span class="line">containerEl.removeChild(removeEl);</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="屬性節點"><a href="#屬性節點" class="headerlink" title="屬性節點"></a>屬性節點</h3><ul>
+<li>存取變更屬性值</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 檢查屬性值是否存在</span></span><br><span class="line"><span class="keyword">if</span> (firstItem.hasAttribute(<span class="string">'class'</span>)) &#123;</span><br><span class="line">    <span class="comment">//取得屬性值</span></span><br><span class="line">    <span class="keyword">var</span> attr = firstItem.getAttribute(<span class="string">'class'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> firstItem = <span class="built_in">document</span>.getElementById(<span class="string">'one'</span>);</span><br><span class="line"><span class="comment">//變更class屬性值</span></span><br><span class="line">firstItem.className = <span class="string">'complete'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fourthItem = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>).item(<span class="number">3</span>);</span><br><span class="line"><span class="comment">//加入class屬性值</span></span><br><span class="line">fourthItem.setAttribute(<span class="string">'class'</span>, <span class="string">'cool'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (firstItem.hasAttribute(<span class="string">'class'</span>)) &#123;</span><br><span class="line">    <span class="comment">//移除class屬性</span></span><br><span class="line">    firstItem.removeAttribute(<span class="string">'class'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author：</strong>
+    BulbCat.David
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link：</strong>
+    <a href="http://tiida54.github.io/2018/02/10/JS-網站互動設計程式進化之道-4/" title="JS-網站互動設計程式進化之道-4">http://tiida54.github.io/2018/02/10/JS-網站互動設計程式進化之道-4/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice： </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/share/" rel="tag"># share</a>
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/09/JS-網站互動設計程式進化之道-3/" rel="next" title="JS-網站互動設計程式進化之道-3">
+                <i class="fa fa-chevron-left"></i> JS-網站互動設計程式進化之道-3
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.gif"
+                alt="BulbCat.David" />
+            
+              <p class="site-author-name" itemprop="name">BulbCat.David</p>
+              <p class="site-description motion-element" itemprop="description">BulbCat 邁向前端工程師的學習心得與技術分享｜Front-end engineer｜Web Design</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/tiida54" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-amp-JQuery-網站互動設計程式進化之道-4"><span class="nav-number">1.</span> <span class="nav-text">JavaScript&amp;JQuery-網站互動設計程式進化之道-4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、文件物件模型（Document-Object-Model-DOM）"><span class="nav-number">1.2.</span> <span class="nav-text">四、文件物件模型（Document Object Model , DOM）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#節點類型"><span class="nav-number">1.2.1.</span> <span class="nav-text">節點類型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存取元件節點"><span class="nav-number">1.2.2.</span> <span class="nav-text">存取元件節點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作元件節點"><span class="nav-number">1.2.3.</span> <span class="nav-text">操作元件節點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屬性節點"><span class="nav-number">1.2.4.</span> <span class="nav-text">屬性節點</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BulbCat.David</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
