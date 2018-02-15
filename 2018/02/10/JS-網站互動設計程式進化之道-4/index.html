@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="JavaScript&amp;amp;JQuery-網站互動設計程式進化之道-4學習筆記(4)  打造產品很困難。如果它很簡單，那每個人都來做了   引言原文書名：JavaScript &amp;amp; JQuery: Interactive Front-End Web Development作者：Jon Duckett譯者：謝銘倫出版社：碁峰出版日期：2017/02/24  JavaScript &amp;amp;">
+<meta name="description" content="JavaScript&amp;amp;JQuery-網站互動設計程式進化之道-Document Object Model學習筆記(4)  打造產品很困難。如果它很簡單，那每個人都來做了   引言原文書名：JavaScript &amp;amp; JQuery: Interactive Front-End Web Development作者：Jon Duckett譯者：謝銘倫出版社：碁峰出版日期：2017/02/">
 <meta name="keywords" content="share,Notes,Javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS-網站互動設計程式進化之道-4">
+<meta property="og:title" content="JS-網站互動設計程式進化之道-Document Object Model">
 <meta property="og:url" content="http://tiida54.github.io/2018/02/10/JS-網站互動設計程式進化之道-4/index.html">
 <meta property="og:site_name" content="BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat">
-<meta property="og:description" content="JavaScript&amp;amp;JQuery-網站互動設計程式進化之道-4學習筆記(4)  打造產品很困難。如果它很簡單，那每個人都來做了   引言原文書名：JavaScript &amp;amp; JQuery: Interactive Front-End Web Development作者：Jon Duckett譯者：謝銘倫出版社：碁峰出版日期：2017/02/24  JavaScript &amp;amp;">
+<meta property="og:description" content="JavaScript&amp;amp;JQuery-網站互動設計程式進化之道-Document Object Model學習筆記(4)  打造產品很困難。如果它很簡單，那每個人都來做了   引言原文書名：JavaScript &amp;amp; JQuery: Interactive Front-End Web Development作者：Jon Duckett譯者：謝銘倫出版社：碁峰出版日期：2017/02/">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Shakedown_2008_Figure_1a.jpg/500px-Shakedown_2008_Figure_1a.jpg">
-<meta property="og:updated_time" content="2018-02-10T15:54:31.000Z">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/428px-DOM-model.svg.png">
+<meta property="og:updated_time" content="2018-02-15T15:31:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS-網站互動設計程式進化之道-4">
-<meta name="twitter:description" content="JavaScript&amp;amp;JQuery-網站互動設計程式進化之道-4學習筆記(4)  打造產品很困難。如果它很簡單，那每個人都來做了   引言原文書名：JavaScript &amp;amp; JQuery: Interactive Front-End Web Development作者：Jon Duckett譯者：謝銘倫出版社：碁峰出版日期：2017/02/24  JavaScript &amp;amp;">
-<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Shakedown_2008_Figure_1a.jpg/500px-Shakedown_2008_Figure_1a.jpg">
+<meta name="twitter:title" content="JS-網站互動設計程式進化之道-Document Object Model">
+<meta name="twitter:description" content="JavaScript&amp;amp;JQuery-網站互動設計程式進化之道-Document Object Model學習筆記(4)  打造產品很困難。如果它很簡單，那每個人都來做了   引言原文書名：JavaScript &amp;amp; JQuery: Interactive Front-End Web Development作者：Jon Duckett譯者：謝銘倫出版社：碁峰出版日期：2017/02/">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/428px-DOM-model.svg.png">
 
 
 
@@ -130,7 +130,7 @@
 
 
 
-  <title>JS-網站互動設計程式進化之道-4 | BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat</title>
+  <title>JS-網站互動設計程式進化之道-Document Object Model | BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat</title>
   
 
 
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS-網站互動設計程式進化之道-4</h1>
+          <h1 class="post-title" itemprop="name headline">JS-網站互動設計程式進化之道-Document Object Model</h1>
         
 
         <div class="post-meta">
@@ -323,8 +323,8 @@
       
 
       
-        <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Shakedown_2008_Figure_1a.jpg/500px-Shakedown_2008_Figure_1a.jpg" alt="Snowboard figure at the 2008 Shakedown. Saint-Sauveur, Quebec (Canada)."></p>
-<h1 id="JavaScript-amp-JQuery-網站互動設計程式進化之道-4"><a href="#JavaScript-amp-JQuery-網站互動設計程式進化之道-4" class="headerlink" title="JavaScript&amp;JQuery-網站互動設計程式進化之道-4"></a>JavaScript&amp;JQuery-網站互動設計程式進化之道-4</h1><p>學習筆記(4)</p>
+        <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/428px-DOM-model.svg.png" alt="Document Object Model"></p>
+<h1 id="JavaScript-amp-JQuery-網站互動設計程式進化之道-Document-Object-Model"><a href="#JavaScript-amp-JQuery-網站互動設計程式進化之道-Document-Object-Model" class="headerlink" title="JavaScript&amp;JQuery-網站互動設計程式進化之道-Document Object Model"></a>JavaScript&amp;JQuery-網站互動設計程式進化之道-Document Object Model</h1><p>學習筆記(4)</p>
 <blockquote>
 <p>打造產品很困難。如果它很簡單，那每個人都來做了</p>
 </blockquote>
@@ -394,7 +394,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link：</strong>
-    <a href="http://tiida54.github.io/2018/02/10/JS-網站互動設計程式進化之道-4/" title="JS-網站互動設計程式進化之道-4">http://tiida54.github.io/2018/02/10/JS-網站互動設計程式進化之道-4/</a>
+    <a href="http://tiida54.github.io/2018/02/10/JS-網站互動設計程式進化之道-4/" title="JS-網站互動設計程式進化之道-Document Object Model">http://tiida54.github.io/2018/02/10/JS-網站互動設計程式進化之道-4/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice： </strong>
@@ -426,8 +426,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/09/JS-網站互動設計程式進化之道-3/" rel="next" title="JS-網站互動設計程式進化之道-3">
-                <i class="fa fa-chevron-left"></i> JS-網站互動設計程式進化之道-3
+              <a href="/2018/02/09/JS-網站互動設計程式進化之道-3/" rel="next" title="JS-網站互動設計程式進化之道-Decisions & Loops">
+                <i class="fa fa-chevron-left"></i> JS-網站互動設計程式進化之道-Decisions & Loops
               </a>
             
           </div>
@@ -436,8 +436,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/11/JS-網站互動設計程式進化之道-5/" rel="prev" title="JS-網站互動設計程式進化之道-5">
-                JS-網站互動設計程式進化之道-5 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/11/JS-網站互動設計程式進化之道-5/" rel="prev" title="JS-網站互動設計程式進化之道-Events">
+                JS-網站互動設計程式進化之道-Events <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -519,7 +519,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -581,7 +581,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-amp-JQuery-網站互動設計程式進化之道-4"><span class="nav-number">1.</span> <span class="nav-text">JavaScript&amp;JQuery-網站互動設計程式進化之道-4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、文件物件模型（Document-Object-Model-DOM）"><span class="nav-number">1.2.</span> <span class="nav-text">五、文件物件模型（Document Object Model , DOM）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#節點類型"><span class="nav-number">1.2.1.</span> <span class="nav-text">節點類型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存取元件節點"><span class="nav-number">1.2.2.</span> <span class="nav-text">存取元件節點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作元件節點"><span class="nav-number">1.2.3.</span> <span class="nav-text">操作元件節點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屬性節點"><span class="nav-number">1.2.4.</span> <span class="nav-text">屬性節點</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-amp-JQuery-網站互動設計程式進化之道-Document-Object-Model"><span class="nav-number">1.</span> <span class="nav-text">JavaScript&amp;JQuery-網站互動設計程式進化之道-Document Object Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、文件物件模型（Document-Object-Model-DOM）"><span class="nav-number">1.2.</span> <span class="nav-text">五、文件物件模型（Document Object Model , DOM）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#節點類型"><span class="nav-number">1.2.1.</span> <span class="nav-text">節點類型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存取元件節點"><span class="nav-number">1.2.2.</span> <span class="nav-text">存取元件節點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作元件節點"><span class="nav-number">1.2.3.</span> <span class="nav-text">操作元件節點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屬性節點"><span class="nav-number">1.2.4.</span> <span class="nav-text">屬性節點</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
