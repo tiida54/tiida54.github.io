@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="jhGR9g7yoPHCHNLRInYRrVrZV7d1wJepOzpqWfPbra8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-bulbcat.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-bulbcat.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-bulbcat.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo-bulbcat.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ASPNET,Note," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="ASP.NET Web Pages ASP.NET 支持三種不同的開發模式：Web Pages（Web 頁面）、MVC（Model View Controller 模型-視圖-控制器）、Web Forms（Web 窗體）   ASP.NET-Razor 標記 Razor 是一種將基於服務器的代碼添加到網頁中的標記語法 Razor 具有傳統ASP.NET 標記的功能，但更容易使用並且更容易學習 R">
+<meta name="keywords" content="ASPNET,Note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ASPNET-WebPages-學習筆記">
+<meta property="og:url" content="http://tiida54.github.io/2018/02/22/ASPNET-WebPages-學習筆記/index.html">
+<meta property="og:site_name" content="BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat">
+<meta property="og:description" content="ASP.NET Web Pages ASP.NET 支持三種不同的開發模式：Web Pages（Web 頁面）、MVC（Model View Controller 模型-視圖-控制器）、Web Forms（Web 窗體）   ASP.NET-Razor 標記 Razor 是一種將基於服務器的代碼添加到網頁中的標記語法 Razor 具有傳統ASP.NET 標記的功能，但更容易使用並且更容易學習 R">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://tiida54.github.io/2018/02/22/ASPNET-WebPages-學習筆記/ASP-NET.jpg">
+<meta property="og:updated_time" content="2018-02-22T15:29:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ASPNET-WebPages-學習筆記">
+<meta name="twitter:description" content="ASP.NET Web Pages ASP.NET 支持三種不同的開發模式：Web Pages（Web 頁面）、MVC（Model View Controller 模型-視圖-控制器）、Web Forms（Web 窗體）   ASP.NET-Razor 標記 Razor 是一種將基於服務器的代碼添加到網頁中的標記語法 Razor 具有傳統ASP.NET 標記的功能，但更容易使用並且更容易學習 R">
+<meta name="twitter:image" content="http://tiida54.github.io/2018/02/22/ASPNET-WebPages-學習筆記/ASP-NET.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tiida54.github.io/2018/02/22/ASPNET-WebPages-學習筆記/"/>
+
+
+
+
+
+  <title>ASPNET-WebPages-學習筆記 | BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-112178007-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">BulbCat｜Front-end engineer｜Web Design｜One today is worth two tomorrows</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tiida54.github.io/2018/02/22/ASPNET-WebPages-學習筆記/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BulbCat.David">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ASPNET-WebPages-學習筆記</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-02-22T22:59:53+08:00">
+                2018-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <img src="/2018/02/22/ASPNET-WebPages-學習筆記/ASP-NET.jpg">
+<h1 id="ASP-NET-Web-Pages"><a href="#ASP-NET-Web-Pages" class="headerlink" title="ASP.NET Web Pages"></a>ASP.NET Web Pages</h1><blockquote>
+<p>ASP.NET 支持三種不同的開發模式：<br>Web Pages（Web 頁面）、MVC（Model View Controller 模型-視圖-控制器）、Web Forms（Web 窗體）</p>
+</blockquote>
+<hr>
+<h2 id="ASP-NET-Razor-標記"><a href="#ASP-NET-Razor-標記" class="headerlink" title="ASP.NET-Razor 標記"></a>ASP.NET-Razor 標記</h2><ul>
+<li>Razor 是一種將基於服務器的代碼添加到網頁中的標記語法</li>
+<li>Razor 具有傳統ASP.NET 標記的功能，但更容易使用並且更容易學習</li>
+<li>Razor 是一種服務器端標記語法，與ASP 和PHP 很像</li>
+<li>Razor 支持C# 和Visual Basic 編程語言</li>
+</ul>
+<h3 id="主要的Razor-C-語法規則"><a href="#主要的Razor-C-語法規則" class="headerlink" title="主要的Razor C# 語法規則"></a>主要的Razor C# 語法規則</h3><ul>
+<li>Razor 代碼塊包含在@{ … } 中</li>
+<li>內聯表達式（變量和函數）以@ 開頭</li>
+<li>代碼語句用分號結束</li>
+<li>變量使用var 關鍵字聲明</li>
+<li>字符串用引號括起來</li>
+<li>C# 代碼區分大小寫</li>
+<li>C# 文件的擴展名是.cshtml</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!\-\- Single statement block --&gt;</span><br><span class="line">@&#123; var myMessage = &quot;Hello World&quot;; &#125;</span><br><span class="line"></span><br><span class="line">&lt;!\-\- Inline expression or variable --&gt;</span><br><span class="line">&lt;p&gt;The value of myMessage is: @myMessage &lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;!\-\- Multi-statement block --&gt;</span><br><span class="line">@&#123;</span><br><span class="line">var greeting = &quot;Welcome to our site!&quot;;</span><br><span class="line">var weekDay = DateTime.Now.DayOfWeek;</span><br><span class="line">var greetingMessage = greeting + &quot; Today is: &quot; + weekDay;</span><br><span class="line">&#125;</span><br><span class="line">&lt;p&gt;The greeting is: @greetingMessage &lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="主要的Razor-VB-語法規則"><a href="#主要的Razor-VB-語法規則" class="headerlink" title="主要的Razor VB 語法規則"></a>主要的Razor VB 語法規則</h3><ul>
+<li>Razor 代碼塊包含在@Code … End Code 中</li>
+<li>內聯表達式（變量和函數）以@ 開頭</li>
+<li>變量使用Dim 關鍵字聲明</li>
+<li>字符串用引號括起來</li>
+<li>VB 代碼不區分大小寫</li>
+<li>VB 文件的擴展名是.vbhtml</li>
+</ul>
+<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!\-\- <span class="built_in">Single</span> statement block --&gt;</span><br><span class="line">@Code <span class="keyword">dim</span> myMessage = <span class="string">"Hello World"</span> <span class="keyword">End</span> Code</span><br><span class="line"></span><br><span class="line">&lt;!\-\- Inline expression <span class="keyword">or</span> variable --&gt;</span><br><span class="line">&lt;p&gt;The value <span class="keyword">of</span> myMessage <span class="keyword">is</span>: @myMessage &lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;!\-\- Multi-statement block --&gt;</span><br><span class="line">@Code</span><br><span class="line"><span class="keyword">dim</span> greeting = <span class="string">"Welcome to our site!"</span></span><br><span class="line"><span class="keyword">dim</span> weekDay = DateTime.Now.DayOfWeek</span><br><span class="line"><span class="keyword">dim</span> greetingMessage = greeting &amp; <span class="string">" Today is: "</span> &amp; weekDay</span><br><span class="line"><span class="keyword">End</span> Code</span><br><span class="line"></span><br><span class="line">&lt;p&gt;The greeting <span class="keyword">is</span>: @greetingMessage &lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Content-Blocks（內容塊）"><a href="#Content-Blocks（內容塊）" class="headerlink" title="Content Blocks（內容塊）"></a>Content Blocks（內容塊）</h2><ul>
+<li>通過Web Pages，您可以使用@RenderPage()方法從不同的文件導入內容。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">@RenderPage(&quot;header.cshtml&quot;)</span><br><span class="line">&lt;h1&gt;Hello Web Pages&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;This is a paragraph&lt;/p&gt;</span><br><span class="line">@RenderPage(&quot;footer.cshtml&quot;)</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Layout-Page（佈局頁）"><a href="#Layout-Page（佈局頁）" class="headerlink" title="Layout Page（佈局頁）"></a>Layout Page（佈局頁）</h2><ul>
+<li>佈局頁中使用<strong>@RenderBody()</strong>方法嵌入內容頁</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p&gt;This is header text&lt;/p&gt;</span><br><span class="line">@RenderBody()</span><br><span class="line">&lt;p&gt;&amp;copy; 2012 W3CSchool. All rights reserved.&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@&#123;Layout=&quot;Layout.cshtml&quot;;&#125;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;Welcome to W3CSchool.cc&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat.</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="文件夾結構"><a href="#文件夾結構" class="headerlink" title="文件夾結構"></a>文件夾結構</h2><p>下面是典型ASP.NET網站文件夾結構：</p>
+<ul>
+<li>“Account” 文件夾包含登錄和安全文件</li>
+<li>“App_Data” 文件夾包含數據庫和數據文件</li>
+<li>“Images” 文件夾包含圖片</li>
+<li>“Scripts” 文件夾包含瀏覽器腳本</li>
+<li>“Shared” 文件夾包含公共的文件（比如佈局和样式文件）</li>
+</ul>
+<h3 id="Href-方法"><a href="#Href-方法" class="headerlink" title="Href 方法"></a>Href 方法</h3><ul>
+<li>Href 方法將代碼中的使用的路徑轉換成瀏覽器可以理解的路徑（瀏覽器無法理解~ 運算符）。</li>
+<li>您可以使用Href 方法創建資源（比如圖像文件和CSS 文件）的路徑。</li>
+<li>一般會在HTML 中的<code>&lt;a&gt;、&lt;img&gt; 和&lt;link&gt;</code> 元素中使用此方法:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@&#123;var myStyleSheet = &quot;~/Shared/Site.css&quot;;&#125;</span><br><span class="line"></span><br><span class="line">&lt;!\-\- This creates a link to the CSS file. --&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;@Href(myStyleSheet)&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;!\-\- Same as : --&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/Shared/Site.css&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="在Web-啟動之前：-AppStart"><a href="#在Web-啟動之前：-AppStart" class="headerlink" title="在Web 啟動之前：_AppStart"></a>在Web 啟動之前：_AppStart</h2><ul>
+<li>_AppStart 的典型用途是啟動代碼和初始化全局數值（比如計數器和全局名稱）。</li>
+</ul>
+<h2 id="在每一個頁面之前：-PageStart"><a href="#在每一個頁面之前：-PageStart" class="headerlink" title="在每一個頁面之前：_PageStart"></a>在每一個頁面之前：_PageStart</h2><ul>
+<li>_PageStart 的典型用途是為一個文件夾中的所有頁面設置佈局頁面，或者在運行某個頁面之前檢查用戶是否已經登錄。</li>
+</ul>
+<h3 id="Page-對象的Page-屬性"><a href="#Page-對象的Page-屬性" class="headerlink" title="Page 對象的Page 屬性"></a>Page 對象的Page 屬性</h3><ul>
+<li>Page 對象的Page 屬性，提供了對頁面和佈局頁之間共享的數據的類似屬性訪問。</li>
+<li>您可以對Page 屬性使用（添加）您自己的屬性：<ul>
+<li>Page.Title</li>
+<li>Page.Version</li>
+<li>Page.anythingyoulike</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@&#123;</span><br><span class="line">Layout=&quot;~/Shared/Layout.cshtml&quot;;</span><br><span class="line">Page.Title=&quot;Home Page&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;Welcome to W3CSchool.cc&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;h2&gt;Web Site Main Ingredients&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;A Home Page (Default.cshtml)&lt;/p&gt;</span><br><span class="line">&lt;p&gt;A Layout File (Layout.cshtml)&lt;/p&gt;</span><br><span class="line">&lt;p&gt;A Style Sheet (Site.css)&lt;/p&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt; @Page.Title &lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">@RenderBody()</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html</span><br></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author：</strong>
+    BulbCat.David
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link：</strong>
+    <a href="http://tiida54.github.io/2018/02/22/ASPNET-WebPages-學習筆記/" title="ASPNET-WebPages-學習筆記">http://tiida54.github.io/2018/02/22/ASPNET-WebPages-學習筆記/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice： </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ASPNET/" rel="tag"># ASPNET</a>
+          
+            <a href="/tags/Note/" rel="tag"># Note</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/21/JS30-Day13-Sticky-Nav/" rel="next" title="JS30-Day13-Sticky-Nav">
+                <i class="fa fa-chevron-left"></i> JS30-Day13-Sticky-Nav
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.gif"
+                alt="BulbCat.David" />
+            
+              <p class="site-author-name" itemprop="name">BulbCat.David</p>
+              <p class="site-description motion-element" itemprop="description">BulbCat 邁向前端工程師的學習心得與技術分享｜Front-end engineer｜Web Design</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/tiida54" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ASP-NET-Web-Pages"><span class="nav-number">1.</span> <span class="nav-text">ASP.NET Web Pages</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ASP-NET-Razor-標記"><span class="nav-number">1.1.</span> <span class="nav-text">ASP.NET-Razor 標記</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主要的Razor-C-語法規則"><span class="nav-number">1.1.1.</span> <span class="nav-text">主要的Razor C# 語法規則</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要的Razor-VB-語法規則"><span class="nav-number">1.1.2.</span> <span class="nav-text">主要的Razor VB 語法規則</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content-Blocks（內容塊）"><span class="nav-number">1.2.</span> <span class="nav-text">Content Blocks（內容塊）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Layout-Page（佈局頁）"><span class="nav-number">1.3.</span> <span class="nav-text">Layout Page（佈局頁）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件夾結構"><span class="nav-number">1.4.</span> <span class="nav-text">文件夾結構</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Href-方法"><span class="nav-number">1.4.1.</span> <span class="nav-text">Href 方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在Web-啟動之前：-AppStart"><span class="nav-number">1.5.</span> <span class="nav-text">在Web 啟動之前：_AppStart</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在每一個頁面之前：-PageStart"><span class="nav-number">1.6.</span> <span class="nav-text">在每一個頁面之前：_PageStart</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Page-對象的Page-屬性"><span class="nav-number">1.6.1.</span> <span class="nav-text">Page 對象的Page 屬性</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BulbCat.David</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
