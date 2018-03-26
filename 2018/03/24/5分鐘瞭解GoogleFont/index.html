@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="5分鐘瞭解GoogleFont 大家都努力的考試，也教下一代如何考試，然而大家卻什麼都不懂。 - 理察·費曼">
+<meta name="description" content="5分鐘學會Google Fonts 大家都努力的考試，也教下一代如何考試，然而大家卻什麼都不懂。 - 理察·費曼">
 <meta name="keywords" content="Developer,FrontEnd">
 <meta property="og:type" content="article">
 <meta property="og:title" content="5分鐘瞭解GoogleFont">
 <meta property="og:url" content="http://tiida54.github.io/2018/03/24/5分鐘瞭解GoogleFont/index.html">
 <meta property="og:site_name" content="BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat">
-<meta property="og:description" content="5分鐘瞭解GoogleFont 大家都努力的考試，也教下一代如何考試，然而大家卻什麼都不懂。 - 理察·費曼">
+<meta property="og:description" content="5分鐘學會Google Fonts 大家都努力的考試，也教下一代如何考試，然而大家卻什麼都不懂。 - 理察·費曼">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="http://tiida54.github.io/2018/03/24/5分鐘瞭解GoogleFont/google_fonts.png">
-<meta property="og:updated_time" content="2018-03-24T15:51:19.000Z">
+<meta property="og:updated_time" content="2018-03-26T15:50:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="5分鐘瞭解GoogleFont">
-<meta name="twitter:description" content="5分鐘瞭解GoogleFont 大家都努力的考試，也教下一代如何考試，然而大家卻什麼都不懂。 - 理察·費曼">
+<meta name="twitter:description" content="5分鐘學會Google Fonts 大家都努力的考試，也教下一代如何考試，然而大家卻什麼都不懂。 - 理察·費曼">
 <meta name="twitter:image" content="http://tiida54.github.io/2018/03/24/5分鐘瞭解GoogleFont/google_fonts.png">
 
 
@@ -324,12 +324,32 @@
 
       
         <img src="/2018/03/24/5分鐘瞭解GoogleFont/google_fonts.png">
-<h1 id="5分鐘瞭解GoogleFont"><a href="#5分鐘瞭解GoogleFont" class="headerlink" title="5分鐘瞭解GoogleFont"></a>5分鐘瞭解GoogleFont</h1><blockquote>
+<h1 id="5分鐘學會Google-Fonts"><a href="#5分鐘學會Google-Fonts" class="headerlink" title="5分鐘學會Google Fonts"></a>5分鐘學會<a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a></h1><blockquote>
 <p>大家都努力的考試，也教下一代如何考試，然而大家卻什麼都不懂。 - <a href="https://goo.gl/WLF0F2" target="_blank" rel="noopener">理察·費曼</a></p>
 </blockquote>
 <a id="more"></a>
 <hr>
-<h2 id="GoogleFont"><a href="#GoogleFont" class="headerlink" title="GoogleFont"></a><a href="https://goo.gl/DtwDcM" target="_blank" rel="noopener">GoogleFont</a></h2>
+<h2 id="GoogleFont"><a href="#GoogleFont" class="headerlink" title="GoogleFont"></a><a href="https://goo.gl/DtwDcM" target="_blank" rel="noopener">GoogleFont</a></h2><ul>
+<li><a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" rel="noopener">Get Started with the Google Fonts API</a></li>
+</ul>
+<hr>
+<h2 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h2><ul>
+<li>只需兩步即可開始使用Google Fonts API：</li>
+</ul>
+<p>1.添加樣式請求所需的Web字體：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 網址 + 請求字體(多個用 | 隔開)--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com/css?family=Roboto"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">  </span></span><br><span class="line"><span class="undefined">@import url('https://fonts.googleapis.com/css?family=Roboto');  </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>2.在樣式表中使用請求的Web字體對元素進行樣式設置：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123; </span><br><span class="line">    <span class="attribute">font-family</span>:   <span class="string">'Tangerine'</span>, serif;</span><br><span class="line">    <span class="attribute">font-size</span>:   <span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">text-shadow</span>:   <span class="number">4px</span>   <span class="number">4px</span>   <span class="number">4px</span>   <span class="number">#aaa</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>以CSS樣式指定Web字體時，請至少準備一個後備Web安全字體，以避免出現意外行為。</li>
+<li>添加一個CSS通用字體名稱<code>serif</code>或<code>sans-serif</code>到列表的末尾，這樣瀏覽器需要的話就可以默認字體。</li>
+</ul>
+<hr>
+<h2 id="瀏覽器載入差異-默認行為"><a href="#瀏覽器載入差異-默認行為" class="headerlink" title="瀏覽器載入差異(默認行為)"></a>瀏覽器載入差異(默認行為)</h2><h3 id="Google-Chrome-Apple-Safari-IE"><a href="#Google-Chrome-Apple-Safari-IE" class="headerlink" title="Google Chrome , Apple Safari , IE"></a>Google Chrome , Apple Safari , IE</h3><p>會先呈現頁面的其餘部分，但在加載字體之前，它會顯示一個空格來代替使用該字體的文本。</p>
+<h3 id="Mozilla-Firefox"><a href="#Mozilla-Firefox" class="headerlink" title="Mozilla Firefox"></a>Mozilla Firefox</h3><p><strong>Firefox首先以默認字體顯示文本，然後在加載字體後重新呈現文本。</strong><br>這種行為被稱為 “ flash of unstyled text “ 。</p>
+<hr>
+
       
     </div>
     
@@ -534,7 +554,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#5分鐘瞭解GoogleFont"><span class="nav-number">1.</span> <span class="nav-text">5分鐘瞭解GoogleFont</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GoogleFont"><span class="nav-number">1.1.</span> <span class="nav-text">GoogleFont</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#5分鐘學會Google-Fonts"><span class="nav-number">1.</span> <span class="nav-text">5分鐘學會Google Fonts</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GoogleFont"><span class="nav-number">1.1.</span> <span class="nav-text">GoogleFont</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用方式"><span class="nav-number">1.2.</span> <span class="nav-text">引用方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#瀏覽器載入差異-默認行為"><span class="nav-number">1.3.</span> <span class="nav-text">瀏覽器載入差異(默認行為)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Google-Chrome-Apple-Safari-IE"><span class="nav-number">1.3.1.</span> <span class="nav-text">Google Chrome , Apple Safari , IE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mozilla-Firefox"><span class="nav-number">1.3.2.</span> <span class="nav-text">Mozilla Firefox</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
