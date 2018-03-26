@@ -90,7 +90,7 @@
 <meta property="og:description" content="10分鐘學會Chart.js The scientist has a lot of experience with ignorance and doubt and uncertainty, and this experience is of very great importance, I think. - 理察·費曼">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="http://tiida54.github.io/2018/03/21/10分鐘學會Chart-js/chartjs.jpg">
-<meta property="og:updated_time" content="2018-03-21T15:56:31.000Z">
+<meta property="og:updated_time" content="2018-03-26T15:31:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="10分鐘學會Chart.js">
 <meta name="twitter:description" content="10分鐘學會Chart.js The scientist has a lot of experience with ignorance and doubt and uncertainty, and this experience is of very great importance, I think. - 理察·費曼">
@@ -329,8 +329,37 @@
 </blockquote>
 <a id="more"></a>
 <hr>
-<h2 id="chart-js"><a href="#chart-js" class="headerlink" title="chart.js"></a><a href="http://www.chartjs.org/" target="_blank" rel="noopener">chart.js</a></h2><hr>
-
+<h2 id="chart-js"><a href="#chart-js" class="headerlink" title="chart.js"></a><a href="http://www.chartjs.org/" target="_blank" rel="noopener">chart.js</a></h2><ul>
+<li>Chart.js是一款彈性很高的圖表JavaScript library，</li>
+<li><a href="http://www.chartjs.org/docs/latest/charts/" target="_blank" rel="noopener">支援基本常見的統計圖表類型</a> - 折線圖(line) , 長條圖(bar) , 雷達圖(radar) , 圓餅圖(pie &amp; doughnut) , 圓面積圖(polarArea) , 氣泡圖(bubble) , 分布圖(scatter) , 混合圖形</li>
+</ul>
+<hr>
+<h2 id="使用Chart-js"><a href="#使用Chart-js" class="headerlink" title="使用Chart.js"></a>使用Chart.js</h2><ul>
+<li>使用 Chart.js CDN</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>載入Chart.js之後，我們可以先將要顯示圖表的位置加入一個canvas</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myChart"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"400"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Chart.js接受多種取得canvas的方式，也支援混合類型的圖表</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ctx = <span class="built_in">document</span>.getElementById(<span class="string">'myChart'</span>); </span><br><span class="line"><span class="keyword">var</span> ctx = <span class="built_in">document</span>.getElementById(<span class="string">'myChart'</span>).getContext(<span class="string">'2d'</span>);</span><br><span class="line"><span class="keyword">var</span> ctx = $(<span class="string">'#myChart'</span>);</span><br><span class="line"><span class="keyword">var</span> ctx = <span class="string">"myChart"</span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="一般屬性設定"><a href="#一般屬性設定" class="headerlink" title="一般屬性設定"></a>一般屬性設定</h2><ul>
+<li>畫布<em>渲染</em>大小（<code>canvas.width</code>和<code>.height</code>）<strong>不能</strong>用相對值表示，與<em>顯示</em>大小（<code>canvas.style.width</code>和<code>.height</code>）相反</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`<span class="tag">&lt;<span class="name">canvas</span> <span class="attr">height</span>=<span class="string">"40vh"</span> <span class="attr">width</span>=<span class="string">"80vw"</span>&gt;</span>` <span class="comment">&lt;!-- **無效的**值，畫布不會調整大小--&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Chart.js使用其父容器來更新畫布<em>渲染</em>和<em>顯示</em>大小，此方法要求容器<strong>相對定位，</strong>並且只<strong>專用於圖表畫布</strong>。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"chart-container"</span> <span class="attr">style</span>=<span class="string">"position: relative; height:40vh; width:80vw"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"chart"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://www.chartjs.org/docs/latest/configuration/elements.html" target="_blank" rel="noopener">四種不同類型的元素配置選項： Point , Line , Rectangle , Arc</a></li>
+</ul>
+<hr>
+<h2 id="基本範例"><a href="#基本範例" class="headerlink" title="基本範例"></a>基本範例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;canvas id=<span class="string">"myChart"</span> width=<span class="string">"400"</span> height=<span class="string">"400"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> ctx = <span class="built_in">document</span>.getElementById(<span class="string">"myChart"</span>).getContext(<span class="string">'2d'</span>);</span><br><span class="line"><span class="keyword">var</span> myChart = <span class="keyword">new</span> Chart(ctx, &#123;</span><br><span class="line">    type: <span class="string">'bar'</span>, <span class="comment">// 圖表類型</span></span><br><span class="line">    data: &#123; <span class="comment">// 顯示資料</span></span><br><span class="line">        labels: [<span class="string">"Red"</span>, <span class="string">"Blue"</span>, <span class="string">"Yellow"</span>, <span class="string">"Green"</span>, <span class="string">"Purple"</span>, <span class="string">"Orange"</span>], <span class="comment">//項目</span></span><br><span class="line">        datasets: [&#123; <span class="comment">//圖表設置</span></span><br><span class="line">            label: <span class="string">'# of Votes'</span>,</span><br><span class="line">            data: [<span class="number">12</span>, <span class="number">19</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">            backgroundColor: [</span><br><span class="line">                <span class="string">'rgba(255, 99, 132, 0.2)'</span>,</span><br><span class="line">                <span class="string">'rgba(54, 162, 235, 0.2)'</span>,</span><br><span class="line">                <span class="string">'rgba(255, 206, 86, 0.2)'</span>,</span><br><span class="line">                <span class="string">'rgba(75, 192, 192, 0.2)'</span>,</span><br><span class="line">                <span class="string">'rgba(153, 102, 255, 0.2)'</span>,</span><br><span class="line">                <span class="string">'rgba(255, 159, 64, 0.2)'</span></span><br><span class="line">            ],</span><br><span class="line">            borderColor: [</span><br><span class="line">                <span class="string">'rgba(255,99,132,1)'</span>,</span><br><span class="line">                <span class="string">'rgba(54, 162, 235, 1)'</span>,</span><br><span class="line">                <span class="string">'rgba(255, 206, 86, 1)'</span>,</span><br><span class="line">                <span class="string">'rgba(75, 192, 192, 1)'</span>,</span><br><span class="line">                <span class="string">'rgba(153, 102, 255, 1)'</span>,</span><br><span class="line">                <span class="string">'rgba(255, 159, 64, 1)'</span></span><br><span class="line">            ],</span><br><span class="line">            borderWidth: <span class="number">1</span></span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;, <span class="comment">// 配置選項</span></span><br><span class="line">    options: &#123;</span><br><span class="line">        scales: &#123;</span><br><span class="line">            yAxes: [&#123;</span><br><span class="line">                ticks: &#123;</span><br><span class="line">                    beginAtZero:<span class="literal">true</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;]</span><br><span class="line">        &#125;,</span><br><span class="line">        legend: &#123;</span><br><span class="line">            labels: &#123;</span><br><span class="line">            <span class="comment">// This more specific font property overrides the global property</span></span><br><span class="line">                fontColor: <span class="string">'black'</span>,</span><br><span class="line">                fontSize: <span class="number">16</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -477,7 +506,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">86</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -539,7 +568,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#10分鐘學會Chart-js"><span class="nav-number">1.</span> <span class="nav-text">10分鐘學會Chart.js</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chart-js"><span class="nav-number">1.1.</span> <span class="nav-text">chart.js</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#10分鐘學會Chart-js"><span class="nav-number">1.</span> <span class="nav-text">10分鐘學會Chart.js</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chart-js"><span class="nav-number">1.1.</span> <span class="nav-text">chart.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Chart-js"><span class="nav-number">1.2.</span> <span class="nav-text">使用Chart.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一般屬性設定"><span class="nav-number">1.3.</span> <span class="nav-text">一般屬性設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本範例"><span class="nav-number">1.4.</span> <span class="nav-text">基本範例</span></a></li></ol></li></ol></div>
             
 
           </div>
