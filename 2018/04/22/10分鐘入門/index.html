@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="jhGR9g7yoPHCHNLRInYRrVrZV7d1wJepOzpqWfPbra8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-bulbcat.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-bulbcat.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-bulbcat.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo-bulbcat.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Notes,python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Python 10分鐘入門 一人計短，二人計長，三人勝過諸葛亮">
+<meta name="keywords" content="Notes,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python10分鐘入門">
+<meta property="og:url" content="http://tiida54.github.io/2018/04/22/10分鐘入門/index.html">
+<meta property="og:site_name" content="BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat">
+<meta property="og:description" content="Python 10分鐘入門 一人計短，二人計長，三人勝過諸葛亮">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://tiida54.github.io/2018/04/22/10分鐘入門/python.jpeg">
+<meta property="og:updated_time" content="2018-04-22T11:13:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python10分鐘入門">
+<meta name="twitter:description" content="Python 10分鐘入門 一人計短，二人計長，三人勝過諸葛亮">
+<meta name="twitter:image" content="http://tiida54.github.io/2018/04/22/10分鐘入門/python.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tiida54.github.io/2018/04/22/10分鐘入門/"/>
+
+
+
+
+
+  <title>python10分鐘入門 | BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-112178007-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">BulbCat｜Front-end engineer｜Web Design｜One today is worth two tomorrows</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tiida54.github.io/2018/04/22/10分鐘入門/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BulbCat.David">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python10分鐘入門</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-04-22T19:05:17+08:00">
+                2018-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <img src="/2018/04/22/10分鐘入門/python.jpeg">
+<h1 id="Python-10分鐘入門"><a href="#Python-10分鐘入門" class="headerlink" title="Python 10分鐘入門"></a>Python 10分鐘入門</h1><blockquote>
+<p>一人計短，二人計長，三人勝過諸葛亮<br><a id="more"></a></p>
+</blockquote>
+<ul>
+<li>下次預計更新內容：Vue-幼幼班入門篇-W03</li>
+</ul>
+<hr>
+<h2 id="重點語法"><a href="#重點語法" class="headerlink" title="重點語法"></a>重點語法</h2><ul>
+<li>中文的檔案要加上<code># encoding: utf-8</code></li>
+<li>python不需要任何代表結尾的符號(ex;)</li>
+<li>python不需要先指定變數的型態，之後也可以任意轉換型態(弱型態)</li>
+<li>python可以透過=,+=,-=直接賦值，也可同時給多個變數賦值</li>
+<li>單行註解為#,多行註解則用”””開頭與結尾，多運用註解可以幫助你或其他人看懂你的程式碼。</li>
+</ul>
+<hr>
+<h2 id="資料型態"><a href="#資料型態" class="headerlink" title="資料型態"></a>資料型態</h2><ul>
+<li><code>list</code>是可以隨意更動大小的陣列，可透過append增加。<ul>
+<li>len()可以算list長度</li>
+<li>sum()可以計算list中所有數值的加總(但list中的元素都需為數值，不可與字串混合)</li>
+<li>count則是可以計算list中某個元素出現次數</li>
+</ul>
+</li>
+<li>字串可用雙引號”或用單引號’來進行標示</li>
+<li>注意不能讓不同型別的變數同時運算</li>
+<li><code>Dictionaries</code>用來儲存東西之間對應關係</li>
+</ul>
+<hr>
+<h2 id="迴圈"><a href="#迴圈" class="headerlink" title="迴圈"></a>迴圈</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># encoding: utf-8</span></span><br><span class="line"></span><br><span class="line">my_list=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">10</span>):  <span class="string">"""//for(i=0;i&lt;10;i++)"""</span></span><br><span class="line">    my_list.append(i+<span class="number">1</span>)</span><br><span class="line"><span class="keyword">if</span> my_list[<span class="number">0</span>]==<span class="number">1</span> <span class="keyword">and</span> len(my_list)&lt;<span class="number">10</span>:</span><br><span class="line">    my_list[<span class="number">0</span>]+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">"1 state"</span></span><br><span class="line"><span class="keyword">elif</span> (<span class="number">10</span> <span class="keyword">in</span> my_list) <span class="keyword">or</span> <span class="keyword">not</span>(len(my_list)==<span class="number">10</span>):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"2 state"</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">"range(i,j) is i~j-1"</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"3 state"</span>  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">"none of above"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> my_list:      <span class="string">"""//for(i=0;i&lt;my_list.length();i++)"""</span></span><br><span class="line">    <span class="keyword">print</span> i,          <span class="string">"""//cout&lt;&lt;my_list[i]"""</span></span><br><span class="line"><span class="keyword">print</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="函式"><a href="#函式" class="headerlink" title="函式"></a>函式</h2><ul>
+<li>python定義函式用def開頭，同樣以冒號:結尾，還有縮排。</li>
+<li>Class的初始化函式是由兩條底線包含著init做宣告。</li>
+<li>lambda是簡易型函式，只能回傳一個值，因此如果需要兩個值以上的排列順序，會用attrgetter</li>
+</ul>
+<hr>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
+<li><a href="https://www.youtube.com/watch?v=wqRlKVRUV_k" target="_blank" rel="noopener">Python 簡介、安裝、與快速開始 By 彭彭</a></li>
+<li><a href="http://tech-marsw.logdown.com/blog/2014/09/03/getting-started-with-python-in-ten-minute" target="_blank" rel="noopener">Python - 十分鐘入門</a></li>
+<li><a href="https://hellolynn.hpd.io/2017/01/18/%E4%B8%80%E5%B0%8F%E6%99%82python%E5%85%A5%E9%96%80-part-2/" target="_blank" rel="noopener">一小時Python入門-part 2</a></li>
+<li><a href="http://djangogirlstaipei.herokuapp.com/tutorials/python/?os=windows" target="_blank" rel="noopener">Python 入門</a></li>
+</ul>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author：</strong>
+    BulbCat.David
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link：</strong>
+    <a href="http://tiida54.github.io/2018/04/22/10分鐘入門/" title="python10分鐘入門">http://tiida54.github.io/2018/04/22/10分鐘入門/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice： </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/07/Vue-幼幼班入門篇-W01/" rel="next" title="Vue-幼幼班入門篇-W01">
+                <i class="fa fa-chevron-left"></i> Vue-幼幼班入門篇-W01
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.gif"
+                alt="BulbCat.David" />
+            
+              <p class="site-author-name" itemprop="name">BulbCat.David</p>
+              <p class="site-description motion-element" itemprop="description">BulbCat 邁向前端工程師的學習心得與技術分享｜Front-end engineer｜Web Design</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/tiida54" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-10分鐘入門"><span class="nav-number">1.</span> <span class="nav-text">Python 10分鐘入門</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#重點語法"><span class="nav-number">1.1.</span> <span class="nav-text">重點語法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#資料型態"><span class="nav-number">1.2.</span> <span class="nav-text">資料型態</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迴圈"><span class="nav-number">1.3.</span> <span class="nav-text">迴圈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函式"><span class="nav-number">1.4.</span> <span class="nav-text">函式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#參考資料"><span class="nav-number">1.4.1.</span> <span class="nav-text">參考資料</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BulbCat.David</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
