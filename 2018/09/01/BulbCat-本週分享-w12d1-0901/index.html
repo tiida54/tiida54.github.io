@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="jhGR9g7yoPHCHNLRInYRrVrZV7d1wJepOzpqWfPbra8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-bulbcat.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-bulbcat.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-bulbcat.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo-bulbcat.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="share," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本週分享 第12週 (w12d1)  - 0901 記錄過去一週，我看到的值得分享的東西，每週發布。    一定要有思考的時間。（Make time to think）   隨選精華 介面設計師轉職之路 好UX設計案例分享 (上) — 七大基本使用情境 Good UX Design Examples: 7 Basic User Scenarios 什麼是產品規格？UX背景的PM注意事項">
+<meta name="keywords" content="share">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BulbCat-本週分享-w12d1-0901">
+<meta property="og:url" content="http://tiida54.github.io/2018/09/01/BulbCat-本週分享-w12d1-0901/index.html">
+<meta property="og:site_name" content="BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat">
+<meta property="og:description" content="本週分享 第12週 (w12d1)  - 0901 記錄過去一週，我看到的值得分享的東西，每週發布。    一定要有思考的時間。（Make time to think）   隨選精華 介面設計師轉職之路 好UX設計案例分享 (上) — 七大基本使用情境 Good UX Design Examples: 7 Basic User Scenarios 什麼是產品規格？UX背景的PM注意事項">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://i.imgur.com/KOBxnmZ.png">
+<meta property="og:updated_time" content="2018-09-01T14:51:14.933Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BulbCat-本週分享-w12d1-0901">
+<meta name="twitter:description" content="本週分享 第12週 (w12d1)  - 0901 記錄過去一週，我看到的值得分享的東西，每週發布。    一定要有思考的時間。（Make time to think）   隨選精華 介面設計師轉職之路 好UX設計案例分享 (上) — 七大基本使用情境 Good UX Design Examples: 7 Basic User Scenarios 什麼是產品規格？UX背景的PM注意事項">
+<meta name="twitter:image" content="https://i.imgur.com/KOBxnmZ.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tiida54.github.io/2018/09/01/BulbCat-本週分享-w12d1-0901/"/>
+
+
+
+
+
+  <title>BulbCat-本週分享-w12d1-0901 | BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-112178007-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">BulbCat｜Front-end engineer｜Web Design｜One today is worth two tomorrows</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tiida54.github.io/2018/09/01/BulbCat-本週分享-w12d1-0901/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BulbCat.David">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BulbCat.David｜ 前端工程師之路 ｜學習技術分享 BulbCat">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">BulbCat-本週分享-w12d1-0901</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-09-01T22:49:24+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="本週分享-第12週-w12d1-0901"><a href="#本週分享-第12週-w12d1-0901" class="headerlink" title="本週分享 第12週 (w12d1)  - 0901"></a>本週分享 第12週 (w12d1)  - 0901</h1><ul>
+<li>記錄過去一週，我看到的值得分享的東西，每週發布。</li>
+</ul>
+<p><img src="https://i.imgur.com/KOBxnmZ.png" alt="BulbCat"></p>
+<blockquote>
+<p>一定要有思考的時間。（Make time to think）</p>
+</blockquote>
+<hr>
+<h2 id="隨選精華"><a href="#隨選精華" class="headerlink" title="隨選精華"></a>隨選精華</h2><ul>
+<li><a href="https://medium.com/monospace-tw/%E4%BB%8B%E9%9D%A2%E8%A8%AD%E8%A8%88%E5%B8%AB%E8%BD%89%E8%81%B7%E4%B9%8B%E8%B7%AF-dcd9a19aa1dc" target="_blank" rel="noopener">介面設計師轉職之路</a></li>
+<li><a href="https://medium.com/uxeastmeetswest/%E5%A5%BDux%E8%A8%AD%E8%A8%88%E6%A1%88%E4%BE%8B%E5%88%86%E4%BA%AB-%E4%B8%8A-%E4%B8%83%E5%A4%A7%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%83%85%E5%A2%83-good-ux-design-examples-7-basic-user-scenarios-bcd9fe0f22e4" target="_blank" rel="noopener">好UX設計案例分享 (上) — 七大基本使用情境 Good UX Design Examples: 7 Basic User Scenarios</a></li>
+<li><a href="https://medium.com/uxeastmeetswest/%E4%BB%80%E9%BA%BC%E6%98%AF%E7%94%A2%E5%93%81%E8%A6%8F%E6%A0%BC-ux%E8%83%8C%E6%99%AF%E7%9A%84pm%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85-73b90313abe5" target="_blank" rel="noopener">什麼是產品規格？UX背景的PM注意事項</a></li>
+</ul>
+<a id="more"></a>
+<h2 id="教程影片"><a href="#教程影片" class="headerlink" title="教程影片"></a>教程影片</h2><ul>
+<li><a href="https://www.youtube.com/watch?v=cP9bhEknW_g&amp;index=9&amp;list=WL&amp;t=0s" target="_blank" rel="noopener">Vue CLI 3: Everything you need to know</a></li>
+<li><a href="https://www.youtube.com/watch?v=DwTPbtWkRHQ&amp;index=8&amp;list=WL&amp;t=0s" target="_blank" rel="noopener">Element Vue Basics</a></li>
+</ul>
+<h2 id="技術文章"><a href="#技術文章" class="headerlink" title="技術文章"></a>技術文章</h2><ul>
+<li><a href="https://medium.com/as-a-product-designer/%E4%BD%BF%E7%94%A8%E8%80%85%E7%B6%93%E9%A9%97%E8%A8%AD%E8%A8%88%E8%B7%9F%E5%9C%96%E6%9B%B8%E8%B3%87%E8%A8%8A%E5%AD%B8%E6%9C%89%E4%BB%80%E9%BA%BC%E9%97%9C%E4%BF%82-c0a5563e2301" target="_blank" rel="noopener">UX 設計跟圖書資訊學有什麼關係？</a></li>
+<li><a href="https://medium.com/as-a-product-designer/%E8%B3%87%E8%A8%8A%E6%9E%B6%E6%A7%8B%E5%85%A5%E9%96%80-%E5%88%86%E6%9E%90%E5%85%A7%E5%AE%B9-content-%E4%BB%A5%E5%8F%8A%E5%BE%8C%E8%A8%AD%E8%B3%87%E6%96%99-metadata-%E7%9A%84%E7%B7%B4%E7%BF%92-fc059c8dc3ee" target="_blank" rel="noopener">談UX設計師評估資訊架構時內容的影響力、維護成本與可用性</a></li>
+<li><a href="https://medium.com/@soking/ux%E8%A8%AD%E8%A8%88%E5%B8%AB%E9%81%8B%E7%94%A8google-analytics%E5%8D%94%E5%8A%A9%E7%B6%B2%E7%AB%99%E6%94%B9%E7%89%88%E7%9A%84%E7%B6%B2%E7%AB%99%E5%88%86%E6%9E%90%E5%B0%8F%E6%8A%80%E5%B7%A7-30c7589cd055" target="_blank" rel="noopener">UX設計師運用Google Analytics協助網站改版的網站分析小技巧</a></li>
+</ul>
+<h2 id="思考閱讀"><a href="#思考閱讀" class="headerlink" title="思考閱讀"></a>思考閱讀</h2><ul>
+<li><a href="http://www.ruanyifeng.com/blog/2018/08/api-below.html" target="_blank" rel="noopener">API 之下 - 阮一峰的網絡日誌</a></li>
+<li><a href="https://womany.net/read/article/15125" target="_blank" rel="noopener">聽讀者說｜開始一個好習慣後，你會想要擁有更多</a></li>
+</ul>
+<hr>
+<h2 id="近期活動"><a href="#近期活動" class="headerlink" title="近期活動"></a>近期活動</h2><ul>
+<li><a href="https://ithelp.ithome.com.tw/ironman" target="_blank" rel="noopener">2019 - iT邦幫忙鐵人賽</a></li>
+</ul>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><ul>
+<li><a href="https://medium.com/@kathrynwang/%E6%88%91%E5%BE%88%E9%86%9C-%E5%8F%AF%E6%98%AF%E6%88%91%E6%9C%89%E8%84%88%E7%B5%A1-%E7%94%A8-axure-%E5%BB%BA%E6%A7%8B%E6%A6%82%E5%BF%B5%E5%8E%9F%E5%9E%8B-d711aaf2c5cf" target="_blank" rel="noopener">我很醜，可是我有脈絡：用 Axure 建構概念原型</a></li>
+</ul>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author：</strong>
+    BulbCat.David
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link：</strong>
+    <a href="http://tiida54.github.io/2018/09/01/BulbCat-本週分享-w12d1-0901/" title="BulbCat-本週分享-w12d1-0901">http://tiida54.github.io/2018/09/01/BulbCat-本週分享-w12d1-0901/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice： </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/share/" rel="tag"># share</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/11/BulbCat-本週分享-w11d2-0811/" rel="next" title="BulbCat-本週分享-w11d2-0811">
+                <i class="fa fa-chevron-left"></i> BulbCat-本週分享-w11d2-0811
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.gif"
+                alt="BulbCat.David" />
+            
+              <p class="site-author-name" itemprop="name">BulbCat.David</p>
+              <p class="site-description motion-element" itemprop="description">BulbCat 邁向前端工程師的學習心得與技術分享｜Front-end engineer｜Web Design</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">113</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/tiida54" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本週分享-第12週-w12d1-0901"><span class="nav-number">1.</span> <span class="nav-text">本週分享 第12週 (w12d1)  - 0901</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#隨選精華"><span class="nav-number">1.1.</span> <span class="nav-text">隨選精華</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#教程影片"><span class="nav-number">1.2.</span> <span class="nav-text">教程影片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技術文章"><span class="nav-number">1.3.</span> <span class="nav-text">技術文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考閱讀"><span class="nav-number">1.4.</span> <span class="nav-text">思考閱讀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#近期活動"><span class="nav-number">1.5.</span> <span class="nav-text">近期活動</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具"><span class="nav-number">1.6.</span> <span class="nav-text">工具</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BulbCat.David</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
